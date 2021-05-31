@@ -1,0 +1,116 @@
+-
+    var types = {
+        INFO: 'patient-info',
+        DOCS: 'patient-docs'
+    }
+-
+    var tabs = [
+        {
+            active: true,
+            target: 'tab',
+            idContent: types.INFO,
+            text: 'Основная информация',
+        },
+        {
+            active: false,
+            target: 'tab',
+            idContent: types.DOCS,
+            text: 'Список документов',
+        },
+    ]
+
+
+-
+    var tabContent = [
+        {
+            active: true,
+            target: 'tab',
+            idContent: types.INFO,
+        },
+        {
+            active: false,
+            target: 'tab',
+            idContent: types.DOCS,
+        },
+    ]
+
+mixin patientInfo
+    .wrapper
+        dl.description-list
+            dt._term Пол
+            dd._definition Мужской
+
+            dt._term Дата рождения
+            dd._definition 18.10.1990
+
+            dt._term Область проживания
+            dd._definition Новосибирская обл.
+
+            dt._term Город проживания (населенный пункт)
+            dd._definition Новосибирск
+
+            dt._term Улица проживания
+            dd._definition ул. Дуси Ковальчук
+
+            dt._term Номер дома
+            dd._definition 120/1
+
+            dt._term Номер квартиры
+            dd._definition 32
+
+            dt._term Электронная почта
+            dd._definition -
+
+            dt._term Номер телефона
+            dd._definition +7 (900) 000 00 00
+
+            dt._term Email
+            dd._definition simpleuser@gmail.com
+
+            dt._term Диагноз
+            dd._definition Название диагноза
+
+            dt._term Группа риска
+            dd._definition Повышенный риск
+
+
+-
+    var docsList = {
+        docs: [
+            {
+                name: 'Карточка пациента',
+                property: 'PDF (13.6 мб), 16.10.2020, 16:45'
+            },
+            {
+                name: 'Название документа',
+                property: 'PDF (13.6 мб), 16.10.2020, 16:45'
+            },
+            {
+                name: 'Очень очень длинное документа',
+                property: 'PDF (18.3 мб), 16.12.2019, 12:30'
+            },
+            {
+                name: 'рентгенография грудной клетки',
+                property: 'PDF (12.3 мб), 10.03.2020, 12:30'
+            },
+            {
+                name: 'общий анализ крови',
+                property: 'PDF (5.3 мб), 03.02.2021, 14:48'
+            },
+        ]
+    }
+mixin patientDocs
+    +docsList(docsList)
+
+
+mixin tabsPatient(params)
+    +tabContentWrapper(params)
+        each val in tabContent
+            +tabContentItem(val)
+                if(val.idContent == types.INFO)
+                    +patientInfo
+                else if(val.idContent == types.DOCS)
+                    +patientDocs
+
+
+

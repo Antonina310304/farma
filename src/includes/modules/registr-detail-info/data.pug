@@ -1,0 +1,120 @@
+-
+    var typesRegistry = {
+        INFO: 'registry-info',
+        DOCS: 'registry-docs'
+    }
+-
+    var tabsRegistry = [
+        {
+            active: true,
+            target: 'tab',
+            idContent: typesRegistry.INFO,
+            text: 'Основная информация',
+        },
+        {
+            active: false,
+            target: 'tab',
+            idContent: typesRegistry.DOCS,
+            text: 'Список документов',
+        },
+    ]
+
+
+-
+    var tabContentRegistry = [
+        {
+            active: true,
+            target: 'tab',
+            idContent: typesRegistry.INFO
+        },
+        {
+            active: false,
+            target: 'tab',
+            idContent: typesRegistry.DOCS,
+        },
+    ]
+
+mixin registryInfo
+    .wrapper
+        dl.description-list
+            dt._term Статус
+            dd._definition Активный
+
+            dt._term Пол
+            dd._definition Мужской
+
+            dt._term Дата рождения
+            dd._definition 18.10.1990
+
+            dt._term Область проживания
+            dd._definition Новосибирская обл.
+
+            dt._term Город проживания (населенный пункт)
+            dd._definition Новосибирск
+
+            dt._term Улица проживания
+            dd._definition ул. Дуси Ковальчук
+
+            dt._term Номер дома
+            dd._definition 120/1
+
+            dt._term Номер квартиры
+            dd._definition 32
+
+            dt._term Электронная почта
+            dd._definition -
+
+            dt._term Номер телефона
+            dd._definition +7 (900) 000 00 00
+
+            dt._term Email
+            dd._definition simpleuser@gmail.com
+
+            dt._term Диагноз
+            dd._definition Название диагноза
+
+            dt._term Группа риска
+            dd._definition Повышенный риск
+
+-
+    var registryDocsList = {
+        registr: true,
+        docs: [
+            {
+                name: 'Карточка пациента',
+                property: 'PDF (13.6 мб), 16.10.2020, 16:45'
+            },
+            {
+                name: 'Название документа',
+                property: 'PDF (13.6 мб), 16.10.2020, 16:45'
+            },
+            {
+                name: 'Очень очень длинное документа',
+                property: 'PDF (18.3 мб), 16.12.2019, 12:30'
+            },
+            {
+                name: 'рентгенография грудной клетки',
+                property: 'PDF (12.3 мб), 10.03.2020, 12:30'
+            },
+            {
+                name: 'общий анализ крови',
+                property: 'PDF (5.3 мб), 03.02.2021, 14:48'
+            },
+        ]
+    }
+
+mixin registryDocs
+    +docsList(registryDocsList)
+
+
+mixin registryDetailInfoList(params)
+    +tabContentWrapper(params)
+        each val in tabContentRegistry
+            +tabContentItem(val)
+                if(val.idContent == typesRegistry.INFO)
+                    +registryInfo
+                else if(val.idContent == typesRegistry.DOCS)
+                    +registryDocs
+
+
+

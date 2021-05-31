@@ -1,0 +1,24 @@
+/************ filter ***************/
+@import "src/style/_";
+
+.select-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+
+	&__input {
+		display: none;
+	}
+
+	&__label {
+		display: block;
+		@include robotoRegular($size: 12px, $height: 14px, $color: #2E2E33, $margin: 0);
+		padding: 8px 12px;
+		cursor: pointer;
+
+		.select-list__input:checked + & {
+			background: #EEEFF1;
+		}
+	}
+}

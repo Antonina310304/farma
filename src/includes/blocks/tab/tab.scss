@@ -1,0 +1,13 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+.tab {
+    @include robotoRegular($size: 14px, $height: 16px, $color: #7B828E, $margin: 0);
+    padding: 0 32px 11px;
+    
+    .active & {
+        color: #182538;
+        font-family: 'Roboto-Medium', sans-serif;
+    }
+}
+

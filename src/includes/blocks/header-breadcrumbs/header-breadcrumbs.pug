@@ -1,0 +1,12 @@
+mixin headerBreadcrumbs(params)
+    ul.breadcrumbs
+        each val in params.list
+            li._item
+                a(href="#")._link=val
+
+mixin headerBack
+    ul.breadcrumbs
+        li._item
+            a(href="#")._link.back  Вернуться обратно
+
+

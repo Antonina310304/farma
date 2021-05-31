@@ -1,0 +1,43 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+.pagination {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #EEEFF1;
+    border-radius: 4px;
+
+
+    &__link {
+        display: block;
+        width: 34px;
+        height: 34px;
+        background: #FFFFFF;
+        border-right: 1px solid #EEEFF1;
+        box-sizing: border-box;
+        @include robotoBold($size: 12px, $height:15px, $color: #182538, $margin:0);
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        &.prev {
+            @include bg($url: 'i/arrow-left.svg', $size: 8px auto);
+        }
+
+        &.next {
+            @include bg($url: 'i/arrow-left.svg', $size: 8px auto);
+            border: none;
+            transform: rotate(180deg);
+        }
+
+        .active & {
+            background: #1D6693;
+            color: #fff;
+            border-color: #1D6693;
+        }
+    }
+}

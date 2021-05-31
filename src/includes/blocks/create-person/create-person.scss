@@ -1,0 +1,38 @@
+/************ input ***************/
+@import "src/style/_";
+
+
+@mixin col($width) {
+    padding: 0 12px 12px;
+    width: $width;
+    box-sizing: border-box;
+
+}
+.create-person {
+    padding: 32px;
+
+    &__group {
+        margin: -16px -12px;
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        margin-bottom: 48px;
+    }
+
+    &__button {
+        width: auto;
+        margin-left: auto;
+    }
+
+    &__col {
+        @include col($width: 100%);
+    }
+
+    &__col-3 {
+        @include col($width: 33.3333%);
+    }
+
+    &__col-4 {
+        @include col($width: 25%);
+    }
+}

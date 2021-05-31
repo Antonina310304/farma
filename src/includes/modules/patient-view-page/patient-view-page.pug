@@ -1,0 +1,74 @@
+include data
+
+mixin patientViewPage
+    .page__wrapper
+        +modalLock({title: 'пациента'})
+        +modalChangeData
+        +downloadDoc
+        +SuccessModal
+        +pageInfo({
+            title: 'Выбрано документов: 1',
+            buttons: [
+                {
+                    className: 'button--transparent button--red js-remove-docs',
+                    title: 'Удалить'
+                }
+            ]
+        })('data-modal-name'="modal-footer")
+        .page__rug
+            +SectionHead({
+                title: 'Ключенко Екатерина Олеговна',
+                'user-id': 15475,
+                buttons: [
+                    {
+                        title: 'Редактировать',
+                        className: 'button--min',
+                    },
+                    {
+                        title: 'Заблокировать',
+                        className: 'button--min button--attention js-locked-user',
+                    }
+                ]})
+
+            .page__section
+                +tabGroup({
+                    groupName: 'patient',
+                    tabs: tabs,
+                })
+                    +tabsPatient({groupName: 'patient', content: tabContent})
+
+mixin SuccessModal
+    .page-info.page-info--success(data-modal-name="success-download")
+        ._in
+            p._text Документы успешно загружены
+            ._buttons
+                button(type="button")._close ОК
+
+//mixin modalPageHeader
+//    .modal(data-modal-name="remove-docs")
+//        button(type="button")._close.js-modal-close
+//        ._in
+//            p._title Удаление документа
+//            p._text Вы уверены, что хотите удалить документ Unnamed.pdf?
+//            ._buttons
+//                button(type="button")._button.button.button--white.js-modal-close Отмена
+//                button(type="button")._button.button.button--attention.js-confirm Удалить
+
+mixin downloadDoc
+    .modal(data-modal-name="add-doc").modal--center.modal--min-height.initial
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title Загрузка документа
+            p._text Размер файла не должен превышать 20 мб.
+            ._progress
+                +progress
+
+            ._files-list
+                ul.files-list
+            form(action="action.php")._footer.js-download-file
+                .input-file.modal__input-file
+                    input(type="file" multiple placeholder="Выберите файл" accept=" .pdf, .png, .jpeg, .jpg, .doc, .docx " )#file._input
+                    label(for="file")._label Выберите файл
+                button(type="submit")._button-download.button.button--min Загрузить
+                button(type="button")._button-cancel.button.button--min.button--white.js-cancel-files Отмена
+                button(type="button")._button-close.button.button--min.js-modal-close Окей

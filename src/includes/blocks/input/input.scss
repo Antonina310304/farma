@@ -1,0 +1,98 @@
+/************ input ***************/
+@import "src/style/_";
+
+.input {
+
+	&__error {
+		opacity: 0;
+		@include robotoRegular($size:12px, $height:14px, $color: #D03B2D, $margin:0);
+		padding-left: 16px;
+		padding-top: 6px;
+
+		.input.error & {
+			opacity: 1;
+
+		}
+	}
+
+	&__in {
+		@include inputWrapper();
+
+		.input.error & {
+			border-color: #D03B2D;
+			transition: border 150ms ease-in-out;
+		}
+		.input.focus & {
+			border: 1px solid #1D6693;
+			transition: border 150ms ease-in-out;
+		}
+	}
+
+
+	&__input {
+		box-sizing: border-box;
+		width: 100%;
+		@include robotoRegular($size:15px,$height:18px, $color: #182538, $margin:0);
+		outline: none;
+		border: none;
+		padding: 20px 0 0;
+		background: transparent;
+		height: 38px;
+
+		//&[type="date"]::-webkit-datetime-edit-text {
+		//	color: red;
+		//	-webkit-appearance: none;
+		//	display: none;
+		//}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(20px, -50%);
+		@include robotoRegular($size:15px, $height:18px, $color: #7B828E, $margin:0);
+		transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
+		z-index: -1;
+
+		.input.focused & {
+			transform: translate(16px, -18px);
+			font-size: 12px;
+			line-height: 14px;
+			transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
+		}
+	}
+
+}
+
+.code-item {
+	height: 48px;
+	width: 64px;
+	width: 100%;
+	padding: 0 0 8px;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #C4C4C4;
+	text-align: center;
+	@include robotoLight($size:34px, $height:40px, $color: #182538, $margin:0);
+	transition: border 150ms ease-in-out;
+
+	&.fill {
+		border-color: #1D6693;
+		transition: border 150ms ease-in-out;
+	}
+
+	.error > & {
+		border-color: #D03B2D;
+		transition: border 150ms ease-in-out;
+	}
+
+
+}
+
+.code-item::-webkit-outer-spin-button,
+.code-item::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

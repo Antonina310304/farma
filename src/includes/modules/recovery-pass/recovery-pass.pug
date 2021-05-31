@@ -1,0 +1,32 @@
+mixin recoveryPass
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title-wrap.aut-title Восстановление пароля
+                +form({
+                    inputs: [
+                        {
+                            label: 'Новый пароль',
+                            type: 'password',
+                            disabled: false,
+                            placeholder: '',
+                            value: '',
+                            required: true,
+                            name: 'password',
+                        },
+                        {
+                            label: 'Повторите новый пароль',
+                            type: 'password',
+                            disabled: false,
+                            placeholder: '',
+                            value: '',
+                            required: true,
+                            name: 'repeat-password',
+                        }
+                    ]
+                })
+                    button(type="submit").form__button.button Сохранить новый пароль
+                    a(href="").form__button.button.button--cancel Отмена
+
+            .authorization__error.authorization-error.js-error-block.d-none
+                | Не введен логин или пароль

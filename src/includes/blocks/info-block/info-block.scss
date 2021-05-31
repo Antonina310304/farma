@@ -1,0 +1,49 @@
+/************ шапка ***************/
+@import "src/style/_";
+@mixin infoImg($background) {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    @include bg($url: $background);
+    margin-bottom: 32px;
+  }
+
+.info-block {
+    width: 496px;
+    
+    &.min {
+        width: 380px;
+    }
+    
+    &__img-error {
+      @include infoImg("i/network-error.svg")
+    }
+    
+  
+    &__img-success {
+        @include infoImg("i/success.svg")
+    }
+    &__img-search {
+        @include infoImg("i/search.svg");
+    }
+    
+    &__img-error {
+        height: 64px;
+    }
+    
+    h1 {
+        @include robotoLight($size: 34px, $height: 40px, $color: #182538, $margin: 0 0 16px);
+        text-align: center;
+    }
+  
+    &__text {
+        @include robotoRegular($size: 14px, $height: 20px, $color: #182538, $margin: 0 0 48px);
+        text-align: center;
+    }
+  
+    &__button {
+      max-width: 264px;
+      margin: 0 auto;
+    }
+}
+

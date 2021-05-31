@@ -1,0 +1,83 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+@mixin loaderBase() {
+    background: #1D6693;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+
+}
+
+@mixin pseudo() {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+
+.preloader {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &__in {
+        @include loaderBase;
+        color: #1D6693;
+        text-indent: -9999em;
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 11px;
+        transform: translateZ(0) translateY(-50%) translateX(-50%);
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+
+
+        &:before {
+            @include pseudo();
+            @include loaderBase;
+            left: -1.5em;
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+
+        &:after {
+            @include pseudo();
+            @include loaderBase;
+            left: 1.5em;
+        }
+    }
+}
+
+
+@-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+@keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}

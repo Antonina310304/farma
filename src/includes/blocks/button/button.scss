@@ -1,0 +1,130 @@
+/************ button ***************/
+@import "src/style/_";
+
+.button {
+	text-decoration: none;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	outline: none;
+	border: 0;
+	background: #1D6693;
+	border-radius: 4px;
+	text-align: center;
+	padding: 16px 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	@include robotoMedium($size: 19px, $height: 22px, $color: #fff, $margin: 0);
+
+	&[disabled] {
+		opacity: 0.5;
+	}
+
+	&--min {
+		padding: 14px;
+		text-transform: uppercase;
+		@include robotoMedium($size: 12px, $height: 14px, $color: #fff, $margin: 0);
+
+	}
+
+	&--transparent {
+		padding: 14px 32px;
+		font-size: 17px;
+		line-height: 20px;
+		color: #1D6693;
+		border: 1px solid #1D6693;
+		background: transparent;
+	}
+
+	&--red {
+		color: #D03B2D;
+		border-color: #D03B2D;
+	}
+
+	&--white {
+		background: #FFFFFF;
+		border: 1px solid #E0E2E8;
+		box-sizing: border-box;
+		color: #182538;
+	}
+
+	&--attention {
+		background: #D03B2D;
+		color: #fff;
+	}
+	
+	&--cancel {
+		background: transparent;
+		border: none;
+		width: 100%;
+		padding: 10px;
+		@include robotoRegular($size: 12px, $height: 14px, $color: #7B828E, $margin: 0);
+	}
+}
+
+.btn {
+	@include robotoMedium($size: 14px, $height: 16px, $color: #1D6693, $margin: 0);
+	text-transform: uppercase;
+	padding: 0;
+	border: none;
+	background: transparent;
+	padding: 10px;
+	cursor: pointer;
+
+	&--red {
+		color: #D03B2D;
+	}
+}
+
+.edit-button {
+	width: 100%;
+	height: 100%;
+	@include bg($url: "i/edit.svg", $size: 18px auto);
+}
+
+
+@mixin button($bg) {
+	display: block;
+	width: 100%;
+	height: 100%;
+	@include bg($url: $bg, $size: 24px auto);
+}
+
+.edit-button {
+	@include button("i/edit.svg");
+}
+
+.open-button {
+	@include button("i/open.svg");
+	font-size: 0;
+}
+
+.edit-delete {
+	@include button("i/delete.svg");
+}
+
+.edit-inlocked {
+	@include button("i/inlocked.svg");
+}
+
+.button-icon {
+	position: relative;
+	@include robotoMedium($size: 14px, $height: 16px, $color: #1D6693, $margin: 0);
+	text-transform: uppercase;
+	padding: 24px 40px 24px 0;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	
+	&:before {
+		position: absolute;
+		content: "";
+		display: block;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 24px;
+		height: 24px;
+		@include bg($url: "i/cross.svg", $size: 18px auto);
+	}
+}

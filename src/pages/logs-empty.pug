@@ -1,0 +1,17 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Уведомления об изменениях в данных пользователей'
+    - var isAut = false;
+    - var isNeedheaderBreadcrumbs = true;
+    - var isNeedSideMenu = false;
+    - var isLogs = true;
+    - var breadcrumbsBack = true;
+
+
+block content
+    .page__info-wrapper
+        .info-block
+            p._img-search
+            h1 Нет уведомлений
+            p._text Уведомления об изменениях в данных пользователей отсутствуют

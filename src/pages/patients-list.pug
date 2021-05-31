@@ -1,0 +1,13 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Список пациентов'
+    - var isAut = false;
+    - var activePage = 'patients';
+    - var noticeActive = false;
+    - var className = 'patients';
+    - var isNeedSideMenu = true;
+
+
+block content
+    +patientsListPage

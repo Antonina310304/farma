@@ -1,0 +1,21 @@
+mixin recoverySms
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title-sms.aut-title Введите код из СМС
+                p._text На номер телефона, привязанный к данному аккаунту, отправлен код для восстановления пароля
+                p._text.js-counter-sms='Повторная отправка СМС доступна через '
+                    span 300
+                    |       сек.
+                a(href="#").form__link.text-left.d-none.js-init-sms-counter Отправить СМС повторно
+                form(action='' novalidate).form.js-aut
+                    - var n = 0;
+                    .form__code-wrap.recovery
+                        while n < 6
+                            - n++
+                            p.form__code-item
+                                input(type="text" maxlength=1 name="code-" + n data-required=true required=true).code-item.js-mask-code
+                    button(type="submit").form__button.button Подтвердить
+                    a(href="").form__button.button.button--cancel Отмена
+            .authorization__error.authorization-error.js-error-block.d-none
+                | Введите четырехзначный код

@@ -1,0 +1,72 @@
+/************ form ***************/
+@import "src/style/_";
+
+.form {
+	width: 100%;
+
+	.page__authorization & {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1;
+	}
+
+	&__input {
+		margin-bottom: 8px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		@include robotoMedium($size: 12px, $height: 14px, $color: #4253AF, $margin: 0);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&__in {
+		margin-bottom: 16px;
+	}
+
+	&__button {
+		margin-top: auto;
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-top: 0;
+			margin-bottom: -10px;
+		}
+	}
+
+	&__code-wrap {
+		display: flex;
+		justify-content: center;
+
+		margin-top: 66px;
+		padding: 0 20px;
+
+		&.recovery {
+			margin-top: 43px;
+		}
+
+	}
+
+	&__code-item {
+		margin: 0 40px 0 0;
+		width: 64px;
+
+		.recovery & {
+			width: 56px;
+			margin-right: 24px;
+		}
+
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

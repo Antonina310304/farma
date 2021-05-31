@@ -1,0 +1,8 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Авторизация'
+    - var isAut = true;
+
+block content
+    +authorizationError

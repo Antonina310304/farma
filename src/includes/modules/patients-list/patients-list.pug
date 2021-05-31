@@ -1,0 +1,60 @@
+include data
+mixin patientsListPage
+    +modalLock
+    +modalChangeData
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Пациенты', button: 'Создать'})
+        .page__rug
+            +PersonsListHeader({list: patientsList, keys: patientsListKeys})
+        .js-page-content
+            .page__filter
+                +Filter([
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'login',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'name',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'sex',
+                        title: 'Пол',
+                        options: ['Все', 'Мужской', 'Женский'],
+                    },
+                    {
+                        type: typeFilterInput.DATE,
+                        className: 'date',
+                        title: '',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'diagnosis',
+                        title: 'Все',
+                        options: ['Очень очень очень длинное название диагноза', 'Диагноз2', 'Диагноз3', 'Диагноз4'],
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'risk',
+                        placeholder: 'Все',
+                        options: ['Повышенный риск', 'Нет риска', 'Очень длинное название', 'Риск'],
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'tel',
+                        title: '',
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'status',
+                        placeholder: 'Все',
+                        options: ['Активный', 'Заблокирован'],
+                    },
+                ])
+            .page__rug
+                +PersonsList(patientsList)
+                +paginationWidget

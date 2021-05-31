@@ -1,0 +1,23 @@
+mixin recovery
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title-wrap.aut-title Восстановление пароля
+                +form({
+                    inputs: [
+                        {
+                            label: 'Логин',
+                            type: 'text',
+                            disabled: false,
+                            placeholder: '',
+                            value: '',
+                            required: true,
+                            name: 'login',
+                        },
+                    ]
+                })
+                    button(type="submit").form__button.button Продолжить
+                    a(href="").form__button.button.button--cancel Отмена
+
+            .authorization__error.authorization-error.js-error-block.d-none
+                | Не введен логин

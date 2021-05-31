@@ -1,0 +1,42 @@
+mixin partForm(params)
+    .create-person__group
+        each val in params
+            if(val.size == 3)
+                .create-person__col-3
+                    +returnInput(val)
+            else if(val.size == 4)
+                .create-person__col-4
+                    +returnInput(val)
+            else if(val.size == 1)
+                .create-person__col
+                    +returnInput(val)
+
+
+mixin createPerson(params)
+    form(novalidate action="submit.php").create-person.js-person-form
+        +partForm(params.list)
+        button(type="submit")&attributes(params.btnAttr).__button.button=params.btnName ? params.btnName : 'Создать'
+
+
+
+mixin returnInput(val)
+    if(val.type == 'text')
+        +input(val)
+    else if(val.type == 'select')
+        +inputSelect(val)
+    else if(val.type == 'date')
+        +input(val)
+    else if(val.type == 'password')
+        +input(val)
+
+mixin createPersonGroup(params)
+    form(novalidate action="submit.php").create-person.js-person-form
+        .page__group
+            +partForm(params.best)
+        each item, index in params.groups
+            .page__group
+                .page__group-title='Операция' + (index + 1)
+                +partForm(item)
+        button(type="submit").__button.button=params.btnName ? params.btnName : 'Создать'
+
+

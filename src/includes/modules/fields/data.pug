@@ -1,0 +1,217 @@
+-
+    var fields = [
+        {
+            label: 'Дата',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '10.11.2020',
+            required: true,
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name1',
+            }
+        },
+        {
+            label: 'Доступны все символы (250 знаков)',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+
+            value: '',
+            required: true,
+            name: 'name2',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'max-lenght': '250',
+                'data-validate': 'empty',
+                'data-name': 'name2',
+            }
+        },
+        {
+            label: 'Выбор из списка',
+            type: 'select',
+            disabled: false,
+            className: 'risk',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name3',
+            className: 'problem',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'name3',
+            },
+            options: ['Гистология первичной опухоли',
+                'Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи ',
+                'Гистология метастаза (кроме КМ)',
+                'Миелограмма/трепанобиопсия костного мозга',
+                'Цитологическое исследование опухоли',
+                'Клиническое обследование'
+            ]
+        },
+
+        {
+            label: 'Числа (1-15 знаков)',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '6',
+            required: true,
+            name: 'name4',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'number',
+                'data-name': 'name4',
+            }
+        },
+        {
+            label: 'Число от 0 до 100, / символы(. ,) 1-15 знаков',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '6',
+            required: true,
+            name: 'name4',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'complex_numbers',
+                'data-name': 'name4',
+            }
+        },
+
+        {
+            label: 'Интраоперационные осложнения',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: 'Другое',
+            required: true,
+            name: 'other_problem',
+            className: 'other_problem',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'other_problem',
+            },
+            options: ['Другое','Нет', 'Да']
+        },
+         {
+            label: 'Описание интраоперационных осложнений',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: 'Осложнений не выявлено',
+            required: true,
+            name: 'description',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'description',
+            }
+        },
+        {
+            label: 'Отдаленные осложнения',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: 'Другое',
+            required: true,
+            name: 'name10',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'name10',
+            },
+            options: ['Другое', 'Нет', 'Да']
+        },
+        {
+            label: 'Комментарий к отдаленным осложнениям',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: 'Осложнений не выявлено',
+            required: true,
+            name: 'name20',
+            size: 3,
+            'error-text': 'Заполните комментарий',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name20',
+            }
+        },
+        {
+            label: 'Гистология после операции',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'histology',
+            className: 'histology',
+            size: 3,
+            'error-text': 'Выберете гистологию после операции',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'histology',
+            },
+            options: ['Нет данных', 'Да', 'Нет']
+        },
+        {
+            label: 'МКИ',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '< 2%',
+            required: true,
+            name: 'mki',
+            size: 3,
+            'error-text': 'Выберете МКИ',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'mki',
+            }
+        },
+        {
+            label: 'Лекарственный патоморфоз',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name50',
+            className: 'name50',
+            size: 3,
+            'error-text': 'Выберете лекарственный патоморфоз',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'name50',
+            },
+            options: ['1', '2', '3']
+        },
+    ]
+
+

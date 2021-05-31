@@ -1,0 +1,34 @@
+mixin tabGroup(params)
+    .tab-group(data-tab-group=params.groupName)
+        +navTabs(params.tabs)
+        block
+
+
+
+mixin navTabs(tabs)
+    ul.nav-tabs
+        each tab in tabs
+            li(class=tab.active? 'active' : ''
+                data-selected=tab.active ? 'true' : 'false'
+                data-target=tab.target
+                data-id-content=tab.idContent
+                )._item
+                p.tab=tab.text
+
+mixin tabContentWrapper(params)
+    ul(data-tab-group=params.group).tab-content
+        block
+
+
+mixin tabContentItem(params)
+    li(
+        class=params.active == true ? 'active' : ''
+        data-selected=params.active == true ? 'true' : 'false'
+        data-content=params.idContent
+    ).tab-content__item
+        block
+
+
+
+
+

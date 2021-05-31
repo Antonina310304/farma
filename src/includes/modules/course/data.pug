@@ -1,0 +1,537 @@
+-
+    var courseList = [
+        {
+            label: 'Дата  начала курса 1',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name1',
+            }
+        },
+        {
+            label: 'Дата окончания курса 1',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name2',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name2',
+            }
+        },
+        {
+            label: 'Обезболивание (название препарата)',
+            type: 'select',
+            disabled: false,
+            className: 'name6',
+            placeholder: '',
+            value: '',
+            name: 'name6',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name6'
+            },
+            options: [
+                'Трамадол 5%',
+                'Морфин 1%',
+                'Другое',
+            ]
+        },
+        {
+            label: 'Обезболивание (доза) мг/кг/сутки',
+            type: 'text',
+            disabled: false,
+            className: 'name27',
+            placeholder: '',
+            value: '',
+            name: 'name27',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name27',
+                'max-lenght': '250',
+            },
+        },
+        {
+            label: 'Дата окончание введения обезболивающих препаратов',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name7',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name7',
+            }
+        },
+        {
+            label: 'Болевой синдром',
+            type: 'select',
+            disabled: false,
+            className: 'name8',
+            placeholder: '',
+            value: '',
+            name: 'name8',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name8'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
+                '10'
+            ]
+        },
+        {
+            label: 'Аллергические реакции',
+            type: 'select',
+            disabled: false,
+            className: 'name9',
+            placeholder: '',
+            value: '',
+            name: 'name9',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name9'
+            },
+            options: [
+                'Гиперемия кожных покровов ',
+                'Аллергический отек',
+                'Бронхоспазм ',
+                'Синдром системной капиллярной проницаемости',
+                'Синдром высвобождения цитокинов',
+                'Другое',
+            ]
+        },
+        {
+            label: 'Синдром капиллярной утечки',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: '',
+            name: 'name10',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name10'
+            },
+            options: [
+                'Да',
+                'Нет',
+            ]
+        },
+        {
+            label: 'Дыхательная недостаточность/бронхоспазм',
+            type: 'select',
+            disabled: false,
+            className: 'name11',
+            placeholder: '',
+            value: '',
+            name: 'name11',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name11'
+            },
+            options: [
+                'Да',
+                'Нет',
+            ]
+        },
+        {
+            label: 'Гемоглобин',
+            type: 'select',
+            disabled: false,
+            className: 'name12',
+            placeholder: '',
+            value: '',
+            name: 'name12',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name12'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'Лейкоциты',
+            type: 'select',
+            disabled: false,
+            className: 'name13',
+            placeholder: '',
+            value: '',
+            name: 'name13',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name13'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'Нейтрофилы',
+            type: 'select',
+            disabled: false,
+            className: 'name14',
+            placeholder: '',
+            value: '',
+            name: 'name14',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name14'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'Тромбоциты',
+            type: 'select',
+            disabled: false,
+            className: 'name15',
+            placeholder: '',
+            value: '',
+            name: 'name15',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name15'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+        {
+            label: 'Другие показатели ОАК',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name16',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name16',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Инфекционные осложнения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name17',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name17',
+                'max-lenght': '250',
+            }
+        },
+
+        {
+            label: 'Дополнительные неврологические осложнения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name18',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name18',
+                'max-lenght': '250',
+            }
+        },
+
+        {
+            label: 'Дополнительные офтальмологические осложнения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name19',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name19',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Лихорадка',
+            type: 'select',
+            disabled: false,
+            className: 'name20',
+            placeholder: '',
+            value: '',
+            name: 'name20',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name20'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'Тошнота',
+            type: 'select',
+            disabled: false,
+            className: 'name21',
+            placeholder: '',
+            value: '',
+            name: 'name21',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name21'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'Рвота',
+            type: 'select',
+            disabled: false,
+            className: 'name22',
+            placeholder: '',
+            value: '',
+            name: 'name22',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name22'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+
+        {
+            label: 'Диарея',
+            type: 'select',
+            disabled: false,
+            className: 'name23',
+            placeholder: '',
+            value: '',
+            name: 'name23',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name23'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+
+        {
+            label: 'Креатинин',
+            type: 'text',
+            disabled: false,
+            className: 'name24',
+            placeholder: '',
+            value: '',
+            name: 'name24',
+            size: 3,
+            attributes: {
+                'data-validate': 'number',
+                'data-name': 'name24'
+            },
+        },
+
+        {
+            label: 'Креатинин (единица измерения)',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name25',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'number',
+                'data-name': 'name25'
+            },
+            options: [
+                '1 мкмоль/л',
+                '2 мг / дл'
+            ]
+        },
+        {
+            label: 'Билирубин',
+            type: 'select',
+            disabled: false,
+            className: 'name23',
+            placeholder: '',
+            value: '',
+            name: 'name23',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name23'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+        {
+            label: 'АЛТ/АСТ',
+            type: 'select',
+            disabled: false,
+            className: 'name24',
+            placeholder: '',
+            value: '',
+            name: 'name24',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name24'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+
+
+        {
+            label: 'Запоры',
+            type: 'select',
+            disabled: false,
+            className: 'name25',
+            placeholder: '',
+            value: '',
+            name: 'name25',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name25'
+            },
+            options: [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+            ]
+        },
+        {
+            label: 'Другие осложнения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name26',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name26',
+                'max-lenght': '250',
+            }
+        },
+    ]

@@ -1,0 +1,9 @@
+include data
+
+mixin info
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Гистология и онкомаркеры'})
+        .page__rug
+            +createPerson({list: infoList})
+

@@ -1,0 +1,19 @@
+mixin modalLock(params)
+    - var title = (params) ? params.title : 'пользователя';
+    .modal(data-modal-name="lockdown")
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title='Блокировка ' + title
+            p._text='Вы уверены, что хотите заблокировать ' + title + '?'
+            ._buttons
+                button(type="button")._button.button.button--min.button--white.js-modal-close Отмена
+                button(type="button")._button.button--min.button--attention.button.js-confirm Заблокировать
+
+mixin modalChangeData
+    .modal(data-modal-name="modal-success").modal--center
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title Изменение данных
+            p._text Заявка на изменение данных пользователя отправлена администратору на рассмотрение
+            ._buttons
+                button(type="button")._button.button.button--min.js-modal-close.js-confirm Окей

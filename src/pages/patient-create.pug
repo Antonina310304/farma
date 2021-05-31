@@ -1,0 +1,13 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Создание пользователя'
+    - var isAut = false;
+    - var isNeedSideMenu = true;
+    - var isLogs = false;
+    - var activePage = 'patients';
+    - var breadcrumbsList = ['Пользователи', 'Создание пользователя'];
+
+
+block content
+    +patientCreatePage

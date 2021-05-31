@@ -1,0 +1,33 @@
+{
+  "projectName": "farma",
+  "pages": {
+    "название_файла.html": "Название страницы",
+    "index.html": "Главная",
+    "authorization.html": "Авторизация",
+    "authorization-error.html": "Ошибка авторизации",
+    "changed-password.html": "Изменение пароля",
+    "error-sms.html": "Ошибка ввода смс",
+    "network-error.html": "Ошибка сети",
+    "recovery.html": "Восстановление пароля",
+    "recovery-pass.html": "Восстановление пароля",
+    "recovery-sms.html": "Смс восстановления пароля",
+    "sms.html": "Смс Ввод смс",
+    "users-list-empty.html": "Путой список пользователей",
+    "users-list.html": "Список пользователей",
+    "user-create.html": "Создание пользователя",
+    "user-edit.html": "Изменение пользователя",
+    "user-view.html": "Просмотр пользователя",
+    "logs.html": "Уведомления об изменениях в данных пользователей",
+    "logs-empty.html": "Уведомления об изменениях в данных пользователей(пусто)",
+
+    "patients-list.html": "Список пациентов",
+    "patient-create.html": "Создание пациента",
+    "patient-view.html": "Просмотр пациента",
+    "patients-registry.html": "Реестр пациентов",
+
+    "histology.html": "Гистология",
+    "initial-examination.html": "Инициальное обследование",
+    "info.html": "информация о заболевании",
+    "risk-stage.html": "Стадия и группа риска"
+  }
+}

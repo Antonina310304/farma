@@ -1,0 +1,37 @@
+mixin userViewPage
+    .page__wrapper
+        +modalLock
+        +modalChangeData
+        .page__rug
+            +SectionHead({
+                title: 'Ключенко Екатерина Олеговна',
+                'user-id': 15475,
+                buttons: [
+                    {
+                        title: 'Редактировать',
+                        className: 'button--min',
+                    },
+                    {
+                        title: 'Заблокировать',
+                        className: 'button--min button--attention js-locked-user',
+                    }
+                ]})
+
+            .page__inner
+                dl.description-list
+                    dt._term Логин
+                    dd._definition 001011
+
+                    dt._term Номер телефона
+                    dd._definition +7 (987) 654 3210
+
+                    dt._term Должность
+                    dd._definition Нейрохирург
+
+                    dt._term Роль в системе
+                    dd._definition Пользователь / Врач
+
+                    dt._term Статус
+                    dd._definition Активный
+
+

@@ -1,0 +1,65 @@
+/************ шапка сайта ***************/
+@import "src/style/_";
+
+.breadcrumbs {
+    margin: 0;
+    background: #fff;
+    padding: 18px 32px;
+    border-radius: 8px;
+    border: 1px solid #EEEFF1;
+    list-style: none;
+
+    &__item {
+        display: inline-block;
+        margin-right: 8px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        @include robotoRegular($size: 12px, $height: 14px, $color: #182538, $margin: 0);
+        text-decoration: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0 26px 0 0;
+        position: relative;
+
+        .breadcrumbs__item:last-child & {
+            color: #7B828E;
+
+            &:before {
+                content: none;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 50%;
+            //top: -2px;
+            transform: translateY(-50%) rotate(180deg);
+            width: 18px;
+            height: 18px;
+            display: block;
+            @include bg($url: 'i/arrow-left.svg', $size: 6px auto, $position: center);
+
+        }
+
+
+        &.back {
+            padding-right: 0;
+            padding-left: 26px;
+            color: #182538 !important;
+
+            &:before {
+                content: '' !important;
+                right: auto;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

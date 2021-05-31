@@ -1,0 +1,50 @@
+/************ filter ***************/
+@import "src/style/_";
+
+.filter {
+	display: flex;
+	padding: 8px 0;
+	list-style: none;
+	margin: 0;
+
+	&__item {
+		padding-right: 8px;
+		//overflow: hidden;
+		box-sizing: border-box;
+
+		@each $block, $key in $widths {
+			&.#{$block} {
+				min-width: #{$key};
+				max-width: #{$key};
+				flex: 0 0 #{$key};
+			}
+		}
+
+		@each $block, $key in $widthsRegistry {
+			.page.registry &.#{$block} {
+				min-width: #{$key};
+				max-width: #{$key};
+				flex: 0 0 #{$key};
+			}
+		}
+
+
+		@each $block, $key in $widthsPatientsList {
+			.page.patients &.#{$block} {
+				min-width: #{$key};
+				max-width: #{$key};
+				flex: 0 0 #{$key};
+			}
+		}
+
+		&.role {
+			width: 10.06%;
+			min-width: 10.06%;
+			max-width: 10.06%;
+		}
+
+		&:first-child {
+			padding-left: 19px;
+		}
+	}
+}

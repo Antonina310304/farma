@@ -1,0 +1,9 @@
+include data
+
+mixin initialExaminationList
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Инициальное обследование'})
+        .page__rug
+            +createPerson({list: initialExaminationList})
+

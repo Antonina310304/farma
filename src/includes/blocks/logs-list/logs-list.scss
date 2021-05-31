@@ -1,0 +1,38 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+
+.logs-list {
+    width: 100%;
+    border: none;
+
+    th {
+        @include tableTitle();
+    }
+
+    &__btn {
+        margin-right: 12px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__cell {
+        padding: 6px 0;
+        border-bottom: 1px solid #EEEFF1;
+        @include tableText();
+
+        &:first-child {
+            padding-left: 32px;
+        }
+
+        &.state {
+            text-align: right;
+        }
+
+        &:last-child {
+            padding-right: 22px;
+        }
+    }
+}

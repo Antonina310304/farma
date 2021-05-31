@@ -1,0 +1,60 @@
+mixin registrCategory2
+    .page__wrapper
+        .page__rug
+            +SectionHead({
+                title: 'Хирургическое лечение',
+                buttons: [
+                    {
+                        title: 'Редактировать',
+                        className: 'button--min',
+                    },
+                ]
+            })
+
+            .page__inner.page__section
+                .page__group
+                    .description-list
+                        dt._term Дата лучшей операции
+                        dd._definition 10.11.2020
+
+                        dt._term Объем лучшей операции
+                        dd._definition Объем операции 1
+
+                        dt._term Размеры остаточной опухоли перед операцией(см) (ШхВхД)
+                        dd._definition 2х1х2
+
+                        dt._term Объем остаточной опухоли перед лучшей операцией (см куб)
+                        dd._definition 4
+
+                        dt._term Процент удаленной опухоли по данным протокола операции
+                        dd._definition 100
+
+                        dt._term Кол-во курсов ПХТ до лучшей операции
+                        dd._definition 2
+                .page__group
+                    .page__group-title Операция 1
+                    .description-list
+                        dt._term Дата операции
+                        dd._definition 10.10.2020
+
+                        dt._term Название операции
+                        dd._definition Самая лучшая операция
+
+                        dt._term Объем операции
+                        dd._definition 6
+
+                        dt._term Осложнения операции
+                        dd._definition Нет
+
+                        dt._term Интраоперационные осложнения
+                        dd._definition Нет
+
+                        dt._term Гистология после операции
+                        dd._definition Нет данных
+
+                        dt._term МКИ
+                        dd._definition < 2%
+
+                        dt._term Лекарственный патоморфоз
+                        dd._definition 1
+

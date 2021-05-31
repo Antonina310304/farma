@@ -1,0 +1,15 @@
+
+mixin mainNav(activePage)
+    - var mainNavList = {'users': 'Пользователи', 'patients': 'Пациенты', 'registr': 'Реестр пациентов', 'reports': 'Отчеты',};
+    ul.main-nav
+        each val, index in mainNavList
+            li._item
+                a(href="#" class=(index == activePage ? 'checked' : ''))._link
+                    if(index == 'users')
+                        include users.svg
+                    else if(index == 'patients')
+                        include patients.svg
+                    else if(index == 'reports')
+                        include reports.svg
+                    else if(index == 'registr')
+                        include registr.svg

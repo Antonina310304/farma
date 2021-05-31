@@ -1,0 +1,65 @@
+mixin registrCategory
+    .page__wrapper
+        +modalLock
+        +modalChangeData
+        .page__rug
+            +SectionHead({
+                title: 'Информация о заболевании',
+                buttons: [
+                    {
+                        title: 'Редактировать',
+                        className: 'button--min',
+                    },
+                ]
+            })
+
+            .page__inner.page__section
+                .description-list
+                    dt._term Дата первых клинических признаков
+                    dd._definition 10.11.2020
+                    dt._term Первые симптомы
+                    dd._definition Болевой синдром
+                    dd._definition Диарея
+
+                    dt._term Изменения выявленные антенатально
+                    dd._definition Lorem ipsum dolor sit amet
+
+                    dt._term Диагноз
+                    dd._definition Нейробластома
+
+                    dt._term МКБ-10
+                    dd._definition С38
+
+                    dt._term Метод постановки диагноза
+                    dd._definition Клиническое обследование
+
+                    dt._term Локализация
+                    dd._definition Нет данных
+
+                    dt._term Латеральность
+                    dd._definition Неизвестно
+
+                    dt._term Костные метастазы
+                    dd._definition Нет
+
+                    dt._term Метастазы
+                    dd._definition Нет
+
+                    dt._term Клинические симптомы
+                    dd._definition Диарея
+
+                    dt._term Опсоклонус (терапия гормонами)
+                    dd._definition Диарея
+
+                    dt._term Сопутствующие заболевания
+                    dd._definition Сопутствующих заболеваний не выявлено
+
+                    dt._term ВПС
+                    dd._definition Нет
+
+                    dt._term ВПС тип
+                    dd._definition -
+
+                    dt._term Жизнеугрожающие симптомы (для группы наблюдения)
+                    dd._definition Нет
+

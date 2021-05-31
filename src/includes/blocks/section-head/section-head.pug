@@ -1,0 +1,9 @@
+mixin SectionHead(params)
+    .section-head
+        h1(data-user-id=params['user-id'] ? params['user-id'] : false)._title.page-heading=params.title
+        if(params.button)
+            a(href="#")&attributes(attributes)._button.button.button--min=params.button
+        if(params.buttons)
+            ._buttons
+                each val in params.buttons
+                    a(href="#" class=val.className)&attributes(attributes)._button.button=val.title

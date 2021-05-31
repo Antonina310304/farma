@@ -1,0 +1,59 @@
+include data
+mixin PatientsRegistry
+    +pageInfo({
+        title: 'Выбрано документов: 1',
+        buttons: [
+            {
+                className: 'button--transparent',
+                title: 'Выгрузить в excel'
+            },
+            {
+                className: 'button--transparent button--red',
+                title: 'Удалить'
+            }
+        ]
+    })(data-modal-name="modal-footer")
+
+    .modal(data-modal-name="report")
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title Формирование отчёта
+            p._text Вы уверены, что хотите сформировать отчёт?
+            ._buttons
+                button(type="button")._button.button.button--white.js-modal-close Отмена
+                button(type="button")._button.button Подтвердить
+
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Реестр пациентов', button: 'Сформировать отчёт'})(data-modal="report")
+        .page__rug
+            +PersonsListHeader({list: PatientsList, keys: userKeysUsersList})
+        .js-page-content
+            .page__filter
+                +Filter([
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'input-cell',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'name',
+                        placeholder: 'Пример текста',
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'city',
+                        title: 'Все',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'role',
+                        title: 'Все',
+                        options: ['Да', 'Нет'],
+                    },
+                ])
+
+            .page__rug
+                +PersonsListRegistry({list: PatientsList, mark: 3})
+                +paginationWidget

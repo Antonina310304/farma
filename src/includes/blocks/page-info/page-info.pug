@@ -1,0 +1,8 @@
+mixin pageInfo(params)
+    .page-info(class=params.event)&attributes(attributes)
+        ._in
+            p._text=params.title
+            if(params.buttons)
+                ._buttons
+                    each val in params.buttons
+                        button(href="#" class=val.className)._button.button=val.title

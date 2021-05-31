@@ -1,0 +1,15 @@
+mixin SelectList(params)
+    ul.select-list
+        each val, index in params.options
+            li._item
+                input(type="checkbox" id=`${params.className}-${index}` name=`${params.className}-${index}`)._input&attributes(attributes)
+                label(for=`${params.className}-${index}`)._label=val
+
+
+mixin SelectListRadio(params)
+    ul.select-list
+        each val, index in params.options
+            li._item
+                - var other = (val == 'Другие' || val == 'Другое (описательно)' ? 'js-other' : '');
+                input(tabindex="8" value=val type=params.attributes['data-validate'] id=`${params.className}-${index}` name=params.className class=`${other}  js-select-${params.attributes['data-validate']}`)._input
+                label(for=`${params.className}-${index}`)._label=val

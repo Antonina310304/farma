@@ -1,0 +1,23 @@
+/************ input ***************/
+@import "src/style/_";
+
+
+
+.description-list {
+    margin: 0;
+    padding: 0;
+
+    &__term {
+        display: block;
+        @include robotoRegular($size: 12px, $height: 16px, $color: #7B828E, $margin: 0 0 4px);
+    }
+
+    &__definition {
+        display: block;
+        @include robotoRegular($size: 17px, $height: 20px, $color: #182538, $margin: 0 0 16px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

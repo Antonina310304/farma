@@ -1,0 +1,9 @@
+mixin pagination
+    ul.pagination&attributes(attributes)
+        li._item
+            a(href='#' data-num-page='prev')._link.prev.js-pagination
+        - for(var i = 1; i < 9; i++)
+            li._item(class=(i == 2 ? 'active' : ''))
+                a(href='#' data-num-page=i)._link.js-pagination=i
+        li._item
+            a(href='#' data-num-page='next')._link.next.js-pagination

@@ -1,0 +1,15 @@
+include data
+
+mixin logsPage
+    +SectionHead({title: 'Уведомления об изменениях в данных пользователей'})
+    +SuccessModalLog
+    +logsList({list: logList, keys: logListKeys})
+
+
+
+mixin SuccessModalLog
+    .page-info.page-info--success(data-modal-name="success-confirmed")
+        ._in
+            p._text Изменения успешно приняты
+            ._buttons
+                button(type="button")._close ОК

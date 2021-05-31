@@ -1,0 +1,62 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+
+.docs-list {
+    @include list();
+    
+    &__item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #EEEFF1;
+        padding: 0 32px;
+    }
+    
+    &__input {
+        display: none;
+    }
+    
+    &__title {
+        @include robotoRegular($size: 14px, $height: 16px, $color: #182538, $margin: 0 0 8px);
+    }
+    
+    &__subtitle {
+        @include robotoRegular($size: 12px, $height: 14px, $color: #7B828E, $margin: 0);
+    }
+
+    label {
+        position: relative;
+        padding: 16px 0 16px 40px;
+        cursor: pointer;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            @include bg($url: 'i/input.svg', $size: 18px auto);
+        }
+
+    }
+    
+    &__label {
+        flex: 1;
+        padding: 16px 0 16px 0;
+
+        .docs-list__input:checked + & {
+            &:before {
+                @include bg($url: 'i/input-checked.svg', $size: 18px auto);
+            }
+        }
+    }
+    
+    &__open {
+        width: 24px;
+        height: 24px;
+    }
+}

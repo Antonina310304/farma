@@ -1,0 +1,30 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+
+.section-head {
+	padding: 30px 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__title {
+		//@include robotoRegular($size: 34px, $height: 40px, $color: #182538, $margin: 0);
+	}
+
+	&__button {
+		min-width: 128px;
+		width: auto;
+		font-size: 14px;
+		line-height: 16px;
+		display: inline-block;
+		padding-left: 18px;
+		padding-right: 18px;
+		margin-right: 16px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+}

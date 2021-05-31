@@ -1,0 +1,107 @@
+.aut-title {
+    @include robotoLight($size: 34px, $height: 40px, $color: #182538, $margin: 0);
+}
+//заголовки разделов
+.page-title {
+    @include robotoRegular($size: 34px, $height: 40px, $color: #212121, $margin: 0);
+}
+//для пустых уведомлений
+.page-heading {
+    @include robotoLight($size: 34px, $height: 40px, $color: #212121, $margin: 0);
+}
+
+.page {
+    display: flex;
+    background: #E5E5E5;
+    background: #F3F4F5;
+    flex: 1;
+    
+    &__section {
+        margin-top: -8px;
+    }
+
+    &__heading {
+        margin-bottom: 32px ;
+    }
+
+    &__title {
+        @include robotoLight($size: 34px, $height: 40px, $color: #212121, $margin: 0);
+    }
+
+    &__main-content {
+        width: 100%;
+    }
+
+    &__inner {
+        padding: 0 32px 32px;
+    }
+
+    &__wrapper {
+        margin: 0 24px 0;
+        margin-left: 104px;
+        border: 1px solid #EEEFF1;
+        box-sizing: border-box;
+        border-radius: 8px;
+        overflow: hidden;
+
+        body.log & {
+            margin-left: 28px;
+            margin-right: 28px;
+        }
+    }
+
+    &__wrap {
+
+    }
+
+    &__rug {
+        background: #fff;
+    }
+
+    &__info-wrapper {
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    &__authorization {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__authorization-in {
+        width: 560px;
+        padding-bottom: 50px;
+    }
+    
+    //&__aside {
+    //    width: 80px;
+    //    background: #fff;
+    //    flex: 0 0 auto;
+    //}
+
+    &__info {
+        min-height: 98px;
+    }
+
+    &__group {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__group-title {
+        @include robotoMedium($size: 12px, $height: 14px, $color: #182538, $margin: 0 0 16px);
+        padding-bottom: 8px;
+        border-bottom: 1px solid #EEEFF1;
+    }
+}

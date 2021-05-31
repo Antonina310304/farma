@@ -1,0 +1,358 @@
+-
+    var infoList = [
+        {
+            label: 'Дата первых клинических признаков ',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name1',
+            }
+        },
+        {
+            label: 'Первые симптомы ',
+            type: 'select',
+            disabled: false,
+            className: 'name2',
+            placeholder: '',
+            value: '',
+            name: 'name2',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name2'
+            },
+            options: [
+                'Болевой синдром',
+                'Лихорадка',
+                'Неврологические осложнения',
+                'Потеря массы тела',
+                'Диарея',
+                'Бессимптомное',
+                'Запоры',
+                'Увеличение в объеме живота',
+                'Другие',
+            ]
+        },
+        {
+            label: 'Изменения выявленные антенатально',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name3',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'max-lenght': '250',
+                'data-name': 'name3',
+            }
+        },
+        {
+            label: 'Диагноз',
+            type: 'select',
+            disabled: false,
+            className: 'name4',
+            placeholder: '',
+            value: '',
+            name: 'name4',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name4'
+            },
+            options: [
+                'Нейробластома',
+                'Ганглионейробластома',
+                'Ганглионеврома',
+            ]
+        },
+        {
+            label: 'МКБ-10',
+            type: 'select',
+            disabled: false,
+            className: 'name5',
+            placeholder: '',
+            value: '',
+            name: 'name5',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name5'
+            },
+            options: [
+                'С38',
+                'С38.2',
+                'С47',
+                'С47.3',
+                'С47.4',
+                'С47.5',
+                'С47.6',
+                'С47.8',
+                'С47.9',
+                'С48.0',
+                'С49',
+                'С74.0',
+                'С74.1',
+                'С74.9',
+                'С76.0',
+                'С76.1',
+                'С76.2',
+                'С76.3',
+                'С76.7',
+                'С76.8',
+                'Другие',
+            ]
+        },
+        {
+            label: 'Метод постановки диагноза',
+            type: 'select',
+            disabled: false,
+            className: 'name6',
+            placeholder: '',
+            value: '',
+            name: 'name6',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name6'
+            },
+            options: [
+                'Гистология первичной опухоли',
+                'Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи ',
+                'Гистология метастаза (кроме КМ)',
+                'Миелограмма/трепанобиопсия костного мозга)',
+                'Цитологическое исследование опухоли',
+                'Клиническое обследование',
+                'Нет данных',
+            ]
+        },
+        {
+            label: 'Локализация',
+            type: 'select',
+            disabled: false,
+            className: 'name7',
+            placeholder: '',
+            value: '',
+            name: 'name7',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name7'
+            },
+            options: [
+                'Надпочечник',
+                'Забрюшинно внеогранно',
+                'Заднее средостение',
+                'Область шеи',
+                'Малый таз',
+                'Более одной локализации',
+                'Другие',
+                'Не установлена',
+                'Нет данных'
+            ]
+        },
+        {
+            label: 'Латеральность',
+            type: 'select',
+            disabled: false,
+            className: 'name8',
+            placeholder: '',
+            value: '',
+            name: 'name8',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name8'
+            },
+            options: [
+                'Справа',
+                'Слева',
+                'По средней линии',
+                'Билатерально',
+                'Неизвестно',
+            ]
+        },
+        {
+            label: 'Костные метастазы',
+            type: 'select',
+            disabled: false,
+            className: 'name9',
+            placeholder: '',
+            value: '',
+            name: 'name9',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name9'
+            },
+            options: [
+                'Голова',
+                'Конечности',
+                'Осевой скелет',
+                'Нет',
+            ]
+        },
+        {
+            label: 'Метастазы',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: '',
+            name: 'name10',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name10'
+            },
+            options: [
+                'НЕТ',
+                'Костный мозг',
+                'Кости',
+                'Отдаленные лимфоузлы',
+                'Печень',
+                'Кожа',
+                'Легкие / плевра',
+                'ЦНС',
+                'Орбита',
+                'Другие',
+                'Неизвестна'
+
+            ]
+        },
+        {
+            label: 'Клинические симптомы',
+            type: 'select',
+            disabled: false,
+            className: 'name11',
+            placeholder: '',
+            value: '',
+            name: 'name11',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name11'
+            },
+            options: [
+                'Компрессия спинного мозга',
+                'Опсоклонус-миоклонус',
+                'Синдром Горнера',
+                'Диарея',
+                'Артериальная гипертензия',
+                'Интраспинальное распространение (без симптомов)',
+                'Другое (описательно)',
+                'распространение в межпозвоночные отверстия'
+            ]
+        },
+        {
+            label: 'Опсоклонус (терапия гормонами)',
+            type: 'select',
+            disabled: false,
+            className: 'name12',
+            placeholder: '',
+            value: '',
+            name: 'name12',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name12'
+            },
+            options: [
+                'Да',
+                'Нет',
+            ]
+        },
+        {
+            label: 'Сопутствующие заболевания',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name13',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'max-lenght': '250',
+                'data-name': 'name13',
+            }
+        },
+        {
+            label: 'ВПС',
+            type: 'select',
+            disabled: false,
+            className: 'name14',
+            placeholder: '',
+            value: '',
+            name: 'name14',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name14'
+            },
+            options: [
+                'Да',
+                'Нет',
+            ]
+        },
+        {
+            label: 'ВПС тип',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name15',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'max-lenght': '250',
+                'data-name': 'name15',
+            }
+        },
+        {
+            label: 'Жизнеугрожающие симптомы (для группы наблюдения)',
+            type: 'select',
+            disabled: false,
+            className: 'name16',
+            placeholder: '',
+            value: '',
+            name: 'name16',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name16'
+            },
+            options: [
+                'НЕТ',
+                'Ухудшение общего состояния',
+                'Трудности при кормлении',
+                'Дыхательная недостаточностьСердечно - сосудистая недостаточность',
+                'Печеночная недостаточность',
+                'Почечная недостаточность',
+                'Компрессия спинного мозга',
+                'Недостаточность других органов и систем',
+                'Интраспинальное распространение'
+            ]
+        },
+    ]

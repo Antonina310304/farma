@@ -1,0 +1,77 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+.registry-detail-list {
+    @include list($padding: 0 32px 32px);
+    margin: -8px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    &__item {
+        display: flex;
+        flex: 0 0 auto;
+        width: 25%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    &__card {
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 46.66%;
+        display: flex;
+        //justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        flex: 1;
+        background: #FFFFFF;
+        border: 1px solid #EEEFF1;
+        box-sizing: border-box;
+        border-radius: 8px;
+        min-height: 140px;
+
+
+        .disabled & {
+            background: #FAFAFB;
+        }
+
+        .error & {
+            background: #FFF4F4;
+            border-color: #D03B2D;
+        }
+
+    }
+
+    &__in {
+        position: absolute;
+        padding: 50px 46px 10px;
+        left: 0;
+        text-align: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__error {
+        @include robotoRegular($size: 14px, $height:16px, $color: #D03B2D, $margin:20px 0 0);
+    }
+
+    &__name {
+        @include robotoRegular($size: 14px, $height:16px, $color: #182538, $margin:0 0 8px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .disabled & {
+            color: #7B828E;
+        }
+    }
+
+    &__count {
+
+        @include robotoRegular($size: 14px, $height:16px, $color: #7B828E, $margin:0);
+    }
+}

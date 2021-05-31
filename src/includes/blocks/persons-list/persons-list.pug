@@ -1,0 +1,52 @@
+mixin PersonsList(params)
+    table(cellpadding=0 cellspacing=0)&attributes(attributes).persons-list
+        each user, index in params
+            tr(data-id="user-" + index)._tr
+                each item, index in user
+                    td(class=index)._cell
+                        if(index == 'system')
+                            ._buttons
+                                a(href="#")._btn-control.edit-button
+                                if(item == true)
+                                    button(data-locked="N")._btn-control.js-locked.edit-delete
+                                else
+                                    button(data-locked="Y")._btn-control.js-locked.edit-inlocked
+                        else
+                            =item
+
+
+
+
+mixin PersonsListRegistry(params)
+    table(cellpadding=0 cellspacing=0).persons-list.persons-list--registry
+        each user, index in params.list
+            tr._tr.js-checked(class=index == params.mark ? 'mark' : '')
+                td._cell.input-cell
+                    input(type="checkbox" id=index).persons-list__input
+                    label(id=index).persons-list__checkbox
+                each item, index in user
+                    td(class=index)._cell
+                        if(index == 'name')
+                            span._cell-in=item
+                            button.persons-list__mark Отключить отметку
+                        else
+                            =item
+                td._cell.button-cell
+                    button.button.persons-list__button.button--min Создать консилиум
+
+
+
+mixin _PersonsListHeader(params)
+    table(cellpadding=0 cellspacing=0).persons-list&attributes(attributes)
+        tr._tr
+            each item, index in params.list[0]
+                th(class=index)._cell=params.keys[index]
+
+
+
+mixin PersonsListHeader(params)
+    table(cellpadding=0 cellspacing=0).persons-list&attributes(attributes)
+        tr._tr
+            each item, index in params.keys
+                th(class=index)._cell=item
+

@@ -1,0 +1,9 @@
+include data
+
+mixin patientCreatePage
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Создание пользователя'})
+        .page__rug
+            +createPerson({list: patientCreateList})
+

@@ -1,0 +1,12 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Редактирование'
+    - var isAut = false;
+    - var isNeedSideMenu = false;
+    - var isLogs = true;
+    - var breadcrumbsList = ['Реестр пациентов', 'Иванова Виктория Евгеньевна', 'Хирургическое лечение', 'Редактирование'];
+
+
+block content
+    +diseaseCreatePage

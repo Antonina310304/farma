@@ -1,0 +1,35 @@
+mixin authorizationError
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title.aut-title Вход в админ панель
+                +form({
+                    action: 'js-aut',
+                    inputs: [
+                        {
+                            label: 'Логин',
+                            type: 'text',
+                            disabled: false,
+                            placeholder: '',
+                            value: 'asdfadsfadsf',
+                            required: true,
+                            name: 'login',
+                            error: true,
+                        },
+                        {
+                            label: 'Пароль',
+                            type: 'password',
+                            disabled: false,
+                            placeholder: '',
+                            value: 'asdfasfd',
+                            required: true,
+                            name: 'password',
+                            error: true,
+                        }
+                    ]
+                })(data-form="login" data-form-type="success")
+                    a(href='#').form__link.text-right Забыли пароль?
+                    button(type="submit").form__button.button Войти
+
+            .authorization__error.authorization-error.js-error-block
+                | Не введен логин или пароль

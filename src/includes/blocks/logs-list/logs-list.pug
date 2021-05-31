@@ -1,0 +1,17 @@
+mixin logsList(params)
+    table(cellpadding=0 cellspacing=0)&attributes(attributes).logs-list
+        tr
+            each value, key in params.keys
+                th(class=key)._cell=value
+        each user, index in params.list
+            tr(id="log-id-" + index)._tr
+                each item, index in user
+                    td(class=index)._cell
+                        if(index == 'state')
+                            .__buttons
+                                button(type="button" data-action="confirm").logs-list__btn.btn.js-refresh-changes Подтвердить
+                                button(type="button" data-action="cancel").logs-list__btn.btn.btn--red.js-refresh-changes Отменить
+                        else
+                            =item
+
+

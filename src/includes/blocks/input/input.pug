@@ -1,0 +1,24 @@
+mixin input(params)
+    .input(class=params.error ? 'error' : '' )
+        ._in
+            input(type=params.type, required=(params.required ? '' : false) name=params.name data-required=(params.required ? 'true' : false) disabled=params.disabled placeholder=params.placeholder value=params.value)._input.js-input&attributes(params.attributes)
+            label.input__label=params.label
+        if(params['error-text'])
+            ._error.js-input-error=params['error-text']
+
+mixin inputSelect(params)
+    .input-select
+        input.js-fake-input.visually-hidden
+
+        div(tabindex="7")._in.js-input-select
+            input(readonly tabindex="-1" data-required=params.required data-type="radio" value=params.value data-validate='empty' data-name=params.attributes['data-name'])._text
+            ._label=params.label
+            i._icon
+        if(params['error-text'])
+            .input-select__error.js-input-error=params['error-text']
+        ._list
+            ._list-in
+                ._wrapper
+                    ._inner.scrollbar-inner
+                        +SelectListRadio(params)
+

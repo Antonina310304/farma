@@ -1,0 +1,32 @@
+include ../_
+doctype html
+
+html
+    block var
+    +head
+    body(class=isLogs ? 'log' : '')
+        if(!isAut)
+            +pageHeader(noticeActive)
+                if(isNeedSideMenu == true)
+                    .page-header__rug
+                    nav.page-header__nav
+                        +mainNav(activePage)
+                if(breadcrumbsList)
+                    .page-header__breadcrumbs
+                        +headerBreadcrumbs({list: breadcrumbsList})
+                if(breadcrumbsBack == true)
+                    .page-header__breadcrumbs
+                        +headerBack
+
+        main.page(class=className ? className : '')
+            if(isAut)
+                .page__main-content
+                    block content
+
+            else
+                .page__main-content
+                    block content
+
+
+        +pageFooter
+        +scripts

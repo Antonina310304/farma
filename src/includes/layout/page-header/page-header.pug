@@ -1,0 +1,31 @@
+mixin pageHeader(noticeActive)
+    header.page-header
+        +modalPageHeader
+        ._inner
+            a(href="#" class=(noticeActive == true) ? 'active' : '')._notice
+            ._in
+                ._content
+                    p._user Митяева Валерия Игнатьевна
+                    p._position Администратор
+                ._user-nav
+                    ._trigger.js-nav-trigger
+                        ._icon-nav
+                        ._icon-arrow
+                    ._exit.js-exit(data-modal="exit") Выйти из аккаунта
+        if block
+            block
+        else
+            p No content provided
+
+
+
+
+mixin modalPageHeader
+    .modal(data-modal-name="exit")
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title Выход
+            p._text Вы действительно хотите выйти? Несохраненные данные будут утеряны.
+            ._buttons
+                button(type="button")._button.button.button--white.js-modal-close Нет
+                button(type="button")._button.button Да

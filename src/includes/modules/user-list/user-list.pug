@@ -1,0 +1,49 @@
+include data
+mixin UserListPage
+    +modalLock
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Пользователи', button: 'Создать'})
+        .page__rug
+            +PersonsListHeader({list: usersList, keys: userKeys})
+
+        .js-page-content
+            .page__filter
+                +Filter([
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'login',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'name',
+                        placeholder: 'Пример текста',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'post',
+                        title: 'Все',
+                        options: ['Нейрохирург', 'Длинное название должности', 'Терапевт'],
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'role',
+                        title: 'Все',
+                        options: ['Менеджер', 'Пользователь', 'Врач'],
+                    },
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'tel',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'status',
+                        title: 'Все',
+                        options: ['Активный', 'Заблокирован'],
+                    },
+                ])
+            .page__rug
+                +PersonsList(usersList)
+                +paginationWidget

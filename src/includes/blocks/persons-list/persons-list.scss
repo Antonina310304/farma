@@ -1,0 +1,191 @@
+/************ persons-list ***************/
+@import "src/style/_";
+
+.persons-list {
+	$cell: &;
+	width: 100%;
+
+	th {
+		@include tableTitle();
+	}
+
+	&__tr {
+		display: flex;
+
+		&.mark {
+			position: relative;
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 1px;
+				top: 0;
+				bottom: 1px;
+				width: 4px;
+				background: #D03B2D;
+			}
+		}
+	}
+
+	&__cell {
+		border-bottom: 1px solid #EEEFF1;
+		padding: 21px 20px 21px 12px;
+		padding: 12px 20px 12px 12px;
+		box-sizing: border-box;
+		flex: 1 1 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		@include tableText();
+		transition: background $transition, color $transition;
+		cursor: pointer;
+
+		.persons-list__tr.mark & {
+			padding-top: 19px;
+			padding-bottom: 20px;
+			background: #FFF0EF;
+
+		}
+
+		&.system {
+			justify-content: flex-end;
+		}
+
+		@each $block, $key in $widths {
+			&.#{$block} {
+				min-width: #{$key};
+				max-width: #{$key};
+				flex: 0 0 #{$key};
+			}
+		}
+
+		.page.registry & {
+			padding-top: 9px;
+			padding-bottom: 9px ;
+			@each $block, $key in $widthsRegistry {
+				&.#{$block} {
+					min-width: #{$key};
+					max-width: #{$key};
+					flex: 0 0 #{$key};
+
+				}
+			}
+		}
+
+
+		.page.patients & {
+
+			@each $block, $key in $widthsPatientsList {
+				&.#{$block} {
+					min-width: #{$key};
+					max-width: #{$key};
+					flex: 0 0 #{$key};
+				}
+			}
+		}
+
+		&.system {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+
+		&:first-child {
+			padding-left: 32px;
+
+			.page.registry & {
+				padding-left: 35px;
+			}
+		}
+		&:last-child {
+			padding-right: 19px;
+		}
+
+		.page.registry &:last-child {
+			padding-right: 32px;
+		}
+
+	}
+
+	&__th {
+	}
+
+	&__button {
+		width: 198px;
+        margin-left: auto;
+		background: #0D486B;
+	}
+
+	&__tr {
+		&:last-child {
+			td {
+				border-bottom: 0;
+			}
+		}
+		.page.registry &:hover {
+			td {
+				background: rgba(238, 239, 241, 0.4);
+				color: #7B828E;
+				transition: background $transition, color $transition;
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__btn-control {
+		display: inline-block;
+		width: 44px;
+		height: 44px;
+		width: 32px;
+		height: 32px;
+		padding: 0;
+		border: 0;
+		background-color: transparent;
+		cursor: pointer;
+
+		&[disabled] {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+
+	&__input {
+		display: none;
+	}
+
+	&__checkbox {
+		display: block;
+		width: 18px;
+		height: 18px;
+		box-sizing: border-box;
+		@include bg($url: 'i/input.svg');
+
+		.persons-list__input:checked + & {
+			@include bg($url: 'i/input-checked.svg');
+		}
+
+	}
+
+	&__mark {
+		background: transparent;
+		display: inline-block;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		@include robotoRegular($size: 12px, $height: 14px, $color: #D03B2D, $margin: 8px 0 0);
+		display: none;
+
+		.persons-list__tr.mark & {
+			display: block;
+		}
+	}
+
+	&__cell-in {
+		display: block;
+		width: 100%;
+	}
+}

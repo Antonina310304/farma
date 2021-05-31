@@ -1,0 +1,61 @@
+/************ authorization ***************/
+@import "src/style/_";
+
+
+.authorization {
+	position: relative;
+
+	&__title {
+		margin-bottom: 46px;
+	}
+
+	&__title-wrap {
+		margin-bottom: 24px;
+	}
+
+	&__title-sms {
+		margin-bottom: 8px;
+	}
+
+	&.large {
+		width: 320px;
+		padding: 0 24px;
+		align-items: center;
+	}
+
+	&__in {
+		position: relative;
+		z-index: 2;
+		padding: 32px;
+		box-sizing: border-box;
+		border-radius: 8px;
+		min-height: 392px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		background: #fff;
+	}
+
+	&__error {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 24px 16px 16px;
+		background: #D03B2D;
+		border-radius: 4px;
+		@include robotoRegular($size: 15px, $height: 18px, $color: #fff, $margin: 0);
+		text-align: center;
+		position: absolute;
+		top: calc(100% - 58px);
+		left: 0;
+		z-index: 1;
+	}
+
+	&__text {
+		@include robotoRegular($size: 12px, $height: 14px, $color: #7B828E, $margin: 0);
+		margin-bottom: 16px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

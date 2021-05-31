@@ -1,0 +1,35 @@
+.main-nav {
+	display: block;
+	margin: 0;
+	padding: 24px 16px;
+	list-style: none;
+	
+	&__item {
+		margin-bottom: 16px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	&__link {
+		display: block;
+		padding: 12px;
+		
+		
+		&.checked {
+			background: linear-gradient(180deg, #2D6486 0%, #0D4D75 100%);
+			border-radius: 8px;
+			line-height: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			path {
+				fill: #fff;
+			}
+		}
+		
+		
+	}
+}

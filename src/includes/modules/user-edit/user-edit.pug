@@ -1,0 +1,10 @@
+include data
+
+mixin userEditPage
+    .page__wrapper
+        +modalChangeData
+        .page__rug
+            +SectionHead({title: 'Редактирование пользователя'})
+        .page__rug
+            +createPerson({list: userEditList, btnName: 'Сохранить', btnAttr: {'data-action': 'check'}})
+

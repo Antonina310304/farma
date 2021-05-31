@@ -1,0 +1,301 @@
+-
+    var registrEditList = [
+        [
+            {
+                label: 'Дата операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+
+                value: '10.11.2020',
+                required: true,
+                name: 'best_date',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'date',
+                    'data-mask': 'date',
+                    'data-name': 'best_date',
+                }
+            },
+            {
+                label: 'Название операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+
+                value: '',
+                required: true,
+                name: 'best_date',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'date_name',
+                }
+            },
+            {
+                label: 'Объем операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '6',
+                required: true,
+                name: 'volume',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'volume',
+                }
+            },
+            {
+                label: 'Осложнения операции',
+                type: 'select',
+                disabled: false,
+                className: 'risk',
+                placeholder: '',
+                value: '',
+                required: true,
+                name: 'problem',
+                className: 'problem',
+                size: 3,
+                'error-text': 'Выберете группу риска',
+                attributes: {
+                    'data-type': 'radio',
+                    'data-validate': 'empty',
+                    'data-name': 'problem',
+                },
+                options: ['Нет', 'Да']
+            },
+            {
+                label: 'Интраоперационные осложнения',
+                type: 'select',
+                disabled: false,
+                placeholder: '',
+                value: 'Другое',
+                required: true,
+                name: 'other_problem',
+                className: 'other_problem',
+                size: 3,
+                'error-text': 'Выберете группу риска',
+                attributes: {
+                    'data-type': 'radio',
+                    'data-validate': 'empty',
+                    'data-name': 'other_problem',
+                },
+                options: ['Другое','Нет', 'Да']
+            },
+             {
+                label: 'Описание интраоперационных осложнений',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: 'Осложнений не выявлено',
+                required: true,
+                name: 'description',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'description',
+                }
+            },
+            {
+                label: 'Отдаленные осложнения',
+                type: 'select',
+                disabled: false,
+                className: 'name10',
+                placeholder: '',
+                value: 'Другое',
+                required: true,
+                name: 'name10',
+                size: 3,
+                'error-text': 'Выберете группу риска',
+                attributes: {
+                    'data-type': 'radio',
+                    'data-validate': 'empty',
+                    'data-name': 'name10',
+                },
+                options: ['Другое', 'Нет', 'Да']
+            },
+            {
+                label: 'Комментарий к отдаленным осложнениям',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: 'Осложнений не выявлено',
+                required: true,
+                name: 'name20',
+                size: 3,
+                'error-text': 'Заполните комментарий',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'name20',
+                }
+            },
+            {
+                label: 'Гистология после операции',
+                type: 'select',
+                disabled: false,
+                placeholder: '',
+                value: '',
+                required: true,
+                name: 'histology',
+                className: 'histology',
+                size: 3,
+                'error-text': 'Выберете гистологию после операции',
+                attributes: {
+                    'data-type': 'radio',
+                    'data-validate': 'empty',
+                    'data-name': 'histology',
+                },
+                options: ['Нет данных', 'Да', 'Нет']
+            },
+            {
+                label: 'МКИ',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '< 2%',
+                required: true,
+                name: 'mki',
+                size: 3,
+                'error-text': 'Выберете МКИ',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'mki',
+                }
+            },
+            {
+                label: 'Лекарственный патоморфоз',
+                type: 'select',
+                disabled: false,
+                placeholder: '',
+                value: '',
+                required: true,
+                name: 'name50',
+                className: 'name50',
+                size: 3,
+                'error-text': 'Выберете лекарственный патоморфоз',
+                attributes: {
+                    'data-type': 'radio',
+                    'data-validate': 'empty',
+                    'data-name': 'name50',
+                },
+                options: ['1', '2', '3']
+            },
+
+        ]
+    ]
+
+
+-
+    var registrMain = {
+        best: [
+            {
+                label: 'Дата лучшей операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+
+                value: '10.11.2020',
+                required: true,
+                name: 'best_date',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'date',
+                    'data-mask': 'date',
+                    'data-name': 'best_date',
+                }
+            },
+            {
+                label: 'Объем лучшей операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: 'Объем операции 1',
+                required: true,
+                name: 'best_volume',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'best_volume',
+                }
+            },
+            {
+                label: 'Размеры остаточной опухоли перед операцией(см) (ШхВхД)',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '2х1х2',
+                required: true,
+                name: 'best_size',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'best_size',
+                }
+            },
+            {
+                label: 'Объем остаточной опухоли перед лучшей операцией (см куб)',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '4',
+                required: true,
+                name: 'best_volume1',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'best_volume1',
+                }
+            },
+            {
+                label: 'Процент удаленной опухоли по данным протокола операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '100',
+                required: true,
+                name: 'best_persent',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'best_persent',
+                }
+            },
+            {
+                label: 'Кол-во курсов ПХТ до лучшей операции',
+                type: 'text',
+                disabled: false,
+                placeholder: '',
+                value: '2',
+                required: true,
+                name: 'best_persent',
+                size: 3,
+                'error-text': 'Недопустимые символы',
+                attributes: {
+                    'data-validate': 'empty',
+                    'data-mask': 'shot',
+                    'data-name': 'best_persent',
+                }
+            },
+        ],
+        groups: registrEditList
+    }
+

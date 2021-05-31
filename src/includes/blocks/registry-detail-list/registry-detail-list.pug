@@ -1,0 +1,11 @@
+mixin RegistryDetailList(list)
+    ul.registry-detail-list
+        each val in list
+            li(class=val.status)._item
+                a(href="#")._card
+                    ._in
+                        p._name=val.name
+                        if(val.count)
+                            p._count=val.count
+                        if(val.status == 'error')
+                            p._error Отключить отметку

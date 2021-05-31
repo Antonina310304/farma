@@ -1,0 +1,33 @@
+mixin authorization
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title.aut-title Вход в админ панель
+                +form({
+                    action: 'js-aut',
+                    inputs: [
+                        {
+                            label: 'Логин',
+                            type: 'text',
+                            disabled: false,
+                            placeholder: '',
+                            value: '',
+                            required: true,
+                            name: 'login',
+                        },
+                        {
+                            label: 'Пароль',
+                            type: 'password',
+                            disabled: false,
+                            placeholder: '',
+                            value: '',
+                            required: true,
+                            name: 'password',
+                        }
+                    ]
+                })(data-form="login" data-form-type="error")
+                    a(href='#').form__link.text-right Забыли пароль?
+                    button(type="submit").form__button.button Войти
+
+            .authorization__error.authorization-error.js-error-block.d-none
+                | Введите пожалуйста логин и пароль для входа на сайт

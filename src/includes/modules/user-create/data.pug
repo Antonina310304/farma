@@ -1,0 +1,119 @@
+-
+    var userCreateList = [
+        {
+            label: 'Фамилия',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'surname',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'surname',
+                'data-mask': 'shot',
+            }
+        },
+        {
+            label: 'Имя',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'name',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name',
+                'data-mask': 'shot',
+            }
+        },
+        {
+            label: 'Отчество',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'patronymic',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'patronymic',
+                'data-mask': 'shot',
+            }
+        },
+        {
+            label: 'Пароль',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'pass',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'password',
+                'data-mask': 'password',
+                'data-name': 'password',
+                // 'maxlength' : 20,
+                // 'minlength' : 8,
+            }
+        },
+        {
+            label: 'Номер телефона',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'tel',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'tel',
+                'data-mask': 'tel',
+                'data-name': 'tel',
+            }
+
+        },
+        {
+            label: 'Должность',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'post',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+            'data-validate': 'empty',
+            'data-mask': 'post',
+            'data-name': 'post',
+            }
+        },
+        {
+            label: 'Роль в системе',
+            type: 'select',
+            disabled: false,
+            className: 'role',
+            placeholder: '',
+            value: '',
+            // required: true,
+            name: 'role',
+            size: 1,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'role'
+            },
+            options: ['Менеджер', 'Руководитель']
+        },
+    ]

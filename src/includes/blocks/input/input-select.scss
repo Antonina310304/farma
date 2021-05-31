@@ -1,0 +1,156 @@
+/************ input-select ***************/
+@import "src/style/_";
+
+.input-select {
+    position: relative;
+
+    &__in {
+        display: flex;
+        @include robotoMedium($size: 12px, $height: 14px, $color: #2E2E33, $margin: 0);
+        @include inputWrapper();
+        justify-content: flex-end;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        cursor: pointer;
+
+        .input-select.show & {
+            border-color: #1D6693;
+        }
+        .input-select.error & {
+            border-color: #D03B2D;
+            transition: border 150ms ease-in-out;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(20px, -50%);
+        @include robotoRegular($size:15px, $height:18px, $color: #7B828E, $margin:0);
+        transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
+        z-index: -1;
+
+        .input-select.checked & {
+            transform: translate(16px, -18px);
+            font-size: 12px;
+            line-height: 14px;
+            transition: transform 150ms ease-in-out, font-size 150ms ease-in-out;
+        }
+
+    }
+
+    &__icon {
+        display: block;
+        flex: 0 0 auto;
+        width: 40px;
+        border-left: 1px solid #EEEFF1;
+        position: relative;
+        transition: border-color $transition;
+
+        &:before {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            width:  24px;
+            height: 24px;
+            @include bg($url: 'i/arrow.svg');
+            transition: transform $transition;
+        }
+
+        .input-select.error & {
+            border-color: #D03B2D;
+            transition: border-color $transition;
+        }
+
+        .input-select.show & {
+            border-color: #1D6693;
+            transition: border-color $transition;
+
+            &:before {
+                transition: transform $transition;
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__error {
+        opacity: 0;
+        @include robotoRegular($size:12px, $height:14px, $color: #D03B2D, $margin:0);
+        padding-left: 16px;
+        padding-top: 6px;
+
+        .input-select.error & {
+            opacity: 1;
+
+        }
+    }
+
+
+    &__wrapper {
+        height: 100%;
+    }
+
+    &__list-in {
+        border: 1px solid #EEEFF1;
+        box-sizing: border-box;
+        border-radius: 4px;
+        //height: 108px;
+
+        padding: 8px 0;
+        background: #FFFFFF;
+
+    }
+
+    &__list {
+        position: absolute;
+        top: 64px;
+        margin-top: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        //display: none;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 5;
+
+        .input-select.show & {
+            display: block;
+        }
+    }
+
+    &__inner {
+        height: 100%;
+    }
+
+    &__text {
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        width: 100%;
+        @include robotoRegular($size:15px,$height:18px, $color: #182538, $margin:0);
+        outline: none;
+        border: none;
+        padding: 30px 0 10px;
+        background: transparent;
+        cursor: pointer;
+    }
+
+
+    .scrollbar-inner > .scroll-element .scroll-element_track {
+        background: transparent;
+    }
+
+    .scrollbar-inner > .scroll-element.scroll-y {
+        width: 4px;
+        right: 4px;
+    }
+
+    .scrollbar-inner > .scroll-element .scroll-bar {
+        opacity: 1;
+        background: #999EA7;
+    }
+}

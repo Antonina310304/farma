@@ -1,0 +1,22 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+
+.input-file {
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        display: block;
+        background: #FFFFFF;
+        border: 1px solid #E0E2E8;
+        box-sizing: border-box;
+        border-radius: 4px;
+        @include robotoMedium($size: 15px, $height: 18px, $color: #182538, $margin: 0);
+        padding: 12px 15px;
+        cursor: pointer;
+
+    }
+}

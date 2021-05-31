@@ -1,0 +1,38 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Главная страница'
+    - var isAut = true;
+
+block content
+    .text-link-wrapper
+        h2.text-head Авторизация
+        a(href="authorization.html" target="_blank").text-link Авторизация
+        a(href="authorization-error.html" target="_blank").text-link Ошибка авторизации
+        a(href="changed-password.html" target="_blank").text-link Изменение пароля
+        a(href="error-sms.html" target="_blank").text-link Ошибка ввода смс
+        a(href="network-error.html" target="_blank").text-link Ошибка сети
+        a(href="recovery.html" target="_blank").text-link Восстановление пароля
+        a(href="recovery-pass.html" target="_blank").text-link Восстановление пароля
+        a(href="recovery-sms.html" target="_blank").text-link Смс восстановления пароля
+        a(href="sms.html" target="_blank").text-link Смс Ввод смс
+        h2.text-head Пользователи
+        a(href="users-list-empty.html" target="_blank").text-link Путой список пользователей
+        a(href="users-list.html" target="_blank").text-link Список пользователей
+        a(href="user-create.html" target="_blank").text-link Создание пользователя
+        a(href="user-edit.html" target="_blank").text-link Изменение пользователя
+        a(href="user-view.html" target="_blank").text-link Просмотр пользователя
+        a(href="logs.html" target="_blank").text-link Уведомления об изменениях в данных пользователей
+        a(href="logs-empty.html" target="_blank").text-link Уведомления об изменениях в данных пользователей(пусто)
+        h2.text-head Пациенты
+        a(href="patients-list.html" target="_blank").text-link Список пациентов
+        a(href="patient-create.html" target="_blank").text-link Создание пациента
+        a(href="patient-view.html" target="_blank").text-link Просмотр пациента
+        a(href="patients-registry.html" target="_blank").text-link Реестр пациентов
+        h2.text-head Формы
+        a(href="histology.html" target="_blank").text-link Гистология
+        a(href="initial-examination.html" target="_blank").text-link Инициальное обследование
+        a(href="info.html" target="_blank").text-link информация о заболевании
+        a(href="risk-stage.html" target="_blank").text-link Стадия и группа риска
+
+

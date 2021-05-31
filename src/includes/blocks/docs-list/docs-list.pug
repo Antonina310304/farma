@@ -1,0 +1,31 @@
+mixin docsList(params)
+    if(!params.registr)
+        ul.docs-list
+            li._item
+                input(type="checkbox" id="check-all")._input.js-check-all-docs
+                label(for="check-all")._label
+                    ._wrapper
+                        p._subtitle Выделить все
+                ._button
+                    button(type="button").button-icon.js-show-doc-modal добавить документ
+    ul.docs-list.ajax-docs-list
+        each doc, index in params.docs
+            li._item
+                if(!params.registr)
+                    input(type="checkbox" id=`doc-${index}`)._input.js-check-docs
+                if(!params.registr)
+                    label(for=`doc-${index}`)._label
+                        ._wrapper
+                            p._title=doc.name
+                            p._subtitle=doc.property
+                    ._button
+                        a(href="#")._open.open-button скачать документ
+                else
+                    ._label
+                        ._wrapper
+                            p._title=doc.name
+                            p._subtitle=doc.property
+                    ._button
+                        a(href="#")._open.open-button скачать документ
+
+

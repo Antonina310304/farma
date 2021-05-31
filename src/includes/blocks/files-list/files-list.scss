@@ -1,0 +1,39 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+
+.files-list {
+    @include list();
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #EEEFF1;
+        margin-bottom: 16px;
+
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        @include robotoRegular($size: 15px, $height: 18px, $color: #182538, $margin: 0 0 4px);
+    }
+
+    &__size {
+        @include robotoRegular($size: 12px, $height: 14px, $color: #7B828E, $margin: 0);
+    }
+
+    &__remove {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        margin-right: -12px;
+        @include bg('i/delete-red.svg');
+        background-color: transparent;
+        border: none;
+    }
+}

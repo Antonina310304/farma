@@ -1,0 +1,203 @@
+-
+    var histologyList = [
+        {
+            label: 'VMA',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name1',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'HVA',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name2',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name2',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Dopamine единица измерения',
+            type: 'select',
+            disabled: false,
+            className: 'name3',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name3',
+            size: 3,
+            'error-text': 'Выберете статус',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name3'
+            },
+            options: ['Пг/мл', 'Пмоль/л']
+        },
+        {
+            label: 'Dopamine',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name4',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name4',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'NSA (0-13) (инициально)',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name5',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name5',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'ЛДГ инициально',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name6',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name6',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Ферритин инициально (единица измерения)',
+            type: 'select',
+            disabled: false,
+            className: 'name7',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name7',
+            size: 3,
+            'error-text': 'Выберете статус',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name7'
+            },
+            options: ['Нг/мл', 'МКг/л']
+        },
+        {
+            label: 'Ферритин инициально',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name8',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name8',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Гистология по Shimada system инициальная',
+            type: 'select',
+            disabled: false,
+            className: 'name9',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name9',
+            size: 3,
+            'error-text': 'Выберете статус',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name9'
+            },
+            options: [
+                'Нейробластома, недифференцированный подтип',
+                'Нейробластома, низкодифференцированный подтип',
+                'Нейробластома, дифференцированный подтип',
+                'Ганглионейробластома',
+                'Ганглионеврома',
+                'Ганглионеврома, созревающий подтип',
+                'Ганглионеврома, зрелый подтип',
+                'Ганглионейробластома, узловая',
+                'Ганглионейробластома, узловая, атипичная',
+                'Нейробластома, NOS',
+                'Ганглионейробластома, NOS',
+                'Не проводилась',
+                'Нет данных',
+            ]
+        },
+        {
+            label: 'Индекс Митоз-Кариорексис',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name10',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name10'
+            },
+            options: [
+                '< 2%',
+                '2-4%',
+                '>4%',
+                'Нет данных',
+                'Невозможно подсчитать',
+            ]
+        },
+        {
+            label: 'Прогностичесая группа (Shimada)',
+            type: 'select',
+            disabled: false,
+            className: 'name11',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name11',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name11'
+            },
+            options: [
+                'Благоприятная',
+                'Неблагоприятная',
+                'Не возможно определить',
+                'Нет данных',
+            ]
+        },
+    ]

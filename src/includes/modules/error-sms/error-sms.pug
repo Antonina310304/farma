@@ -1,0 +1,21 @@
+mixin errorSms
+    .page__authorization
+        .authorization.page__authorization-in
+            ._in
+                h1._title-sms.aut-title Введите код из СМС
+                p._text.js-counter-sms.d-none='Повторная отправка СМС доступна через '
+                    span 300
+                    |       сек.
+
+                a(href="#").form__link.text-left.js-init-sms-counter Отправить СМС повторно
+
+                form(action='' novalidate data-form="sms").form.js-aut
+                    - var n = 0;
+                    .form__code-wrap
+                        while n < 4
+                            - n++
+                            p.form__code-item.error
+                                input(type="text" maxlength=1 name="code-" + n data-required=true required=true value=0).code-item.js-mask-code
+                    button(type="submit").form__button.button Подтвердить
+            .authorization__error.authorization-error.js-error-block
+                | Введен неверный четырехзначный код

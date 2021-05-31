@@ -1,0 +1,16 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Список пользователей'
+    - var isAut = false;
+    - var activePage = 'users';
+    - var noticeActive = true;
+    - var isNeedSideMenu = true;
+
+block content
+    .page__info-wrapper
+        .info-block
+            p._img-search
+            h1 Пользователей не найдено
+            p._text !{"Данные по пользователям отсутствуют. <br>Создайте первого пользователя"}
+            a(href="#")._button.button Создать

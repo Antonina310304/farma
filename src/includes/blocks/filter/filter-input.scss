@@ -1,0 +1,23 @@
+/************ filter ***************/
+@import "src/style/_";
+
+
+.filter-input {
+	margin: 0;
+	position: relative;
+	box-sizing: border-box;
+
+	&__search {
+		@include filterInput();
+		outline: none;
+
+		@include placeholder {
+			@include robotoRegular($size: 12px, $height: 14px, $color: #182538, $margin: 0);
+		}
+	}
+
+	&__icon-search {
+		@include iconFilterInput($bg: 'i/search-filter.svg', $size: 17px auto)
+	}
+
+}

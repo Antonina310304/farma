@@ -1,0 +1,18 @@
+include data
+
+mixin registrDetailInfo
+    .page__wrapper
+        +modalLock
+        +modalChangeData
+        .page__rug
+            +SectionHead({
+                title: 'Ключенко Екатерина Олеговна',
+                'user-id': 15475
+            })
+
+            .page__section
+                +tabGroup({
+                    groupName: 'patient',
+                    tabs: tabsRegistry,
+                })
+                    +registryDetailInfoList({groupName: 'registry', content: tabContentRegistry})

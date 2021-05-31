@@ -1,0 +1,24 @@
+/************ шапка ***************/
+@import "src/style/_";
+
+.tab-content {
+    @include list;
+    position: relative;
+    
+    &__item {
+        position: absolute;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        visibility: hidden;
+        top: 0;
+        
+        &.active {
+            position: static;
+            z-index: 0;
+            display: block;
+            visibility: visible;
+        }
+    }
+    
+}

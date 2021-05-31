@@ -1,0 +1,15 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Просмотр пациента'
+    - var isAut = false;
+    - var activePage = 'patients';
+    - var noticeActive = false;
+    // - var className = 'patients';
+    - var isNeedSideMenu = true;
+    - var isLogs = false;
+    - var breadcrumbsList = ['Пациенты ', 'ID12121'];
+
+
+block content
+    +patientViewPage

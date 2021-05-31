@@ -1,0 +1,32 @@
+mixin Filter(params)
+    form(action="" method="POST").filter#filter&attributes(attributes)
+        each val in params
+            ._item(class=val.className)
+                if(val.type == typeFilterInput.SEARCH)
+                    +FilterInputSearch(val)
+                else if(val.type == typeFilterInput.SELECT)
+                    +FilterInputSelect(val)
+                else if(val.type == typeFilterInput.DATE)
+                    +FilterInputDate(val)
+
+
+mixin FilterInputSearch(params)
+    p.filter-input
+        input(type='text' placeholder=params.placeholder class=params.event name=params.className)._search.js-evt-search
+        i._icon-search
+
+
+mixin FilterInputSelect(params)
+    .filter-select
+        p._in.js-select=params.title
+            i._icon-arrow
+        .filter-select__list.js-select-list
+            +SelectList(params)(class="js-filter-checkbox")
+
+
+mixin FilterInputDate(params)
+    .filter-select
+        p._in.js-select=params.title
+            i._icon-down
+            i._icon-arrow
+

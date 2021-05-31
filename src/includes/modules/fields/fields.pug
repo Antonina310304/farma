@@ -1,0 +1,8 @@
+include data
+mixin fields
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Инпуты'})
+        .page__rug
+            +createPerson({list: fields})
+

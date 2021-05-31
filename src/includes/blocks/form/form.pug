@@ -1,0 +1,10 @@
+mixin form(params)
+    form(action='' novalidate class=params.action).form&attributes(attributes)
+        ._in
+            each input in params.inputs
+                ._input
+                    +input(input)
+        block
+
+
+

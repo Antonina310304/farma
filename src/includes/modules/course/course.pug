@@ -1,0 +1,9 @@
+include data
+
+mixin course
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Стадия и группа риска'})
+        .page__rug
+            +createPerson({list: courseList})
+

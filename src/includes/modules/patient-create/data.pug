@@ -1,0 +1,238 @@
+-
+    var patientCreateList = [
+        {
+            label: 'Фамилия',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'surname',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'surname',
+            }
+        },
+        {
+            label: 'Имя',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name',
+            }
+        },
+        {
+            label: 'Отчество',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'patronymic',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'patronymic',
+            }
+        },
+        {
+            label: 'Пол',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'sex',
+            className: 'sex',
+            size: 4,
+            'error-text': 'Выберете пол',
+            options: ['Мужской', 'Женский'],
+            attributes: {
+                'data-validate': 'empty',
+                'data-type': 'radio',
+                'data-name': 'sex',
+            }
+        },
+        {
+            label: 'Дата рождения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+
+            value: '',
+            required: true,
+            name: 'date_birth',
+            size: 4,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'date',
+            }
+        },
+        {
+            label: 'Номер телефона',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'tel',
+            size: 4,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'tel',
+                'data-mask': 'tel',
+                'data-name': 'tel',
+            }
+
+        },
+        {
+            label: 'e-mail',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'email',
+            size: 4,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'email',
+                'data-mask': 'email',
+                'data-name': 'email',
+            }
+
+        },
+        {
+            label: 'Группа риска',
+            type: 'select',
+            disabled: false,
+            className: 'risk',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'risk',
+            className: 'risk',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'risk',
+            },
+            options: ['Наблюдение', 'Промежуточного риска', 'Высокого риска', 'Ультравысокого риска', 'Неизвестна']
+        },
+        {
+            label: 'Область проживания',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'area',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'long',
+                'data-name': 'area',
+            }
+        },
+        {
+            label: 'Город проживания',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'city',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'long',
+                'data-name': 'city',
+            }
+        },
+        {
+            label: 'Улица',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'street',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'long',
+                'data-name': 'street',
+            }
+        },
+        {
+            label: 'Номер дома',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'house',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'long',
+                'data-name': 'house',
+            }
+        },
+        {
+            label: 'Номер квартиры',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: false,
+            name: 'flat',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'long',
+                'data-name': 'flat',
+            }
+        },
+        {
+            label: 'Диагноз',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            className: 'diagnosis',
+            value: '',
+            required: true,
+            name: 'diagnosis',
+            size: 1,
+            'error-text': 'Выберете диагноз',
+            attributes: {
+                'data-validate': 'empty',
+                'data-type': 'radio',
+                'data-name': 'diagnosis',
+            },
+            options: ['Нейробластома', 'Ганглионейробластома', 'Ганглионеврома']
+        },
+    ]
+
