@@ -1,7 +1,6 @@
 {
   "projectName": "farma",
   "pages": {
-    "название_файла.html": "Название страницы",
     "index.html": "Главная",
     "authorization.html": "Авторизация",
     "authorization-error.html": "Ошибка авторизации",
