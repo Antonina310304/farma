@@ -19,12 +19,10 @@
     "user-view.html": "Просмотр пользователя",
     "logs.html": "Уведомления об изменениях в данных пользователей",
     "logs-empty.html": "Уведомления об изменениях в данных пользователей(пусто)",
-
     "patients-list.html": "Список пациентов",
     "patient-create.html": "Создание пациента",
     "patient-view.html": "Просмотр пациента",
     "patients-registry.html": "Реестр пациентов",
-
     "histology.html": "Гистология",
     "initial-examination.html": "Инициальное обследование",
     "info.html": "информация о заболевании",
