@@ -42,12 +42,14 @@
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'radio',
-                'data-name': 'name6'
+                'data-name': 'name6',
+                'data-select': 'js-advanced-select',
+                'data-change-name': 'name27'
             },
-            options: [
-                'Трамадол 5%',
-                'Морфин 1%',
-                'Другое',
+            options_: [
+                {name: 'Трамадол 5%', attr: 'number'},
+                {name: 'Морфин 1%', attr: 'float'},
+                {name: 'Другое', attr: 'number'},
             ]
         },
         {

@@ -174,7 +174,6 @@ ValidatePerson.prototype.checkValid = function (item) {
             this.hideError(item);
         }
     }
-    console.log(this.errors)
 }
 
 /**

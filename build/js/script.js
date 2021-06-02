@@ -703,7 +703,6 @@ ValidatePerson.prototype.checkValid = function (item) {
             this.hideError(item);
         }
     }
-    console.log(this.errors)
 }
 
 /**
@@ -1539,55 +1538,6 @@ onSubmitForm({
 
 
 
-function refreshChanges() {
-    $('body').on('click', '.js-refresh-changes',function (evt) {
-        evt.preventDefault();
-
-        var stingLogItem = $(this).closest('.logs-list__tr');
-        var id = stingLogItem.attr('id');
-        var action = $(this).data('action');
-        preloader.show();
-
-        onSendAjax({
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: {
-                action,
-                id
-            },
-            onSuccess: function (data) {
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    errorText: 'Какая-то ошибка которая приходит с бэка'
-                }
-
-                var pageInfo = new PageInfoController('success-confirmed');
-                preloader.hide();
-
-                if(data.status == 'OK') {
-
-                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
-                    stingLogItem.remove();
-                    pageInfo.changeText(textSuccess);
-                    pageInfo.showModal();
-
-                } else {
-                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
-                    pageInfo.showModal();
-
-                }
-            },
-            onError: function () {
-                alert('Ошибка соединения, попробуйте позже!')
-            },
-        })
-    })
-}
-
-refreshChanges();
-
 function ControllerInput() {
     this.focusedClass = 'focused';
     this.focusClass = 'focus';
@@ -1692,6 +1642,7 @@ function DropdownInput(container) {
     this.animationSpeed = 150;
     this.input = container.find('.js-input-select');
     this.radio = container.find('.js-select-radio');
+    this.advanced = container.find('.js-advanced-select');
     this.other = container.find('.js-other');
     this.checkbox = container.find('.js-select-checkbox');
     this.fakeInput = container.find('.js-fake-input');
@@ -1785,12 +1736,52 @@ DropdownInput.prototype.init = function () {
         }
     })
 
-
     this.radio.on('click', function () {
         _this.selectedBlock.val($(this).attr('value'));
         _this.container.addClass(_this.checkedClass);
         _this.container.removeClass(_this.errorClass);
         _this.hideDropdown();
+    })
+
+
+    this.advanced.on('click', function () {
+        var maskType = $(this).attr('data-change-mask');
+        var name = $(this).attr('data-change-name');
+        var definitions,
+            mask,
+            test;
+
+        switch (maskType) {
+            case 'number':
+                mask = "*{15}";
+                definitions = {
+                    '*' : {
+                        validator: "[0-8/.,]",
+                    }
+                }
+                break;
+            case 'float':
+                test = 'number';
+                mask = "*{4}";
+                definitions = {
+                    '*' : {
+                        validator: "0,0[2-5,]",
+                    }
+                }
+
+                break;
+        }
+
+        $('[name="'+ name + '"]').inputmask(test, {
+            mask: mask,
+            placeholder: "",
+            showMaskOnHover: false,
+            recursive: true,
+            definitions: definitions,
+            min: 0.02,
+            max: 0.05
+        });
+
     })
 
     this.checkbox.on('click', function () {
@@ -1826,6 +1817,55 @@ DropdownInput.prototype.onBodyClick = function (evt) {
 $('.input-select').each(function () {
     var dropdownInput = new DropdownInput($(this));
 })
+function refreshChanges() {
+    $('body').on('click', '.js-refresh-changes',function (evt) {
+        evt.preventDefault();
+
+        var stingLogItem = $(this).closest('.logs-list__tr');
+        var id = stingLogItem.attr('id');
+        var action = $(this).data('action');
+        preloader.show();
+
+        onSendAjax({
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: {
+                action,
+                id
+            },
+            onSuccess: function (data) {
+                //удалить при интеграции
+                var data = {
+                    status: 'OK',
+                    errorText: 'Какая-то ошибка которая приходит с бэка'
+                }
+
+                var pageInfo = new PageInfoController('success-confirmed');
+                preloader.hide();
+
+                if(data.status == 'OK') {
+
+                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
+                    stingLogItem.remove();
+                    pageInfo.changeText(textSuccess);
+                    pageInfo.showModal();
+
+                } else {
+                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
+                    pageInfo.showModal();
+
+                }
+            },
+            onError: function () {
+                alert('Ошибка соединения, попробуйте позже!')
+            },
+        })
+    })
+}
+
+refreshChanges();
+
 function Modal(params) {
     this.modal = params.modal;
     this.closeBtn = this.modal.find('.js-modal-close');
