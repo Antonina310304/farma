@@ -5,6 +5,7 @@ mixin patientViewPage
         +modalLock({title: 'пациента'})
         +modalChangeData
         +downloadDoc
+        +checkRemove
         +SuccessModal
         +pageInfo({
             title: 'Выбрано документов: 1',
@@ -44,15 +45,15 @@ mixin SuccessModal
             ._buttons
                 button(type="button")._close ОК
 
-//mixin modalPageHeader
-//    .modal(data-modal-name="remove-docs")
-//        button(type="button")._close.js-modal-close
-//        ._in
-//            p._title Удаление документа
-//            p._text Вы уверены, что хотите удалить документ Unnamed.pdf?
-//            ._buttons
-//                button(type="button")._button.button.button--white.js-modal-close Отмена
-//                button(type="button")._button.button.button--attention.js-confirm Удалить
+mixin checkRemove
+    .modal(data-modal-name="check-remove")
+        button(type="button")._close.js-modal-close
+        ._in
+            p._title Удаление документа
+            p._text Вы уверены, что хотите удалить документы?
+            ._buttons
+                button(type="button")._button.button.button--white.js-modal-close Отмена
+                button(type="button")._button.button.button--attention.js-confirm Удалить
 
 mixin downloadDoc
     .modal(data-modal-name="add-doc").modal--center.modal--min-height.initial

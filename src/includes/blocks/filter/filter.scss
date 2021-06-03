@@ -37,6 +37,19 @@
 			}
 		}
 
+
+		.page.reports &.input-cell {
+			padding-left: 32px !important;
+		}
+
+		@each $block, $key in $widthsReports {
+			.page.reports &.#{$block} {
+				min-width: #{$key};
+				max-width: #{$key};
+				flex: 0 0 #{$key};
+			}
+		}
+
 		&.role {
 			width: 10.06%;
 			min-width: 10.06%;

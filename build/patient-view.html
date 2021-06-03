@@ -1,15 +1,6 @@
 
 <!-- лайолит-->
-<!--pages-->
-<!--mixin modalPageHeader-->
-<!--    .modal(data-modal-name="remove-docs")-->
-<!--        button(type="button")._close.js-modal-close-->
-<!--        ._in-->
-<!--            p._title Удаление документа-->
-<!--            p._text Вы уверены, что хотите удалить документ Unnamed.pdf?-->
-<!--            ._buttons-->
-<!--                button(type="button")._button.button.button--white.js-modal-close Отмена-->
-<!--                button(type="button")._button.button.button--attention.js-confirm Удалить--><!DOCTYPE html>
+<!--pages--><!DOCTYPE html>
 <html>
   <!-- - var className = 'patients';-->
   <head>
@@ -123,6 +114,17 @@
                 <button class="modal__button-cancel button button--min button--white js-cancel-files" type="button">Отмена</button>
                 <button class="modal__button-close button button--min js-modal-close" type="button">Окей</button>
               </form>
+            </div>
+          </div>
+          <div class="modal" data-modal-name="check-remove">
+            <button class="modal__close js-modal-close" type="button"></button>
+            <div class="modal__in">
+              <p class="modal__title">Удаление документа</p>
+              <p class="modal__text">Вы уверены, что хотите удалить документы?</p>
+              <div class="modal__buttons">
+                <button class="modal__button button button--white js-modal-close" type="button">Отмена</button>
+                <button class="modal__button button button--attention js-confirm" type="button">Удалить</button>
+              </div>
             </div>
           </div>
           <div class="page-info page-info--success" data-modal-name="success-download">

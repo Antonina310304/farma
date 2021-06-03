@@ -465,6 +465,16 @@ body.log .page__wrapper {
   background-repeat: no-repeat;
 }
 
+.download-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("..//i/download.svg");
+  background-size: 24px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .button-icon {
   position: relative;
   font-family: 'Roboto-Medium', sans-serif;
@@ -700,6 +710,28 @@ body.log .page__wrapper {
   margin: 0;
   position: relative;
   box-sizing: border-box;
+}
+
+.filter-input__checkbox {
+  display: none;
+}
+
+.filter-input__label {
+  display: block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background-image: url("..//..//i/input.svg");
+  background-size: 18px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.filter-input__checkbox:checked + .filter-input__label {
+  background-image: url("..//..//i/input-checked.svg");
+  background-size: 18px auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .filter-input__search {
@@ -965,6 +997,40 @@ body.log .page__wrapper {
   min-width: 9.6%;
   max-width: 9.6%;
   flex: 0 0 9.6%;
+}
+
+.page.reports .filter__item.input-cell {
+  padding-left: 32px !important;
+}
+
+.page.reports .filter__item.name {
+  min-width: 37.95%;
+  max-width: 37.95%;
+  flex: 0 0 37.95%;
+}
+
+.page.reports .filter__item.type {
+  min-width: 10.68%;
+  max-width: 10.68%;
+  flex: 0 0 10.68%;
+}
+
+.page.reports .filter__item.format {
+  min-width: 10.68%;
+  max-width: 10.68%;
+  flex: 0 0 10.68%;
+}
+
+.page.reports .filter__item.size {
+  min-width: 7.55%;
+  max-width: 7.55%;
+  flex: 0 0 7.55%;
+}
+
+.page.reports .filter__item.date {
+  min-width: 8%;
+  max-width: 8%;
+  flex: 0 0 8%;
 }
 
 .filter__item.role {
@@ -2026,6 +2092,36 @@ body.log .page__wrapper {
   flex: 0 0 5.48%;
 }
 
+.page.reports .persons-list__cell.name {
+  min-width: 37.95%;
+  max-width: 37.95%;
+  flex: 0 0 37.95%;
+}
+
+.page.reports .persons-list__cell.type {
+  min-width: 10.68%;
+  max-width: 10.68%;
+  flex: 0 0 10.68%;
+}
+
+.page.reports .persons-list__cell.format {
+  min-width: 10.68%;
+  max-width: 10.68%;
+  flex: 0 0 10.68%;
+}
+
+.page.reports .persons-list__cell.size {
+  min-width: 7.55%;
+  max-width: 7.55%;
+  flex: 0 0 7.55%;
+}
+
+.page.reports .persons-list__cell.date {
+  min-width: 8%;
+  max-width: 8%;
+  flex: 0 0 8%;
+}
+
 .page.registry .persons-list__cell {
   padding-top: 9px;
   padding-bottom: 9px;
@@ -2112,6 +2208,12 @@ body.log .page__wrapper {
 
 .persons-list__cell:last-child {
   padding-right: 19px;
+}
+
+.page.reports .persons-list__cell:last-child {
+  width: auto;
+  padding-right: 32px;
+  justify-content: flex-end;
 }
 
 .page.registry .persons-list__cell:last-child {

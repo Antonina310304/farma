@@ -59,6 +59,16 @@
 			}
 		}
 
+		.page.reports & {
+			@each $block, $key in $widthsReports {
+				&.#{$block} {
+					min-width: #{$key};
+					max-width: #{$key};
+					flex: 0 0 #{$key};
+				}
+			}
+		}
+
 		.page.registry & {
 			padding-top: 9px;
 			padding-bottom: 9px ;
@@ -100,6 +110,14 @@
 		&:last-child {
 			padding-right: 19px;
 		}
+
+
+		.page.reports &:last-child  {
+			width: auto;
+			padding-right: 32px;
+			justify-content: flex-end;
+		}
+
 
 		.page.registry &:last-child {
 			padding-right: 32px;

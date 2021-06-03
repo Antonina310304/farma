@@ -107,6 +107,10 @@
 	@include button("i/inlocked.svg");
 }
 
+.download-btn {
+	@include button("i/download.svg");
+}
+
 .button-icon {
 	position: relative;
 	@include robotoMedium($size: 14px, $height: 16px, $color: #1D6693, $margin: 0);

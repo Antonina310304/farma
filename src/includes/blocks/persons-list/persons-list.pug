@@ -1,7 +1,12 @@
-mixin PersonsList(params)
+mixin PersonsList(params, needInput)
     table(cellpadding=0 cellspacing=0)&attributes(attributes).persons-list
         each user, index in params
-            tr(data-id="user-" + index)._tr
+            tr(data-id="user-" + index class=needInput ? 'js-checked' : '')._tr
+                if(needInput)
+                    td._cell.input-cell
+                        input(type="checkbox" id=index).persons-list__input.js-persons-input
+                        label(id=index).persons-list__checkbox
+
                 each item, index in user
                     td(class=index)._cell
                         if(index == 'system')
@@ -11,10 +16,31 @@ mixin PersonsList(params)
                                     button(data-locked="N")._btn-control.js-locked.edit-delete
                                 else
                                     button(data-locked="Y")._btn-control.js-locked.edit-inlocked
+                        else if(index == 'download')
+                            ._buttons
+                                a(href="#")._btn-control.download-btn
                         else
                             =item
 
 
+
+
+mixin PersonsListReport(params)
+    table(cellpadding=0 cellspacing=0).persons-list.persons-list--report
+        each user, index in params.list
+            tr._tr.js-checked
+                td._cell.input-cell
+                    input(type="checkbox" id=index).persons-list__input.js-persons-input
+                    label(id=index).persons-list__checkbox
+                each item, index in user
+                    td(class=index)._cell
+                        if(index == 'name')
+                            span._cell-in=item
+                            button.persons-list__mark.js-mark Отключить отметку
+                        else
+                            =item
+                td._cell.button-cell
+                    button.button.persons-list__button.button--min Создать консилиум
 
 
 mixin PersonsListRegistry(params)

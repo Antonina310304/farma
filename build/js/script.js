@@ -527,34 +527,6 @@ var counterSms = new CounterSms();
 
 
 
-function triggerNav() {
-    var exitBlock = $('.page-header__exit');
-
-    function closeCloseBlock(evt) {
-        var target = $(evt.target);
-        closeTrigger();
-    }
-
-    function closeTrigger() {
-        exitBlock.animate({opacity: 0}, 150, function () {
-            exitBlock.removeClass('open');
-            $('body').off('click', closeCloseBlock);
-        })
-    }
-
-    $('body').on('click', '.js-nav-trigger', function () {
-
-        if(exitBlock.hasClass('open')) {
-            closeTrigger();
-        } else {
-            exitBlock.addClass('open');
-            exitBlock.animate({opacity: 1}, 150);
-            $('body').on('click', closeCloseBlock);
-        }
-    })
-}
-
-triggerNav();
 /**
  *  * маска накладывается по атрибуту data-mask
  * валидация проходит по полю data-validate и data-required
@@ -1267,7 +1239,7 @@ DownloadFiles.prototype.removeFiles = function () {
         evt.preventDefault();
 
 
-        var modal = $('[data-modal-name="remove-docs"]');
+        var modal = $('[data-modal-name="check-remove"]');
         var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
         modalClass.render();
 
@@ -1363,102 +1335,11 @@ DownloadFiles.prototype.init = function () {
 }
 
 var downloadFiles = new DownloadFiles();
-function onSubmitForm(params) {
-    $('body').on('submit', params.class, function (evt) {
-        evt.preventDefault();
-        var form = $(this);
-        var inputs = form.find('[data-required]');
-        var isFormValid = true;
-        var errorBlock = $('.js-error-block');
 
 
-        if(inputs.length) {
-            inputs.each(function () {
-                var val = $(this).val().trim();
-                if(val == '') {
-                    $(this).parent().parent().addClass('error');
-                    isFormValid = isFormValid && false;
-                } else {
-                    $(this).parent().parent().removeClass('error');
-                }
-            })
-        }
+function removeElement() {
 
-        if(!isFormValid) {
-            errorBlock.removeClass('d-none');
-        } else {
-            errorBlock.addClass('d-none');
-            $(this).attr('disabled', true);
-            preloader.show();
-
-            var paramsAjax = {
-                type: 'POST',
-                url: 'action.php',
-                dataType: 'json',
-                data: form.serializeArray(),
-                onSuccess: function (data) {
-                    preloader.hide();
-                    params.onSuccess();
-                },
-                onError: function () {
-                    params.onError();
-                },
-            }
-
-            onSendAjax(paramsAjax);
-        }
-    })
 }
-
-onSubmitForm({
-    class: '.js-aut',
-    onError: function () {
-        return false;
-    },
-
-    onSuccess: function (data) {
-        var type = $('.js-aut').attr('data-form');
-        var typeError = $('.js-aut').attr('data-form-type');
-
-        function refreshSmsBlock() {
-            //запускаю счетчик и навешиваю маску на блок с паролем смс
-            $('.js-mask-code').eq(0).focus();
-            var counterSms = new CounterSms();
-            codeMask();
-        }
-
-        //это безобразие при интеграции удалить
-        var data = {};
-        if(type == 'login' && typeError == 'error'){
-            data.template = templateLogin.clone();
-            data.status = 'LOGIN_ERROR';
-        } else if(type == 'login' && typeError == 'success') {
-            data.status = 'LOGIN_SUCCESS';
-            data.template = templateSms.clone();
-        } else if(type == 'sms' && typeError == 'error') {
-            data.status = 'SMS_ERROR';
-            data.template = templateErrorSms.clone();
-        }
-        //
-
-        $('.page__authorization-in').replaceWith(data.template);
-        switch (data.status) {
-            case 'LOGIN_ERROR' :
-                break;
-            case 'LOGIN_ERROR' :
-                break;
-            case 'SMS_ERROR' :
-                refreshSmsBlock();
-                break;
-            case 'LOGIN_SUCCESS':
-                refreshSmsBlock()
-                break;
-        }
-    }
-})
-
-
-
 function SelectBlock() {
     this.onClick = $.proxy(this.onClick, this);
     this.onBodyClick = $.proxy(this.onBodyClick, this);
@@ -1567,54 +1448,101 @@ function AjaxFilter() {
 AjaxFilter();
 
 
-function refreshChanges() {
-    $('body').on('click', '.js-refresh-changes',function (evt) {
+function onSubmitForm(params) {
+    $('body').on('submit', params.class, function (evt) {
         evt.preventDefault();
+        var form = $(this);
+        var inputs = form.find('[data-required]');
+        var isFormValid = true;
+        var errorBlock = $('.js-error-block');
 
-        var stingLogItem = $(this).closest('.logs-list__tr');
-        var id = stingLogItem.attr('id');
-        var action = $(this).data('action');
-        preloader.show();
 
-        onSendAjax({
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: {
-                action,
-                id
-            },
-            onSuccess: function (data) {
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    errorText: 'Какая-то ошибка которая приходит с бэка'
-                }
-
-                var pageInfo = new PageInfoController('success-confirmed');
-                preloader.hide();
-
-                if(data.status == 'OK') {
-
-                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
-                    stingLogItem.remove();
-                    pageInfo.changeText(textSuccess);
-                    pageInfo.showModal();
-
+        if(inputs.length) {
+            inputs.each(function () {
+                var val = $(this).val().trim();
+                if(val == '') {
+                    $(this).parent().parent().addClass('error');
+                    isFormValid = isFormValid && false;
                 } else {
-                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
-                    pageInfo.showModal();
-
+                    $(this).parent().parent().removeClass('error');
                 }
-            },
-            onError: function () {
-                alert('Ошибка соединения, попробуйте позже!')
-            },
-        })
+            })
+        }
+
+        if(!isFormValid) {
+            errorBlock.removeClass('d-none');
+        } else {
+            errorBlock.addClass('d-none');
+            $(this).attr('disabled', true);
+            preloader.show();
+
+            var paramsAjax = {
+                type: 'POST',
+                url: 'action.php',
+                dataType: 'json',
+                data: form.serializeArray(),
+                onSuccess: function (data) {
+                    preloader.hide();
+                    params.onSuccess();
+                },
+                onError: function () {
+                    params.onError();
+                },
+            }
+
+            onSendAjax(paramsAjax);
+        }
     })
 }
 
-refreshChanges();
+onSubmitForm({
+    class: '.js-aut',
+    onError: function () {
+        return false;
+    },
+
+    onSuccess: function (data) {
+        var type = $('.js-aut').attr('data-form');
+        var typeError = $('.js-aut').attr('data-form-type');
+
+        function refreshSmsBlock() {
+            //запускаю счетчик и навешиваю маску на блок с паролем смс
+            $('.js-mask-code').eq(0).focus();
+            var counterSms = new CounterSms();
+            codeMask();
+        }
+
+        //это безобразие при интеграции удалить
+        var data = {};
+        if(type == 'login' && typeError == 'error'){
+            data.template = templateLogin.clone();
+            data.status = 'LOGIN_ERROR';
+        } else if(type == 'login' && typeError == 'success') {
+            data.status = 'LOGIN_SUCCESS';
+            data.template = templateSms.clone();
+        } else if(type == 'sms' && typeError == 'error') {
+            data.status = 'SMS_ERROR';
+            data.template = templateErrorSms.clone();
+        }
+        //
+
+        $('.page__authorization-in').replaceWith(data.template);
+        switch (data.status) {
+            case 'LOGIN_ERROR' :
+                break;
+            case 'LOGIN_ERROR' :
+                break;
+            case 'SMS_ERROR' :
+                refreshSmsBlock();
+                break;
+            case 'LOGIN_SUCCESS':
+                refreshSmsBlock()
+                break;
+        }
+    }
+})
+
+
 
 function ControllerInput() {
     this.focusedClass = 'focused';
@@ -1895,6 +1823,55 @@ DropdownInput.prototype.onBodyClick = function (evt) {
 $('.input-select').each(function () {
     var dropdownInput = new DropdownInput($(this));
 })
+function refreshChanges() {
+    $('body').on('click', '.js-refresh-changes',function (evt) {
+        evt.preventDefault();
+
+        var stingLogItem = $(this).closest('.logs-list__tr');
+        var id = stingLogItem.attr('id');
+        var action = $(this).data('action');
+        preloader.show();
+
+        onSendAjax({
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: {
+                action,
+                id
+            },
+            onSuccess: function (data) {
+                //удалить при интеграции
+                var data = {
+                    status: 'OK',
+                    errorText: 'Какая-то ошибка которая приходит с бэка'
+                }
+
+                var pageInfo = new PageInfoController('success-confirmed');
+                preloader.hide();
+
+                if(data.status == 'OK') {
+
+                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
+                    stingLogItem.remove();
+                    pageInfo.changeText(textSuccess);
+                    pageInfo.showModal();
+
+                } else {
+                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
+                    pageInfo.showModal();
+
+                }
+            },
+            onError: function () {
+                alert('Ошибка соединения, попробуйте позже!')
+            },
+        })
+    })
+}
+
+refreshChanges();
+
 function Modal(params) {
     this.modal = params.modal;
     this.closeBtn = this.modal.find('.js-modal-close');
@@ -1939,6 +1916,7 @@ $('body').on('click', '[data-modal]', function () {
     var modalClass = new Modal({modal});
     modalClass.render();
 })
+
 function pagination() {
     $('body').on('click', '.js-pagination', function (evt) {
         evt.preventDefault();
@@ -1979,38 +1957,28 @@ function pagination() {
 }
 
 pagination();
-
-function Preloader() {
-    this.template = $('<div class="preloader">\n' +
-        '        <div class="preloader__in"></div>\n' +
-        '      </div>')
-}
-
-Preloader.prototype.renderInBlock = function (block) {
-    block.append(this.template);
-    $('body').css('overflow', 'hidden');
-
-}
-
-Preloader.prototype.show = function () {
-    this.renderInBlock($('footer'))
-}
-
-Preloader.prototype.hide = function () {
-    this.template.remove();
-    $('body').attr('style', '');
-}
-
-var preloader = new Preloader();
-// поставить галочку в реестре пациентов
+//поставить галочку в реестре пациентов/отчетах, консилиумах
 $('body').on('click', '.js-checked', function (evt) {
+    var modal = new PageInfoController('modal-footer');
     var input = $(this).find('input');
     if(!input.length) return;
     if(evt.target.nodeName == 'BUTTON') {
         return;
     }
     input.prop('checked', !input.prop("checked"))
+
+    var countCheckedDocs = $('.js-persons-input:checked').length;
+
+    if(countCheckedDocs > 0) {
+        modal.changeText('Выбрано документов: ' + countCheckedDocs);
+        modal.showModal();
+    } else {
+        modal.hide();
+    }
+
+
 })
+
 
 //заблокировать разблокировать пользователя/пациента
 $('body').on('click', '.js-locked', function (evt) {
@@ -2060,6 +2028,28 @@ $('body').on('click', '.js-locked', function (evt) {
         })
     }
 })
+function Preloader() {
+    this.template = $('<div class="preloader">\n' +
+        '        <div class="preloader__in"></div>\n' +
+        '      </div>')
+}
+
+Preloader.prototype.renderInBlock = function (block) {
+    block.append(this.template);
+    $('body').css('overflow', 'hidden');
+
+}
+
+Preloader.prototype.show = function () {
+    this.renderInBlock($('footer'))
+}
+
+Preloader.prototype.hide = function () {
+    this.template.remove();
+    $('body').attr('style', '');
+}
+
+var preloader = new Preloader();
 function tab(target) {
     var activeClass = 'active';
     var disabledClass = 'disabled';
@@ -2136,23 +2126,6 @@ $('body').on('click', '.js-locked-user', function (evt) {
         })
     }
 })
-function uploadDocs() {
-    var modal = new PageInfoController('modal-footer');
-    $('body').on('click', '.js-checked', function () {
-
-        var countCheckedDocs = $('.js-persons-input:checked').length;
-
-        if(countCheckedDocs > 0) {
-            modal.changeText('Выбрано документов: ' + countCheckedDocs);
-            modal.showModal();
-        } else {
-            modal.hide();
-        }
-    })
-}
-
-uploadDocs();
-
 
 $('body').on('click', '.js-remove-registr', function () {
 
@@ -2197,3 +2170,31 @@ $('body').on('click', '.js-mark', function (evt) {
 
 
 
+function triggerNav() {
+    var exitBlock = $('.page-header__exit');
+
+    function closeCloseBlock(evt) {
+        var target = $(evt.target);
+        closeTrigger();
+    }
+
+    function closeTrigger() {
+        exitBlock.animate({opacity: 0}, 150, function () {
+            exitBlock.removeClass('open');
+            $('body').off('click', closeCloseBlock);
+        })
+    }
+
+    $('body').on('click', '.js-nav-trigger', function () {
+
+        if(exitBlock.hasClass('open')) {
+            closeTrigger();
+        } else {
+            exitBlock.addClass('open');
+            exitBlock.animate({opacity: 1}, 150);
+            $('body').on('click', closeCloseBlock);
+        }
+    })
+}
+
+triggerNav();

@@ -240,7 +240,7 @@ DownloadFiles.prototype.removeFiles = function () {
         evt.preventDefault();
 
 
-        var modal = $('[data-modal-name="remove-docs"]');
+        var modal = $('[data-modal-name="check-remove"]');
         var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
         modalClass.render();
 
@@ -336,3 +336,8 @@ DownloadFiles.prototype.init = function () {
 }
 
 var downloadFiles = new DownloadFiles();
+
+
+function removeElement() {
+
+}

@@ -8,6 +8,14 @@ mixin Filter(params)
                     +FilterInputSelect(val)
                 else if(val.type == typeFilterInput.DATE)
                     +FilterInputDate(val)
+                else if(val.type == typeFilterInput.INPUT)
+                    +FilterInput(val)
+
+
+mixin FilterInput(params)
+    p.filter-input
+        input(type='checkbox' id="check-all" placeholder=params.placeholder class=params.event name=params.className)._checkbox.js-check-all
+        label(for="check-all")._label
 
 
 mixin FilterInputSearch(params)

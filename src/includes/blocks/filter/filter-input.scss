@@ -7,6 +7,29 @@
 	position: relative;
 	box-sizing: border-box;
 
+	&__checkbox {
+		display: none;
+	}
+
+	&__label {
+		display: block;
+		position: relative;
+		width: 18px;
+		height: 18px;
+		background-image: url(..//i/input.svg);
+		background-size: 18px auto;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		.filter-input__checkbox:checked + & {
+			background-image: url(..//i/input-checked.svg);
+			background-size: 18px auto;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+	}
+
 	&__search {
 		@include filterInput();
 		outline: none;

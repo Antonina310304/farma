@@ -1,20 +1,3 @@
-function uploadDocs() {
-    var modal = new PageInfoController('modal-footer');
-    $('body').on('click', '.js-checked', function () {
-
-        var countCheckedDocs = $('.js-persons-input:checked').length;
-
-        if(countCheckedDocs > 0) {
-            modal.changeText('Выбрано документов: ' + countCheckedDocs);
-            modal.showModal();
-        } else {
-            modal.hide();
-        }
-    })
-}
-
-uploadDocs();
-
 
 $('body').on('click', '.js-remove-registr', function () {
 

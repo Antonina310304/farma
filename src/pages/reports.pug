@@ -1,0 +1,13 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Отчёты, консилиумы'
+    - var isAut = false;
+    - var activePage = 'reports';
+    - var noticeActive = true;
+    - var className = 'reports';
+    - var isNeedSideMenu = true;
+
+
+block content
+    +reportsPage

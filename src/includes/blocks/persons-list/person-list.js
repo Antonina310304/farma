@@ -1,12 +1,25 @@
-// поставить галочку в реестре пациентов
+//поставить галочку в реестре пациентов/отчетах, консилиумах
 $('body').on('click', '.js-checked', function (evt) {
+    var modal = new PageInfoController('modal-footer');
     var input = $(this).find('input');
     if(!input.length) return;
     if(evt.target.nodeName == 'BUTTON') {
         return;
     }
     input.prop('checked', !input.prop("checked"))
+
+    var countCheckedDocs = $('.js-persons-input:checked').length;
+
+    if(countCheckedDocs > 0) {
+        modal.changeText('Выбрано документов: ' + countCheckedDocs);
+        modal.showModal();
+    } else {
+        modal.hide();
+    }
+
+
 })
+
 
 //заблокировать разблокировать пользователя/пациента
 $('body').on('click', '.js-locked', function (evt) {

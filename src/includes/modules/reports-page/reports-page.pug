@@ -1,0 +1,51 @@
+include data.pug
+
+mixin reportsPage
+    +checkRemove
+    +pageInfo({
+        event: 'js-upload',
+        title: 'Выбрано документов: 1',
+        buttons: [
+            {
+                className: 'button--transparent button--red js-remove-docs',
+                title: 'Удалить',
+            }
+        ]
+    })(data-modal-name="modal-footer")
+
+    .page__wrapper
+        .page__rug
+            +SectionHead({title: 'Отчёты, консилиумы'})
+        .page__rug
+            +PersonsListHeader({list: reportsList , keys: reportsListKeys})
+        .js-page-content
+            .page__filter
+                +Filter([
+                    {
+                        type: typeFilterInput.INPUT,
+                        className: 'input-cell',
+                        placeholder: '',
+                    },
+
+                    {
+                        type: typeFilterInput.SEARCH,
+                        className: 'name',
+                        placeholder: '',
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'type',
+                        title: 'Все',
+                        options: ['Отчёт', 'Консилиум'],
+                    },
+                    {
+                        type: typeFilterInput.SELECT,
+                        className: 'format',
+                        title: 'Формат',
+                        options: ['Excel', 'Word'],
+                    },
+                ])
+
+            .page__rug
+                +PersonsList(reportsList, true)
+                +paginationWidget
