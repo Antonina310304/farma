@@ -20,7 +20,7 @@
 	}
 
 	&__link {
-		@include robotoMedium($size: 12px, $height: 14px, $color: #4253AF, $margin: 0);
+		@include robotoMedium($size: 12px, $height: 14px, $color: #1D6693, $margin: 0);
 		text-decoration: none;
 
 		&:hover {
@@ -37,8 +37,8 @@
 		margin-bottom: 10px;
 
 		&:last-child {
-			margin-top: 0;
-			margin-bottom: -10px;
+			margin-top: auto;
+			margin-bottom: 0;
 		}
 	}
 
