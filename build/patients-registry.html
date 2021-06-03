@@ -72,12 +72,12 @@
     </header>
     <main class="page registry">
       <div class="page__main-content">
-        <div class="page-info" data-modal-name="modal-footer">
+        <div class="page-info js-upload" data-modal-name="modal-footer">
           <div class="page-info__in">
             <p class="page-info__text">Выбрано документов: 1</p>
             <div class="page-info__buttons">
               <button class="button--transparent page-info__button button" href="#">Выгрузить в excel</button>
-              <button class="button--transparent button--red page-info__button button" href="#">Удалить</button>
+              <button class="button--transparent button--red js-remove-registr page-info__button button" href="#">Удалить</button>
             </div>
           </div>
         </div>
@@ -148,13 +148,13 @@
             </div>
             <div class="page__rug">
               <table class="persons-list persons-list--registry" cellpadding="0" cellspacing="0">
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="0">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="0"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="0"/>
                     <label class="persons-list__checkbox" id="0"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -164,13 +164,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="1">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="1"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="1"/>
                     <label class="persons-list__checkbox" id="1"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -180,13 +180,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="2">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="2"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="2"/>
                     <label class="persons-list__checkbox" id="2"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -196,13 +196,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked mark">
+                <tr class="persons-list__tr js-checked mark" id="3">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="3"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="3"/>
                     <label class="persons-list__checkbox" id="3"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -212,13 +212,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="4">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="4"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="4"/>
                     <label class="persons-list__checkbox" id="4"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -228,13 +228,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="5">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="5"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="5"/>
                     <label class="persons-list__checkbox" id="5"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -244,13 +244,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="6">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="6"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="6"/>
                     <label class="persons-list__checkbox" id="6"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -260,13 +260,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="7">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="7"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="7"/>
                     <label class="persons-list__checkbox" id="7"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>
@@ -276,13 +276,13 @@
                     <button class="button persons-list__button button--min">Создать консилиум</button>
                   </td>
                 </tr>
-                <tr class="persons-list__tr js-checked">
+                <tr class="persons-list__tr js-checked" id="8">
                   <td class="persons-list__cell input-cell">
-                    <input class="persons-list__input" type="checkbox" id="8"/>
+                    <input class="persons-list__input js-persons-input" type="checkbox" id="8"/>
                     <label class="persons-list__checkbox" id="8"></label>
                   </td>
                   <td class="name persons-list__cell"><span class="persons-list__cell-in">Иванова Виктория Евгеньевна</span>
-                    <button class="persons-list__mark">Отключить отметку</button>
+                    <button class="persons-list__mark js-mark">Отключить отметку</button>
                   </td>
                   <td class="city persons-list__cell">Новосибирск
                   </td>

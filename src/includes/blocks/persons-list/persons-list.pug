@@ -20,15 +20,15 @@ mixin PersonsList(params)
 mixin PersonsListRegistry(params)
     table(cellpadding=0 cellspacing=0).persons-list.persons-list--registry
         each user, index in params.list
-            tr._tr.js-checked(class=index == params.mark ? 'mark' : '')
+            tr._tr.js-checked(class=index == params.mark ? 'mark' : '' id=index)
                 td._cell.input-cell
-                    input(type="checkbox" id=index).persons-list__input
+                    input(type="checkbox" id=index).persons-list__input.js-persons-input
                     label(id=index).persons-list__checkbox
                 each item, index in user
                     td(class=index)._cell
                         if(index == 'name')
                             span._cell-in=item
-                            button.persons-list__mark Отключить отметку
+                            button.persons-list__mark.js-mark Отключить отметку
                         else
                             =item
                 td._cell.button-cell

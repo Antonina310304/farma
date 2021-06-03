@@ -1,6 +1,7 @@
 include data
-mixin PatientsRegistry
+mixin  PatientsRegistry
     +pageInfo({
+        event: 'js-upload',
         title: 'Выбрано документов: 1',
         buttons: [
             {
@@ -8,7 +9,7 @@ mixin PatientsRegistry
                 title: 'Выгрузить в excel'
             },
             {
-                className: 'button--transparent button--red',
+                className: 'button--transparent button--red js-remove-registr',
                 title: 'Удалить'
             }
         ]
