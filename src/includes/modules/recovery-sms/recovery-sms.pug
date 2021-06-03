@@ -2,7 +2,7 @@ mixin recoverySms
     .page__authorization
         .authorization.page__authorization-in
             ._in
-                h1._title-sms.aut-title Введите код из СМС
+                h1._title-sms.aut-title Восстановление пароля
                 p._text На номер телефона, привязанный к данному аккаунту, отправлен код для восстановления пароля
                 p._text.js-counter-sms='Повторная отправка СМС доступна через '
                     span 300
@@ -16,6 +16,6 @@ mixin recoverySms
                             p.form__code-item
                                 input(type="text" maxlength=1 name="code-" + n data-required=true required=true).code-item.js-mask-code
                     button(type="submit").form__button.button Подтвердить
-                    a(href="").form__button.button.button--cancel Отмена
+                    a(href="").form__button-cancel.button.button--cancel Отмена
             .authorization__error.authorization-error.js-error-block.d-none
                 | Введите четырехзначный код

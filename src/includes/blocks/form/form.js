@@ -28,7 +28,6 @@ function onSubmitForm(params) {
 
             var paramsAjax = {
                 type: 'POST',
-                // url: form.attr('action'),
                 url: 'action.php',
                 dataType: 'json',
                 data: form.serializeArray(),
@@ -79,6 +78,8 @@ onSubmitForm({
 
         $('.page__authorization-in').replaceWith(data.template);
         switch (data.status) {
+            case 'LOGIN_ERROR' :
+                break;
             case 'LOGIN_ERROR' :
                 break;
             case 'SMS_ERROR' :

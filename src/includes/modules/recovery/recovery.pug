@@ -4,6 +4,7 @@ mixin recovery
             ._in
                 h1._title-wrap.aut-title Восстановление пароля
                 +form({
+                    action: 'js-aut',
                     inputs: [
                         {
                             label: 'Логин',
@@ -17,7 +18,7 @@ mixin recovery
                     ]
                 })
                     button(type="submit").form__button.button Продолжить
-                    a(href="").form__button.button.button--cancel Отмена
+                    a(href="").form__button-cancel.button.button--cancel Отмена
 
             .authorization__error.authorization-error.js-error-block.d-none
                 | Не введен логин

@@ -37,9 +37,13 @@
 		margin-bottom: 10px;
 
 		&:last-child {
-			margin-top: auto;
+			margin-top: 0;
 			margin-bottom: 0;
 		}
+	}
+
+	&__button-cancel {
+		margin-bottom: -10px;
 	}
 
 	&__code-wrap {

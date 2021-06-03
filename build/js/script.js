@@ -1473,7 +1473,6 @@ function onSubmitForm(params) {
 
             var paramsAjax = {
                 type: 'POST',
-                // url: form.attr('action'),
                 url: 'action.php',
                 dataType: 'json',
                 data: form.serializeArray(),
@@ -1524,6 +1523,8 @@ onSubmitForm({
 
         $('.page__authorization-in').replaceWith(data.template);
         switch (data.status) {
+            case 'LOGIN_ERROR' :
+                break;
             case 'LOGIN_ERROR' :
                 break;
             case 'SMS_ERROR' :
@@ -1911,6 +1912,46 @@ $('body').on('click', '[data-modal]', function () {
     modalClass.render();
 })
 
+function pagination() {
+    $('body').on('click', '.js-pagination', function (evt) {
+        evt.preventDefault();
+        preloader.show();
+
+        var data = {page: $(this).attr('data-num-page')}
+
+        function onSuccess(data) {
+            if(data.status == 'OK') {
+                $('.js-page-content').replaceWith(data.template);
+
+            } else {
+                alert('Ошибка связи с сервером');
+            }
+            preloader.hide();
+        }
+
+        onSendAjax({
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: data,
+            onSuccess: function (data) {
+                //удалить при интеграции
+                var data = {
+                    status: 'OK',
+                    template: $('#filter').hasClass('persons-list--registry') ? mockDataPersonsList.clone() : mockUserList.clone(),
+                }
+                onSuccess(data);
+            },
+
+            onError: function () {
+                alert('Ошибка связи с сервером');
+                preloader.hide();
+            },
+        })
+    })
+}
+
+pagination();
 // поставить галочку в реестре пациентов
 $('body').on('click', '.js-checked', function (evt) {
     var input = $(this).find('input');
@@ -1969,46 +2010,6 @@ $('body').on('click', '.js-locked', function (evt) {
         })
     }
 })
-function pagination() {
-    $('body').on('click', '.js-pagination', function (evt) {
-        evt.preventDefault();
-        preloader.show();
-
-        var data = {page: $(this).attr('data-num-page')}
-
-        function onSuccess(data) {
-            if(data.status == 'OK') {
-                $('.js-page-content').replaceWith(data.template);
-
-            } else {
-                alert('Ошибка связи с сервером');
-            }
-            preloader.hide();
-        }
-
-        onSendAjax({
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: data,
-            onSuccess: function (data) {
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    template: $('#filter').hasClass('persons-list--registry') ? mockDataPersonsList.clone() : mockUserList.clone(),
-                }
-                onSuccess(data);
-            },
-
-            onError: function () {
-                alert('Ошибка связи с сервером');
-                preloader.hide();
-            },
-        })
-    })
-}
-
-pagination();
 function Preloader() {
     this.template = $('<div class="preloader">\n' +
         '        <div class="preloader__in"></div>\n' +
@@ -2063,34 +2064,6 @@ $('body').on('click', '[data-target="tab"]', function () {
     tab($(this));
 });
 
-function triggerNav() {
-    var exitBlock = $('.page-header__exit');
-
-    function closeCloseBlock(evt) {
-        var target = $(evt.target);
-        closeTrigger();
-    }
-
-    function closeTrigger() {
-        exitBlock.animate({opacity: 0}, 150, function () {
-            exitBlock.removeClass('open');
-            $('body').off('click', closeCloseBlock);
-        })
-    }
-
-    $('body').on('click', '.js-nav-trigger', function () {
-
-        if(exitBlock.hasClass('open')) {
-            closeTrigger();
-        } else {
-            exitBlock.addClass('open');
-            exitBlock.animate({opacity: 1}, 150);
-            $('body').on('click', closeCloseBlock);
-        }
-    })
-}
-
-triggerNav();
 //заблокировать пользователя в детальной карточке
 $('body').on('click', '.js-locked-user', function (evt) {
     evt.preventDefault();
@@ -2137,3 +2110,31 @@ $('body').on('click', '.js-locked-user', function (evt) {
 })
 
 
+function triggerNav() {
+    var exitBlock = $('.page-header__exit');
+
+    function closeCloseBlock(evt) {
+        var target = $(evt.target);
+        closeTrigger();
+    }
+
+    function closeTrigger() {
+        exitBlock.animate({opacity: 0}, 150, function () {
+            exitBlock.removeClass('open');
+            $('body').off('click', closeCloseBlock);
+        })
+    }
+
+    $('body').on('click', '.js-nav-trigger', function () {
+
+        if(exitBlock.hasClass('open')) {
+            closeTrigger();
+        } else {
+            exitBlock.addClass('open');
+            exitBlock.animate({opacity: 1}, 150);
+            $('body').on('click', closeCloseBlock);
+        }
+    })
+}
+
+triggerNav();

@@ -1023,8 +1023,12 @@ body.log .page__wrapper {
 }
 
 .form__button:last-child {
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: 0;
+}
+
+.form__button-cancel {
+  margin-bottom: -10px;
 }
 
 .form__code-wrap {
