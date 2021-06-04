@@ -1,5 +1,5 @@
 mixin input(params)
-    .input(class=params.error ? 'error' : '' )
+    .input(class=params.error ? 'error' : '' class=params.disabled ? 'disabled' : '')
         ._in
             input(type=params.type, required=(params.required ? '' : false) name=params.name data-required=(params.required ? 'true' : false) disabled=params.disabled placeholder=params.placeholder value=params.value)._input.js-input&attributes(params.attributes)
             label.input__label=params.label
@@ -7,11 +7,17 @@ mixin input(params)
             ._error.js-input-error=params['error-text']
 
 mixin inputSelect(params)
-    .input-select
+    .input-select(class=params.disabled ? 'disabled' : '')
         input.js-fake-input.visually-hidden
 
         div(tabindex="7")._in.js-input-select
-            input(readonly tabindex="-1" data-required=params.required data-type="radio" value=params.value data-validate='empty' data-name=params.attributes['data-name'])._text
+            input(readonly
+                tabindex="-1"
+                data-required=params.required
+                data-type="radio"
+                value=params.value
+                data-validate='empty'
+                data-name=params.attributes['data-name'])._text
             ._label=params.label
             i._icon
         if(params['error-text'])

@@ -1,0 +1,12 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Хирургическое лечение'
+    - var isAut = false;
+    - var activePage = 'registr';
+    - var noticeActive = false;
+    - var isNeedSideMenu = true;
+    - var breadcrumbsList = ['Реестр пациентов', 'Иванова Виктория Евгеньевна', 'Хирургическое лечение', 'Хирургическое лечение'];
+
+block content
+    +form9817

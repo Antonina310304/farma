@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link href="css/libs/jquery.scrollbar.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-    <title>Информация о заболевании </title>
+    <title>Информация о заболевании</title>
   </head>
   <body>
     <header class="page-header">
@@ -74,7 +74,7 @@
         <div class="page__wrapper">
           <div class="page__rug">
             <div class="section-head">
-              <h1 class="section-head__title page-heading">Гистология и онкомаркеры</h1>
+              <h1 class="section-head__title page-heading">Информация о заболевании</h1>
             </div>
           </div>
           <div class="page__rug">
@@ -135,7 +135,7 @@
                                 <label class="select-list__label" for="name2-7">Увеличение в объеме живота</label>
                               </li>
                               <li class="select-list__item">
-                                <input class="js-other undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name2-8" name="name2"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name2-8" name="name2"/>
                                 <label class="select-list__label" for="name2-8">Другие</label>
                               </li>
                             </ul>
@@ -280,7 +280,7 @@
                                 <label class="select-list__label" for="name5-19">С76.8</label>
                               </li>
                               <li class="select-list__item">
-                                <input class="js-other undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name5-20" name="name5"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name5-20" name="name5" data-show="name17"/>
                                 <label class="select-list__label" for="name5-20">Другие</label>
                               </li>
                             </ul>
@@ -291,10 +291,19 @@
                   </div>
                 </div>
                 <div class="create-person__col-3">
+                  <div class="input disabled">
+                    <div class="input__in">
+                      <input class="input__input js-input" type="text" name="name6" disabled="disabled" placeholder="" value="" data-validate="empty" data-name="name6" max-lenght="250"/>
+                      <label class="input__label">МКБ-10 (Другие)</label>
+                    </div>
+                    <div class="input__error js-input-error">Выберете поле</div>
+                  </div>
+                </div>
+                <div class="create-person__col-3">
                   <div class="input-select">
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name6"/>
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name7"/>
                       <div class="input-select__label">Метод постановки диагноза</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
@@ -304,32 +313,32 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Гистология первичной опухоли" type="ckeckbox" id="name6-0" name="name6"/>
-                                <label class="select-list__label" for="name6-0">Гистология первичной опухоли</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Гистология первичной опухоли" type="checkbox" id="name7-0" name="name7"/>
+                                <label class="select-list__label" for="name7-0">Гистология первичной опухоли</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи " type="ckeckbox" id="name6-1" name="name6"/>
-                                <label class="select-list__label" for="name6-1">Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи </label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи " type="checkbox" id="name7-1" name="name7"/>
+                                <label class="select-list__label" for="name7-1">Миелограмма/трепанобиопсия костного мозга + повышение уровня катехоламинов сыворотки/мочи </label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Гистология метастаза (кроме КМ)" type="ckeckbox" id="name6-2" name="name6"/>
-                                <label class="select-list__label" for="name6-2">Гистология метастаза (кроме КМ)</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Гистология метастаза (кроме КМ)" type="checkbox" id="name7-2" name="name7"/>
+                                <label class="select-list__label" for="name7-2">Гистология метастаза (кроме КМ)</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Миелограмма/трепанобиопсия костного мозга)" type="ckeckbox" id="name6-3" name="name6"/>
-                                <label class="select-list__label" for="name6-3">Миелограмма/трепанобиопсия костного мозга)</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Миелограмма/трепанобиопсия костного мозга)" type="checkbox" id="name7-3" name="name7"/>
+                                <label class="select-list__label" for="name7-3">Миелограмма/трепанобиопсия костного мозга)</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Цитологическое исследование опухоли" type="ckeckbox" id="name6-4" name="name6"/>
-                                <label class="select-list__label" for="name6-4">Цитологическое исследование опухоли</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Цитологическое исследование опухоли" type="checkbox" id="name7-4" name="name7"/>
+                                <label class="select-list__label" for="name7-4">Цитологическое исследование опухоли</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Клиническое обследование" type="ckeckbox" id="name6-5" name="name6"/>
-                                <label class="select-list__label" for="name6-5">Клиническое обследование</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Клиническое обследование" type="checkbox" id="name7-5" name="name7"/>
+                                <label class="select-list__label" for="name7-5">Клиническое обследование</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Нет данных" type="ckeckbox" id="name6-6" name="name6"/>
-                                <label class="select-list__label" for="name6-6">Нет данных</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Нет данных" type="checkbox" id="name7-6" name="name7"/>
+                                <label class="select-list__label" for="name7-6">Нет данных</label>
                               </li>
                             </ul>
                           </div>
@@ -342,7 +351,7 @@
                   <div class="input-select">
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name7"/>
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name8"/>
                       <div class="input-select__label">Локализация</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
@@ -352,40 +361,40 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Надпочечник" type="ckeckbox" id="name7-0" name="name7"/>
-                                <label class="select-list__label" for="name7-0">Надпочечник</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Надпочечник" type="checkbox" id="name8-0" name="name8"/>
+                                <label class="select-list__label" for="name8-0">Надпочечник</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Забрюшинно внеогранно" type="ckeckbox" id="name7-1" name="name7"/>
-                                <label class="select-list__label" for="name7-1">Забрюшинно внеогранно</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Забрюшинно внеогранно" type="checkbox" id="name8-1" name="name8"/>
+                                <label class="select-list__label" for="name8-1">Забрюшинно внеогранно</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Заднее средостение" type="ckeckbox" id="name7-2" name="name7"/>
-                                <label class="select-list__label" for="name7-2">Заднее средостение</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Заднее средостение" type="checkbox" id="name8-2" name="name8"/>
+                                <label class="select-list__label" for="name8-2">Заднее средостение</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Область шеи" type="ckeckbox" id="name7-3" name="name7"/>
-                                <label class="select-list__label" for="name7-3">Область шеи</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Область шеи" type="checkbox" id="name8-3" name="name8"/>
+                                <label class="select-list__label" for="name8-3">Область шеи</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Малый таз" type="ckeckbox" id="name7-4" name="name7"/>
-                                <label class="select-list__label" for="name7-4">Малый таз</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Малый таз" type="checkbox" id="name8-4" name="name8"/>
+                                <label class="select-list__label" for="name8-4">Малый таз</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Более одной локализации" type="ckeckbox" id="name7-5" name="name7"/>
-                                <label class="select-list__label" for="name7-5">Более одной локализации</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Более одной локализации" type="checkbox" id="name8-5" name="name8"/>
+                                <label class="select-list__label" for="name8-5">Более одной локализации</label>
                               </li>
                               <li class="select-list__item">
-                                <input class="js-other undefined js-select-ckeckbox select-list__input" tabindex="8" value="Другие" type="ckeckbox" id="name7-6" name="name7"/>
-                                <label class="select-list__label" for="name7-6">Другие</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name8-6" name="name8"/>
+                                <label class="select-list__label" for="name8-6">Другие</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Не установлена" type="ckeckbox" id="name7-7" name="name7"/>
-                                <label class="select-list__label" for="name7-7">Не установлена</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Не установлена" type="checkbox" id="name8-7" name="name8"/>
+                                <label class="select-list__label" for="name8-7">Не установлена</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Нет данных" type="ckeckbox" id="name7-8" name="name7"/>
-                                <label class="select-list__label" for="name7-8">Нет данных</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Нет данных" type="checkbox" id="name8-8" name="name8"/>
+                                <label class="select-list__label" for="name8-8">Нет данных</label>
                               </li>
                             </ul>
                           </div>
@@ -408,60 +417,24 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Справа" type="ckeckbox" id="name8-0" name="name8"/>
-                                <label class="select-list__label" for="name8-0">Справа</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Справа" type="checkbox" id="name9-0" name="name9"/>
+                                <label class="select-list__label" for="name9-0">Справа</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Слева" type="ckeckbox" id="name8-1" name="name8"/>
-                                <label class="select-list__label" for="name8-1">Слева</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Слева" type="checkbox" id="name9-1" name="name9"/>
+                                <label class="select-list__label" for="name9-1">Слева</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="По средней линии" type="ckeckbox" id="name8-2" name="name8"/>
-                                <label class="select-list__label" for="name8-2">По средней линии</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="По средней линии" type="checkbox" id="name9-2" name="name9"/>
+                                <label class="select-list__label" for="name9-2">По средней линии</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Билатерально" type="ckeckbox" id="name8-3" name="name8"/>
-                                <label class="select-list__label" for="name8-3">Билатерально</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Билатерально" type="checkbox" id="name9-3" name="name9"/>
+                                <label class="select-list__label" for="name9-3">Билатерально</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Неизвестно" type="ckeckbox" id="name8-4" name="name8"/>
-                                <label class="select-list__label" for="name8-4">Неизвестно</label>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="create-person__col-3">
-                  <div class="input-select">
-                    <input class="js-fake-input visually-hidden"/>
-                    <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name9"/>
-                      <div class="input-select__label">Костные метастазы</div><i class="input-select__icon"></i>
-                    </div>
-                    <div class="input-select__error js-input-error">Выберете поле</div>
-                    <div class="input-select__list">
-                      <div class="input-select__list-in">
-                        <div class="input-select__wrapper">
-                          <div class="input-select__inner scrollbar-inner">
-                            <ul class="select-list">
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Голова" type="ckeckbox" id="name9-0" name="name9"/>
-                                <label class="select-list__label" for="name9-0">Голова</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Конечности" type="ckeckbox" id="name9-1" name="name9"/>
-                                <label class="select-list__label" for="name9-1">Конечности</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Осевой скелет" type="ckeckbox" id="name9-2" name="name9"/>
-                                <label class="select-list__label" for="name9-2">Осевой скелет</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Нет" type="ckeckbox" id="name9-3" name="name9"/>
-                                <label class="select-list__label" for="name9-3">Нет</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Неизвестно" type="checkbox" id="name9-4" name="name9"/>
+                                <label class="select-list__label" for="name9-4">Неизвестно</label>
                               </li>
                             </ul>
                           </div>
@@ -475,7 +448,7 @@
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
                       <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name10"/>
-                      <div class="input-select__label">Метастазы</div><i class="input-select__icon"></i>
+                      <div class="input-select__label">Костные метастазы</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
                     <div class="input-select__list">
@@ -484,48 +457,20 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="НЕТ" type="ckeckbox" id="name10-0" name="name10"/>
-                                <label class="select-list__label" for="name10-0">НЕТ</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Голова" type="checkbox" id="name10-0" name="name10"/>
+                                <label class="select-list__label" for="name10-0">Голова</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Костный мозг" type="ckeckbox" id="name10-1" name="name10"/>
-                                <label class="select-list__label" for="name10-1">Костный мозг</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Конечности" type="checkbox" id="name10-1" name="name10"/>
+                                <label class="select-list__label" for="name10-1">Конечности</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Кости" type="ckeckbox" id="name10-2" name="name10"/>
-                                <label class="select-list__label" for="name10-2">Кости</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Осевой скелет" type="checkbox" id="name10-2" name="name10"/>
+                                <label class="select-list__label" for="name10-2">Осевой скелет</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Отдаленные лимфоузлы" type="ckeckbox" id="name10-3" name="name10"/>
-                                <label class="select-list__label" for="name10-3">Отдаленные лимфоузлы</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Печень" type="ckeckbox" id="name10-4" name="name10"/>
-                                <label class="select-list__label" for="name10-4">Печень</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Кожа" type="ckeckbox" id="name10-5" name="name10"/>
-                                <label class="select-list__label" for="name10-5">Кожа</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Легкие / плевра" type="ckeckbox" id="name10-6" name="name10"/>
-                                <label class="select-list__label" for="name10-6">Легкие / плевра</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="ЦНС" type="ckeckbox" id="name10-7" name="name10"/>
-                                <label class="select-list__label" for="name10-7">ЦНС</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Орбита" type="ckeckbox" id="name10-8" name="name10"/>
-                                <label class="select-list__label" for="name10-8">Орбита</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class="js-other undefined js-select-ckeckbox select-list__input" tabindex="8" value="Другие" type="ckeckbox" id="name10-9" name="name10"/>
-                                <label class="select-list__label" for="name10-9">Другие</label>
-                              </li>
-                              <li class="select-list__item">
-                                <input class=" undefined js-select-ckeckbox select-list__input" tabindex="8" value="Неизвестна" type="ckeckbox" id="name10-10" name="name10"/>
-                                <label class="select-list__label" for="name10-10">Неизвестна</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Нет" type="checkbox" id="name10-3" name="name10"/>
+                                <label class="select-list__label" for="name10-3">Нет</label>
                               </li>
                             </ul>
                           </div>
@@ -539,7 +484,7 @@
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
                       <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name11"/>
-                      <div class="input-select__label">Клинические симптомы</div><i class="input-select__icon"></i>
+                      <div class="input-select__label">Метастазы</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
                     <div class="input-select__list">
@@ -548,36 +493,48 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Компрессия спинного мозга" type="checkbox" id="name11-0" name="name11"/>
-                                <label class="select-list__label" for="name11-0">Компрессия спинного мозга</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="НЕТ" type="checkbox" id="name11-0" name="name11"/>
+                                <label class="select-list__label" for="name11-0">НЕТ</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Опсоклонус-миоклонус" type="checkbox" id="name11-1" name="name11"/>
-                                <label class="select-list__label" for="name11-1">Опсоклонус-миоклонус</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Костный мозг" type="checkbox" id="name11-1" name="name11"/>
+                                <label class="select-list__label" for="name11-1">Костный мозг</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Синдром Горнера" type="checkbox" id="name11-2" name="name11"/>
-                                <label class="select-list__label" for="name11-2">Синдром Горнера</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Кости" type="checkbox" id="name11-2" name="name11"/>
+                                <label class="select-list__label" for="name11-2">Кости</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Диарея" type="checkbox" id="name11-3" name="name11"/>
-                                <label class="select-list__label" for="name11-3">Диарея</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Отдаленные лимфоузлы" type="checkbox" id="name11-3" name="name11"/>
+                                <label class="select-list__label" for="name11-3">Отдаленные лимфоузлы</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Артериальная гипертензия" type="checkbox" id="name11-4" name="name11"/>
-                                <label class="select-list__label" for="name11-4">Артериальная гипертензия</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Печень" type="checkbox" id="name11-4" name="name11"/>
+                                <label class="select-list__label" for="name11-4">Печень</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Интраспинальное распространение (без симптомов)" type="checkbox" id="name11-5" name="name11"/>
-                                <label class="select-list__label" for="name11-5">Интраспинальное распространение (без симптомов)</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Кожа" type="checkbox" id="name11-5" name="name11"/>
+                                <label class="select-list__label" for="name11-5">Кожа</label>
                               </li>
                               <li class="select-list__item">
-                                <input class="js-other undefined js-select-checkbox select-list__input" tabindex="8" value="Другое (описательно)" type="checkbox" id="name11-6" name="name11"/>
-                                <label class="select-list__label" for="name11-6">Другое (описательно)</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Легкие / плевра" type="checkbox" id="name11-6" name="name11"/>
+                                <label class="select-list__label" for="name11-6">Легкие / плевра</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="распространение в межпозвоночные отверстия" type="checkbox" id="name11-7" name="name11"/>
-                                <label class="select-list__label" for="name11-7">распространение в межпозвоночные отверстия</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="ЦНС" type="checkbox" id="name11-7" name="name11"/>
+                                <label class="select-list__label" for="name11-7">ЦНС</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Орбита" type="checkbox" id="name11-8" name="name11"/>
+                                <label class="select-list__label" for="name11-8">Орбита</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Другие" type="checkbox" id="name11-9" name="name11"/>
+                                <label class="select-list__label" for="name11-9">Другие</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Неизвестна" type="checkbox" id="name11-10" name="name11"/>
+                                <label class="select-list__label" for="name11-10">Неизвестна</label>
                               </li>
                             </ul>
                           </div>
@@ -591,6 +548,58 @@
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
                       <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name12"/>
+                      <div class="input-select__label">Клинические симптомы</div><i class="input-select__icon"></i>
+                    </div>
+                    <div class="input-select__error js-input-error">Выберете поле</div>
+                    <div class="input-select__list">
+                      <div class="input-select__list-in">
+                        <div class="input-select__wrapper">
+                          <div class="input-select__inner scrollbar-inner">
+                            <ul class="select-list">
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Компрессия спинного мозга" type="checkbox" id="name12-0" name="name12"/>
+                                <label class="select-list__label" for="name12-0">Компрессия спинного мозга</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Опсоклонус-миоклонус" type="checkbox" id="name12-1" name="name12"/>
+                                <label class="select-list__label" for="name12-1">Опсоклонус-миоклонус</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Синдром Горнера" type="checkbox" id="name12-2" name="name12"/>
+                                <label class="select-list__label" for="name12-2">Синдром Горнера</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Диарея" type="checkbox" id="name12-3" name="name12"/>
+                                <label class="select-list__label" for="name12-3">Диарея</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Артериальная гипертензия" type="checkbox" id="name12-4" name="name12"/>
+                                <label class="select-list__label" for="name12-4">Артериальная гипертензия</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Интраспинальное распространение (без симптомов)" type="checkbox" id="name12-5" name="name12"/>
+                                <label class="select-list__label" for="name12-5">Интраспинальное распространение (без симптомов)</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class="js-other undefined js-select-checkbox select-list__input" tabindex="8" value="Другое (описательно)" type="checkbox" id="name12-6" name="name12"/>
+                                <label class="select-list__label" for="name12-6">Другое (описательно)</label>
+                              </li>
+                              <li class="select-list__item">
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="распространение в межпозвоночные отверстия" type="checkbox" id="name12-7" name="name12"/>
+                                <label class="select-list__label" for="name12-7">распространение в межпозвоночные отверстия</label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="create-person__col-3">
+                  <div class="input-select">
+                    <input class="js-fake-input visually-hidden"/>
+                    <div class="input-select__in js-input-select" tabindex="7">
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name13"/>
                       <div class="input-select__label">Опсоклонус (терапия гормонами)</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
@@ -600,12 +609,12 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Да" type="radio" id="name12-0" name="name12"/>
-                                <label class="select-list__label" for="name12-0">Да</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Да" type="radio" id="name13-0" name="name13"/>
+                                <label class="select-list__label" for="name13-0">Да</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Нет" type="radio" id="name12-1" name="name12"/>
-                                <label class="select-list__label" for="name12-1">Нет</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Нет" type="radio" id="name13-1" name="name13"/>
+                                <label class="select-list__label" for="name13-1">Нет</label>
                               </li>
                             </ul>
                           </div>
@@ -617,7 +626,7 @@
                 <div class="create-person__col-3">
                   <div class="input">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" name="name13" placeholder="" value="" data-validate="empty" max-lenght="250" data-name="name13"/>
+                      <input class="input__input js-input" type="text" name="name14" placeholder="" value="" data-validate="empty" max-lenght="250" data-name="name14"/>
                       <label class="input__label">Сопутствующие заболевания</label>
                     </div>
                     <div class="input__error js-input-error">Недопустимые символы</div>
@@ -627,7 +636,7 @@
                   <div class="input-select">
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name14"/>
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name15"/>
                       <div class="input-select__label">ВПС</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
@@ -637,12 +646,12 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Да" type="radio" id="name14-0" name="name14"/>
-                                <label class="select-list__label" for="name14-0">Да</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Да" type="radio" id="name15-0" name="name15"/>
+                                <label class="select-list__label" for="name15-0">Да</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Нет" type="radio" id="name14-1" name="name14"/>
-                                <label class="select-list__label" for="name14-1">Нет</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Нет" type="radio" id="name15-1" name="name15"/>
+                                <label class="select-list__label" for="name15-1">Нет</label>
                               </li>
                             </ul>
                           </div>
@@ -654,7 +663,7 @@
                 <div class="create-person__col-3">
                   <div class="input">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" name="name15" placeholder="" value="" data-validate="empty" max-lenght="250" data-name="name15"/>
+                      <input class="input__input js-input" type="text" name="name16" placeholder="" value="" data-validate="empty" max-lenght="250" data-name="name16"/>
                       <label class="input__label">ВПС тип</label>
                     </div>
                     <div class="input__error js-input-error">Недопустимые символы</div>
@@ -664,7 +673,7 @@
                   <div class="input-select">
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name16"/>
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name17"/>
                       <div class="input-select__label">Жизнеугрожающие симптомы (для группы наблюдения)</div><i class="input-select__icon"></i>
                     </div>
                     <div class="input-select__error js-input-error">Выберете поле</div>
@@ -674,40 +683,40 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="НЕТ" type="radio" id="name16-0" name="name16"/>
-                                <label class="select-list__label" for="name16-0">НЕТ</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="НЕТ" type="checkbox" id="name17-0" name="name17"/>
+                                <label class="select-list__label" for="name17-0">НЕТ</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Ухудшение общего состояния" type="radio" id="name16-1" name="name16"/>
-                                <label class="select-list__label" for="name16-1">Ухудшение общего состояния</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Ухудшение общего состояния" type="checkbox" id="name17-1" name="name17"/>
+                                <label class="select-list__label" for="name17-1">Ухудшение общего состояния</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Трудности при кормлении" type="radio" id="name16-2" name="name16"/>
-                                <label class="select-list__label" for="name16-2">Трудности при кормлении</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Трудности при кормлении" type="checkbox" id="name17-2" name="name17"/>
+                                <label class="select-list__label" for="name17-2">Трудности при кормлении</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Дыхательная недостаточностьСердечно - сосудистая недостаточность" type="radio" id="name16-3" name="name16"/>
-                                <label class="select-list__label" for="name16-3">Дыхательная недостаточностьСердечно - сосудистая недостаточность</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Дыхательная недостаточностьСердечно - сосудистая недостаточность" type="checkbox" id="name17-3" name="name17"/>
+                                <label class="select-list__label" for="name17-3">Дыхательная недостаточностьСердечно - сосудистая недостаточность</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Печеночная недостаточность" type="radio" id="name16-4" name="name16"/>
-                                <label class="select-list__label" for="name16-4">Печеночная недостаточность</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Печеночная недостаточность" type="checkbox" id="name17-4" name="name17"/>
+                                <label class="select-list__label" for="name17-4">Печеночная недостаточность</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Почечная недостаточность" type="radio" id="name16-5" name="name16"/>
-                                <label class="select-list__label" for="name16-5">Почечная недостаточность</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Почечная недостаточность" type="checkbox" id="name17-5" name="name17"/>
+                                <label class="select-list__label" for="name17-5">Почечная недостаточность</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Компрессия спинного мозга" type="radio" id="name16-6" name="name16"/>
-                                <label class="select-list__label" for="name16-6">Компрессия спинного мозга</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Компрессия спинного мозга" type="checkbox" id="name17-6" name="name17"/>
+                                <label class="select-list__label" for="name17-6">Компрессия спинного мозга</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Недостаточность других органов и систем" type="radio" id="name16-7" name="name16"/>
-                                <label class="select-list__label" for="name16-7">Недостаточность других органов и систем</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Недостаточность других органов и систем" type="checkbox" id="name17-7" name="name17"/>
+                                <label class="select-list__label" for="name17-7">Недостаточность других органов и систем</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Интраспинальное распространение" type="radio" id="name16-8" name="name16"/>
-                                <label class="select-list__label" for="name16-8">Интраспинальное распространение</label>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Интраспинальное распространение" type="checkbox" id="name17-8" name="name17"/>
+                                <label class="select-list__label" for="name17-8">Интраспинальное распространение</label>
                               </li>
                             </ul>
                           </div>

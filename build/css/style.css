@@ -1488,6 +1488,10 @@ body.log .page__wrapper {
   opacity: 1;
 }
 
+.input.disabled {
+  opacity: 0.5;
+}
+
 .input__in {
   position: relative;
   box-sizing: border-box;

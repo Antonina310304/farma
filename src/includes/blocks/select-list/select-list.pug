@@ -12,14 +12,15 @@ mixin SelectListRadio(params)
         if(params.options)
             each val, index in params.options
                  li._item
-                     - var other = (val == 'Другие' || val == 'Другое' || val == 'Другое (описательно)' ? 'js-other' : '');
-                     input(tabindex="8" value=val
+                     - var other = (val == 'Другое (описательно)' ? 'js-other' : '');
+                     input(tabindex="8"
+                         value=val
                          type=params.attributes['data-validate']
                          id=`${params.className}-${test}`
                          data-change-mask=params.attributes['data-select'] == 'js-advanced-select' ? index : false,
                          data-change-name=params.attributes['data-change-name'] ? params.attributes['data-change-name'] : false,
                          name=params.className
-                         class=`${other} ${params.attributes['data-select']} js-select-${params.attributes['data-validate']}`)._input
+                         class=`${other} ${params.attributes['data-select']} js-select-${params.attributes['data-validate']}`)._input&attributes(params.optionsAttr ? params.optionsAttr[index] : '')
                      label(for=`${params.className}-${index}`)._label=val
                  - test = test + 1;
 

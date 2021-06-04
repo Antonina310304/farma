@@ -1,0 +1,12 @@
+extends ../includes/layout/layout.pug
+block var
+    include ../includes/_var
+    - var pageName = 'Примечания к химиотерапии'
+    - var isAut = false;
+    - var activePage = 'registr';
+    - var noticeActive = false;
+    - var isNeedSideMenu = true;
+    - var breadcrumbsList = ['Реестр пациентов', 'Иванова Виктория Евгеньевна', 'Хирургическое лечение', 'Примечания к химиотерапии'];
+
+block content
+    +form9818

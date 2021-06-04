@@ -68,6 +68,35 @@ DropdownInput.prototype.updateCheckedInputs = function () {
     }
 }
 
+DropdownInput.prototype.toogleInput = function () {
+    var _this = this;
+    var input = _this.container.find('[data-show]');
+
+    if(!input.length) return;
+
+
+    //если надо добавить доступность/скрыть у блока
+    var attr = input.attr('data-show').split(', ');
+    if(input.is(':checked')) {
+        attr.forEach(function (item) {
+            var input = $('[name="'+ item + '"]');
+            input.attr('disabled', false);
+
+            input.closest('.input').removeClass('disabled');
+        })
+        $('[name="'+ attr[0] + '"]').focus();
+    } else {
+        attr.forEach(function (item) {
+            var input = $('[name="'+ item + '"]');
+            input.attr('disabled', true);
+            input.val('');
+            input.closest('.input').addClass('disabled');
+            input.closest('.input').removeClass('focused');
+        })
+    }
+
+}
+
 DropdownInput.prototype.init = function () {
     var _this = this;
     this.initDropdown();
@@ -104,6 +133,7 @@ DropdownInput.prototype.init = function () {
         _this.container.addClass(_this.checkedClass);
         _this.container.removeClass(_this.errorClass);
         _this.hideDropdown();
+        _this.toogleInput();
     })
 
 
@@ -125,24 +155,22 @@ DropdownInput.prototype.init = function () {
                 break;
             case 'float':
                 test = 'number';
-                mask = "*{4}";
+                mask = "0.0*";
                 definitions = {
                     '*' : {
-                        validator: "0,0[2-5,]",
+                        validator: "[2-5]",
                     }
                 }
 
                 break;
         }
-
+        console.log($('[name="'+ name + '"]'))
         $('[name="'+ name + '"]').inputmask(test, {
             mask: mask,
             placeholder: "",
             showMaskOnHover: false,
             recursive: true,
             definitions: definitions,
-            min: 0.02,
-            max: 0.05
         });
 
     })
@@ -153,6 +181,8 @@ DropdownInput.prototype.init = function () {
             var value = $(this).val();
             selectedValue = selectedValue ?  selectedValue + ', ' + value : value;
         })
+
+        _this.toogleInput();
 
         if(selectedValue) {
             _this.container.addClass(_this.checkedClass);

@@ -128,7 +128,26 @@
                 'COG',
                 'SIOPEN ',
                 'Другой',
-            ]
+            ],
+            optionsAttr: {
+                3: {"data-show": "name23"}
+            }
+        },
+        {
+            label: 'Название инициального протокола',
+            type: 'text',
+            disabled: true,
+            className: 'name23',
+            placeholder: '',
+            value: '',
+            name: 'name23',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name23',
+                'max-lenght': 250,
+            },
         },
         {
             label: 'Название протокола при изменении',
@@ -145,26 +164,206 @@
                 'data-name': 'name7'
             },
             options: [
-                'синдром Горнера',
-                'полинейропатия',
-                'симптоматическая эпилепсия',
-                'парез периф.нервов'
+                'NB2004',
+                'COG',
+                'SIOPEN',
+                'Другой'
 
             ]
         },
         {
-            label: 'Этилогия',
-            type: 'select',
+            label: 'Дата изменения протокола ',
+            type: 'text',
             disabled: false,
-            className: 'name8',
             placeholder: '',
             value: '',
             name: 'name8',
             size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name8',
+            }
+        },
+        {
+            label: 'Надпочечниковая недостаточность',
+            type: 'select',
+            disabled: false,
+            className: 'name9',
+            placeholder: '',
+            value: '',
+            name: 'name9',
+            size: 3,
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'radio',
-                'data-name': 'name8'
+                'data-name': 'name9'
+            },
+            options: [
+                'Да',
+                'Нет',
+            ]
+        },
+        {
+            label: 'Причины',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name10',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name10',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Исследования до выявления опухоли ',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name11',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name11',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Неврологические проявления',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name12',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name12',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Уровень воздействия',
+            type: 'select',
+            disabled: false,
+            className: 'name13',
+            placeholder: '',
+            value: '',
+            name: 'name13',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'ckeckbox',
+                'data-name': 'name13'
+            },
+            options: [
+                'Шейный',
+                'Грудной',
+                'Поясничный',
+                'Крестцовый / копчиковый',
+            ]
+        },
+        {
+            label: 'ОМС баллы до операции',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name14',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name14',
+                'max-lenght': '250',
+            }
+        },
+
+        {
+            label: 'ОМС баллы после операции',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name15',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name15',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Этиология',
+            type: 'select',
+            disabled: false,
+            className: 'name16',
+            placeholder: '',
+            value: '',
+            name: 'name16',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name16'
+            },
+            options: [
+                'Дебют опухоли - компрессионное воздействие',
+                'Метастатическое поражение',
+                'Паранеопластический процесс',
+                'Прогрессия / рецидив',
+                'Осложнения лечения',
+                'Механизм не ясен',
+                'Нет первичного осмотра невролога в дебюте заболевания',
+                'Компрессионный перелом тел позвонков',
+            ]
+        },
+
+        {
+            label: 'После курсов ПХТ ',
+            type: 'select',
+            disabled: false,
+            className: 'name17',
+            placeholder: '',
+            value: '',
+            name: 'name17',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name17'
+            },
+            options: [
+                'синдром Горнера',
+                'полинейропатия',
+                'симптоматическая эпилепсия',
+                'парез периф.нервов',
+
+            ]
+        },
+
+        {
+            label: 'Этилогия',
+            type: 'select',
+            disabled: false,
+            className: 'name18',
+            placeholder: '',
+            value: '',
+            name: 'name18',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name18'
             },
             options: [
                 'после операции',
@@ -177,32 +376,65 @@
             disabled: false,
             placeholder: '',
             value: '',
-            name: 'name9',
+            name: 'name19',
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
                 'data-validate': 'date',
                 'data-mask': 'date',
-                'data-name': 'name9',
+                'data-name': 'name19',
             }
         },
         {
             label: 'Нейросонография',
             type: 'select',
             disabled: false,
-            className: 'name10',
+            className: 'name20',
             placeholder: '',
             value: '',
-            name: 'name10',
+            name: 'name20',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'radio',
-                'data-name': 'name10',
+                'data-name': 'name20',
             },
             options: [
                 'Да',
                 'Нет',
+            ],
+            optionsAttr: [
+                {"data-show" : "name21, name22"}
             ]
+        },
+        {
+            label: 'Дата нейросонографии',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            name: 'name21',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name21',
+            }
+        },
+        {
+            label: 'Описание нейросонографии',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            name: 'name22',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name22',
+                'max-lenght': '250',
+            }
         },
     ]

@@ -22,6 +22,7 @@ function ValidatePerson() {
         POST: 'post',
         DATE: 'date',
         COMPLEX_NUMBER: 'complex_numbers',
+        NUMBER: 'number',
         SURNAME: 'surname',
         NAME: 'name',
         PATRONYMIC: 'patronymic',
@@ -232,13 +233,21 @@ ValidatePerson.prototype.addMask = function (input) {
             mask = "*{15}";
             definitions = {
                 '*' : {
+                    validator: "[0-99/\\\\/.,]",
+                }
+            };
+
+            break;
+        case this.type.NUMBER:
+            mask = "*{15}";
+            definitions = {
+                '*' : {
                     validator: "[0-99]",
                 }
             };
 
             break;
         case this.type.DATE:
-            console.log('date')
             type = "datetime";
             inputFormat = "dd.mm.yyyy";
             placeholder = '';
@@ -367,7 +376,7 @@ ValidatePerson.prototype.submit = function () {
 
 
 ValidatePerson.prototype.deductible = function () {
-    $('body').on('change', '[data-deductible]', function () {
+    $('body').on('input', '[data-deductible]', function () {
         var deductible = $(this).data('deductible');
 
         var list = $('[data-deductible="' + deductible + '"]');
@@ -389,7 +398,7 @@ ValidatePerson.prototype.deductible = function () {
         })
         // если все поля заполнены числом добавляем результат в финальное поле
         if(isFull) {
-            resultNode.val(total);
+            resultNode.val(total.toFixed(4));
             resultNodeParent.addClass('focused');
         } else {
             resultNode.val('');

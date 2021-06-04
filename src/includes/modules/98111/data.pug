@@ -1,0 +1,388 @@
+-
+    var list98111 = [
+        {
+            label: 'Первое событие',
+            type: 'select',
+            disabled: false,
+            className: 'name',
+            placeholder: '',
+            value: '',
+            name: 'name',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name'
+            },
+            options: [
+                'Жив, без события',
+                'Потерян из - под наблюдения',
+                'Рецидив',
+                'Прогрессирование',
+                'Вторая опухоль',
+                'Смерть',
+                'Жизнеугрожающие симптомы(для группы наблюдения)',
+                'Нет данных'
+
+            ]
+        },
+        {
+            label: 'Дата первого события',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name1',
+            }
+        },
+        {
+            label: 'Второе событие',
+            type: 'select',
+            disabled: false,
+            className: 'name2',
+            placeholder: '',
+            value: '',
+            name: 'name2',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name2'
+            },
+            options: [
+                'Жив, без события',
+                'Потерян из - под наблюдения',
+                'Рецидив',
+                'Прогрессирование',
+                'Вторая опухоль',
+                'Смерть',
+                'Жизнеугрожающие симптомы(для группы наблюдения)',
+                'Нет данных'
+            ]
+        },
+        {
+            label: 'Дата второго события',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name3',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name3',
+            }
+        },
+        {
+            label: 'Статус на момент последнего наблюдения',
+            type: 'select',
+            disabled: false,
+            className: 'name4',
+            placeholder: '',
+            value: '',
+            name: 'name4',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name4'
+            },
+            options: [
+                'Жив без рецидива',
+                'Жив после рецидива / прогрессирования',
+                'Жив после второй опухоли',
+                'Смерть',
+                'Потерян из - под наблюдения',
+            ]
+        },
+        {
+            label: 'Дата последнего наблюдения',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name5',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name5',
+            }
+        },
+        {
+            label: 'Источник информации',
+            type: 'select',
+            disabled: false,
+            className: 'name6',
+            placeholder: '',
+            value: '',
+            name: 'name6',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name6'
+            },
+            options: [
+                'Катамнез',
+                'Родители',
+                'Врачи по м / ж',
+                'Почта электронная',
+                'Мобильная связь',
+                'Другое',
+            ],
+            optionsAttr: {
+                5: {'data-show': 'name20'}
+            }
+        },
+        {
+            label: 'Источник информации(подробно)',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            name: 'name20',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name20',
+                'max-lenght': '250',
+            }
+        },
+
+        {
+            label: 'Дата рецидива',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name7',
+            size: 3,
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name7',
+            }
+        },
+        {
+            label: 'Локализация рецидива',
+            type: 'select',
+            disabled: false,
+            className: 'name8',
+            placeholder: '',
+            value: '',
+            name: 'name8',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name8'
+            },
+            options: [
+                'Локальный',
+                'Метастатический',
+                'Комбинированный',
+                'Нет данных'
+            ],
+        },
+        {
+            label: 'Описание локализации рецидива',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name9',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name9',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Первые признаки рецидива',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: '',
+            name: 'name6',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name10'
+            },
+            options: [
+                'боли в костях',
+                'хромота',
+                'боли в животе',
+                'Повышение НСЕ',
+                'Неврологические осложнения',
+                'случайно при контрольном обследовании',
+                'интоксикационный синдром',
+                'Другое'
+            ],
+            optionsAttr: {
+                7: {'data-show': 'name11'}
+            }
+        },
+        {
+            label: 'Первые признаки рецидива(другое)',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            name: 'name11',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name11',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Дата начала терапии рецидива',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name12',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name12',
+            }
+        },
+
+        {
+            label: 'Дата окончания терапии рецидива',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name13',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name13',
+            }
+        },
+        {
+            label: 'Терапия рецидива',
+            type: 'select',
+            disabled: false,
+            className: 'name14',
+            placeholder: '',
+            value: '',
+            name: 'name14',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name14'
+            },
+            options: [
+                'Иринотекан / темодал',
+                'Топотекан / циклофосфан',
+                'Винкристин / темодал / иринотекан',
+                'Иринотекан / темодал / иммунотерапия',
+                'Другое',
+            ],
+            optionsAttr: {
+                4: {'data-show': 'name15'}
+            }
+        },
+        {
+            label: 'Терапия рецидива (другое)',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            name: 'name15',
+            size: 3,
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name15',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Дата начала метрономной терапии',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name16',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name16',
+            }
+        },
+        {
+            label: 'Дата окончания метрономной терапии',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name17',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name17',
+            }
+        },
+        {
+            label: 'Причина смерти',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name18',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name18',
+                'max-lenght': '250',
+            }
+        },
+        {
+            label: 'Дата смерти',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            name: 'name19',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name19',
+            }
+        },
+
+
+    ]

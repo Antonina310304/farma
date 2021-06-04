@@ -442,8 +442,8 @@ var mockDataPersonsList = $('<div class="js-page-content">\n' +
 
 
 var docsList = $('<li class="docs-list__item">\n' +
-    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-0">\n' +
-    '                        <label class="docs-list__label" for="doc-0">\n' +
+    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-5454">\n' +
+    '                        <label class="docs-list__label" for="doc-5454">\n' +
     '                          <div class="docs-list__wrapper">\n' +
     '                            <p class="docs-list__title">Какой-то новый документ</p>\n' +
     '                            <p class="docs-list__subtitle">PDF (8.6 мб), 16.10.2020, 16:45</p>\n' +
@@ -452,8 +452,8 @@ var docsList = $('<li class="docs-list__item">\n' +
     '                        <div class="docs-list__button"><a class="docs-list__open open-button" href="#">скачать документ</a></div>\n' +
     '                      </li>' +
     '<li class="docs-list__item">\n' +
-    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-0">\n' +
-    '                        <label class="docs-list__label" for="doc-0">\n' +
+    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-5458">\n' +
+    '                        <label class="docs-list__label" for="doc-5458">\n' +
     '                          <div class="docs-list__wrapper">\n' +
     '                            <p class="docs-list__title">Какой-то другой новый документ</p>\n' +
     '                            <p class="docs-list__subtitle">PDF (12.6 мб), 16.10.2020, 16:45</p>\n' +
@@ -551,6 +551,7 @@ function ValidatePerson() {
         POST: 'post',
         DATE: 'date',
         COMPLEX_NUMBER: 'complex_numbers',
+        NUMBER: 'number',
         SURNAME: 'surname',
         NAME: 'name',
         PATRONYMIC: 'patronymic',
@@ -761,13 +762,21 @@ ValidatePerson.prototype.addMask = function (input) {
             mask = "*{15}";
             definitions = {
                 '*' : {
+                    validator: "[0-99/\\\\/.,]",
+                }
+            };
+
+            break;
+        case this.type.NUMBER:
+            mask = "*{15}";
+            definitions = {
+                '*' : {
                     validator: "[0-99]",
                 }
             };
 
             break;
         case this.type.DATE:
-            console.log('date')
             type = "datetime";
             inputFormat = "dd.mm.yyyy";
             placeholder = '';
@@ -896,7 +905,7 @@ ValidatePerson.prototype.submit = function () {
 
 
 ValidatePerson.prototype.deductible = function () {
-    $('body').on('change', '[data-deductible]', function () {
+    $('body').on('input', '[data-deductible]', function () {
         var deductible = $(this).data('deductible');
 
         var list = $('[data-deductible="' + deductible + '"]');
@@ -918,7 +927,7 @@ ValidatePerson.prototype.deductible = function () {
         })
         // если все поля заполнены числом добавляем результат в финальное поле
         if(isFull) {
-            resultNode.val(total);
+            resultNode.val(total.toFixed(4));
             resultNodeParent.addClass('focused');
         } else {
             resultNode.val('');
@@ -1711,6 +1720,35 @@ DropdownInput.prototype.updateCheckedInputs = function () {
     }
 }
 
+DropdownInput.prototype.toogleInput = function () {
+    var _this = this;
+    var input = _this.container.find('[data-show]');
+
+    if(!input.length) return;
+
+
+    //если надо добавить доступность/скрыть у блока
+    var attr = input.attr('data-show').split(', ');
+    if(input.is(':checked')) {
+        attr.forEach(function (item) {
+            var input = $('[name="'+ item + '"]');
+            input.attr('disabled', false);
+
+            input.closest('.input').removeClass('disabled');
+        })
+        $('[name="'+ attr[0] + '"]').focus();
+    } else {
+        attr.forEach(function (item) {
+            var input = $('[name="'+ item + '"]');
+            input.attr('disabled', true);
+            input.val('');
+            input.closest('.input').addClass('disabled');
+            input.closest('.input').removeClass('focused');
+        })
+    }
+
+}
+
 DropdownInput.prototype.init = function () {
     var _this = this;
     this.initDropdown();
@@ -1747,6 +1785,7 @@ DropdownInput.prototype.init = function () {
         _this.container.addClass(_this.checkedClass);
         _this.container.removeClass(_this.errorClass);
         _this.hideDropdown();
+        _this.toogleInput();
     })
 
 
@@ -1768,24 +1807,22 @@ DropdownInput.prototype.init = function () {
                 break;
             case 'float':
                 test = 'number';
-                mask = "*{4}";
+                mask = "0.0*";
                 definitions = {
                     '*' : {
-                        validator: "0,0[2-5,]",
+                        validator: "[2-5]",
                     }
                 }
 
                 break;
         }
-
+        console.log($('[name="'+ name + '"]'))
         $('[name="'+ name + '"]').inputmask(test, {
             mask: mask,
             placeholder: "",
             showMaskOnHover: false,
             recursive: true,
             definitions: definitions,
-            min: 0.02,
-            max: 0.05
         });
 
     })
@@ -1796,6 +1833,8 @@ DropdownInput.prototype.init = function () {
             var value = $(this).val();
             selectedValue = selectedValue ?  selectedValue + ', ' + value : value;
         })
+
+        _this.toogleInput();
 
         if(selectedValue) {
             _this.container.addClass(_this.checkedClass);

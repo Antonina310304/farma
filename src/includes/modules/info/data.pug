@@ -112,12 +112,15 @@
                 'С76.7',
                 'С76.8',
                 'Другие',
-            ]
+            ],
+            optionsAttr: {
+                20: {'data-show': 'name17'}
+            }
         },
         {
-            label: 'Метод постановки диагноза',
-            type: 'select',
-            disabled: false,
+            label: 'МКБ-10 (Другие)',
+            type: 'text',
+            disabled: true,
             className: 'name6',
             placeholder: '',
             value: '',
@@ -125,8 +128,24 @@
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'ckeckbox',
-                'data-name': 'name6'
+                'data-validate': 'empty',
+                'data-name': 'name6',
+                'max-lenght': '250',
+            },
+        },
+        {
+            label: 'Метод постановки диагноза',
+            type: 'select',
+            disabled: false,
+            className: 'name7',
+            placeholder: '',
+            value: '',
+            name: 'name7',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'checkbox',
+                'data-name': 'name7'
             },
             options: [
                 'Гистология первичной опухоли',
@@ -142,15 +161,15 @@
             label: 'Локализация',
             type: 'select',
             disabled: false,
-            className: 'name7',
+            className: 'name8',
             placeholder: '',
             value: '',
-            name: 'name7',
+            name: 'name8',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'ckeckbox',
-                'data-name': 'name7'
+                'data-validate': 'checkbox',
+                'data-name': 'name8'
             },
             options: [
                 'Надпочечник',
@@ -168,14 +187,14 @@
             label: 'Латеральность',
             type: 'select',
             disabled: false,
-            className: 'name8',
+            className: 'name9',
             placeholder: '',
             value: '',
-            name: 'name8',
+            name: 'name9',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'ckeckbox',
+                'data-validate': 'checkbox',
                 'data-name': 'name8'
             },
             options: [
@@ -190,15 +209,15 @@
             label: 'Костные метастазы',
             type: 'select',
             disabled: false,
-            className: 'name9',
+            className: 'name10',
             placeholder: '',
             value: '',
-            name: 'name9',
+            name: 'name10',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'ckeckbox',
-                'data-name': 'name9'
+                'data-validate': 'checkbox',
+                'data-name': 'name10'
             },
             options: [
                 'Голова',
@@ -211,15 +230,15 @@
             label: 'Метастазы',
             type: 'select',
             disabled: false,
-            className: 'name10',
+            className: 'name11',
             placeholder: '',
             value: '',
-            name: 'name10',
+            name: 'name11',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'ckeckbox',
-                'data-name': 'name10'
+                'data-validate': 'checkbox',
+                'data-name': 'name11'
             },
             options: [
                 'НЕТ',
@@ -240,15 +259,15 @@
             label: 'Клинические симптомы',
             type: 'select',
             disabled: false,
-            className: 'name11',
+            className: 'name12',
             placeholder: '',
             value: '',
-            name: 'name11',
+            name: 'name12',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'checkbox',
-                'data-name': 'name11'
+                'data-name': 'name12'
             },
             options: [
                 'Компрессия спинного мозга',
@@ -265,15 +284,15 @@
             label: 'Опсоклонус (терапия гормонами)',
             type: 'select',
             disabled: false,
-            className: 'name12',
+            className: 'name13',
             placeholder: '',
             value: '',
-            name: 'name12',
+            name: 'name13',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'radio',
-                'data-name': 'name12'
+                'data-name': 'name13'
             },
             options: [
                 'Да',
@@ -286,28 +305,28 @@
             disabled: false,
             placeholder: '',
             value: '',
-            name: 'name13',
+            name: 'name14',
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
                 'data-validate': 'empty',
                 'max-lenght': '250',
-                'data-name': 'name13',
+                'data-name': 'name14',
             }
         },
         {
             label: 'ВПС',
             type: 'select',
             disabled: false,
-            className: 'name14',
+            className: 'name15',
             placeholder: '',
             value: '',
-            name: 'name14',
+            name: 'name15',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
                 'data-validate': 'radio',
-                'data-name': 'name14'
+                'data-name': 'name15'
             },
             options: [
                 'Да',
@@ -320,28 +339,28 @@
             disabled: false,
             placeholder: '',
             value: '',
-            name: 'name15',
+            name: 'name16',
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
                 'data-validate': 'empty',
                 'max-lenght': '250',
-                'data-name': 'name15',
+                'data-name': 'name16',
             }
         },
         {
             label: 'Жизнеугрожающие симптомы (для группы наблюдения)',
             type: 'select',
             disabled: false,
-            className: 'name16',
+            className: 'name17',
             placeholder: '',
             value: '',
-            name: 'name16',
+            name: 'name17',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'radio',
-                'data-name': 'name16'
+                'data-validate': 'checkbox',
+                'data-name': 'name17'
             },
             options: [
                 'НЕТ',

@@ -1,0 +1,222 @@
+-
+    var list98171 = [
+        {
+            label: 'Дата операции',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name1',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'date',
+                'data-mask': 'date',
+                'data-name': 'name1',
+            }
+        },
+        {
+            label: 'Название операции',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+
+            value: '',
+            required: true,
+            name: 'name2',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name2',
+            }
+        },
+        {
+            label: 'Объем операции',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name3',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name3',
+            }
+        },
+        {
+            label: 'Осложнения операции',
+            type: 'select',
+            disabled: false,
+            className: 'name4',
+            placeholder: '',
+            value: '',
+            required: false,
+            name: 'name4',
+            className: 'name4',
+            size: 3,
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name4',
+            },
+            options: ['Нет', 'Да']
+        },
+        {
+            label: 'Интраоперационные осложнения',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name5',
+            className: 'name5',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name5',
+            },
+            options: [
+                'Кровотечения',
+                'ТЭЛА',
+                'Тромбоз',
+                'Ранения органов / сосудов',
+                'Другое'
+            ],
+            optionsAttr: {
+                4: {'data-show': 'name6'}
+            }
+        },
+        {
+            label: 'Интраоперационные осложнения (другое)',
+            type: 'text',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name6',
+            size: 3,
+            'error-text': 'Недопустимые символы',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name6',
+            }
+        },
+        {
+            label: 'Отдаленные осложнения',
+            type: 'select',
+            disabled: false,
+            className: 'name7',
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name7',
+            size: 3,
+            'error-text': 'Выберете группу риска',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name7',
+            },
+            options: ['Да', 'Нет'],
+            optionsAttr: {
+                0: {'data-show': 'name8'}
+            }
+
+        },
+        {
+            label: 'Комментарий к отдаленным осложнениям',
+            type: 'text',
+            disabled: true,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name8',
+            size: 3,
+            'error-text': 'Заполните комментарий',
+            attributes: {
+                'data-validate': 'empty',
+                'data-mask': 'shot',
+                'data-name': 'name8',
+            }
+        },
+        {
+            label: 'Гистология после операции',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name9',
+            className: 'name9',
+            size: 3,
+            'error-text': 'Выберете гистологию после операции',
+            attributes: {
+                'data-type': 'checkbox',
+                'data-validate': 'checkbox',
+                'data-name': 'name9',
+            },
+            options: [
+                'Нейробластома, недифференцированный подтип',
+                'Нейробластома, низкодифференцированный подтип',
+                'Нейробластома, дифференцированный подтип',
+                'Ганглионейробластома',
+                'Ганглионеврома',
+                'Ганглионеврома, созревающий подтип',
+                'Ганглионеврома, зрелый подтип',
+                'Ганглионейробластома, узловая',
+                'Ганглионейробластома, узловая, атипичная',
+                'Нейробластома, NOS',
+                'Ганглионейробластома, NOS',
+                'Не проводилась',
+                'Нет данных'
+            ]
+        },
+        {
+            label: 'МКИ',
+            type: 'select',
+            disabled: false,
+            className: 'name10',
+            placeholder: '',
+            value: '',
+            name: 'name10',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'radio',
+                'data-name': 'name10'
+            },
+            options: [
+                '< 2 %',
+                '2 - 4 %',
+                '> 4 %',
+                'Нет данных',
+                'Невозможно подсчитать',
+            ]
+        },
+
+
+        {
+            label: 'Лекарственный патоморфоз',
+            type: 'select',
+            disabled: false,
+            placeholder: '',
+            value: '',
+            required: true,
+            name: 'name11',
+            className: 'name11',
+            size: 3,
+            'error-text': 'Выберете лекарственный патоморфоз',
+            attributes: {
+                'data-type': 'radio',
+                'data-validate': 'empty',
+                'data-name': 'name11',
+            },
+            options: ['1', '2', '3', '4']
+        },
+    ]
