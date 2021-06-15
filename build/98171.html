@@ -92,7 +92,7 @@
                 <div class="create-person__col-3">
                   <div class="input">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" required="" name="name2" data-required="true" placeholder="" value="" data-validate="empty" data-mask="shot" data-name="name2"/>
+                      <input class="input__input js-input" type="text" required="" name="name2" data-required="true" placeholder="" value="" data-validate="empty" data-name="name2" maxlength="250"/>
                       <label class="input__label">Название операции</label>
                     </div>
                     <div class="input__error js-input-error">Недопустимые символы</div>
@@ -101,7 +101,7 @@
                 <div class="create-person__col-3">
                   <div class="input">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" required="" name="name3" data-required="true" placeholder="" value="" data-validate="empty" data-mask="shot" data-name="name3"/>
+                      <input class="input__input js-input" type="text" required="" name="name3" data-required="true" placeholder="" value="" data-validate="empty" data-mask="number" data-name="name3" maxlength="15"/>
                       <label class="input__label">Объем операции</label>
                     </div>
                     <div class="input__error js-input-error">Недопустимые символы</div>
@@ -148,23 +148,23 @@
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Кровотечения" type="radio" id="name5-0" name="name5"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Кровотечения" type="checkbox" id="name5-0" name="name5"/>
                                 <label class="select-list__label" for="name5-0">Кровотечения</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="ТЭЛА" type="radio" id="name5-1" name="name5"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="ТЭЛА" type="checkbox" id="name5-1" name="name5"/>
                                 <label class="select-list__label" for="name5-1">ТЭЛА</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Тромбоз" type="radio" id="name5-2" name="name5"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Тромбоз" type="checkbox" id="name5-2" name="name5"/>
                                 <label class="select-list__label" for="name5-2">Тромбоз</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Ранения органов / сосудов" type="radio" id="name5-3" name="name5"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Ранения органов / сосудов" type="checkbox" id="name5-3" name="name5"/>
                                 <label class="select-list__label" for="name5-3">Ранения органов / сосудов</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="Другое" type="radio" id="name5-4" name="name5" data-show="name6"/>
+                                <input class=" undefined js-select-checkbox select-list__input" tabindex="8" value="Другое" type="checkbox" id="name5-4" name="name5" data-show="name6"/>
                                 <label class="select-list__label" for="name5-4">Другое</label>
                               </li>
                             </ul>
@@ -175,9 +175,9 @@
                   </div>
                 </div>
                 <div class="create-person__col-3">
-                  <div class="input">
+                  <div class="input disabled">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" required="" name="name6" data-required="true" placeholder="" value="" data-validate="empty" data-mask="shot" data-name="name6"/>
+                      <input class="input__input js-input" type="text" required="" name="name6" data-required="true" disabled="disabled" placeholder="" value="" data-validate="empty" maxlength="250" data-name="name6"/>
                       <label class="input__label">Интраоперационные осложнения (другое)</label>
                     </div>
                     <div class="input__error js-input-error">Недопустимые символы</div>
@@ -214,7 +214,7 @@
                 <div class="create-person__col-3">
                   <div class="input disabled">
                     <div class="input__in">
-                      <input class="input__input js-input" type="text" required="" name="name8" data-required="true" disabled="disabled" placeholder="" value="" data-validate="empty" data-mask="shot" data-name="name8"/>
+                      <input class="input__input js-input" type="text" required="" name="name8" data-required="true" disabled="disabled" placeholder="" value="" data-validate="empty" maxlength="250" data-name="name8"/>
                       <label class="input__label">Комментарий к отдаленным осложнениям</label>
                     </div>
                     <div class="input__error js-input-error">Заполните комментарий</div>
@@ -336,30 +336,29 @@
                   <div class="input-select">
                     <input class="js-fake-input visually-hidden"/>
                     <div class="input-select__in js-input-select" tabindex="7">
-                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-required="data-required" data-type="radio" value="" data-validate="empty" data-name="name11"/>
+                      <input class="input-select__text" readonly="readonly" tabindex="-1" data-type="radio" value="" data-validate="empty" data-name="name12"/>
                       <div class="input-select__label">Лекарственный патоморфоз</div><i class="input-select__icon"></i>
                     </div>
-                    <div class="input-select__error js-input-error">Выберете лекарственный патоморфоз</div>
                     <div class="input-select__list">
                       <div class="input-select__list-in">
                         <div class="input-select__wrapper">
                           <div class="input-select__inner scrollbar-inner">
                             <ul class="select-list">
                               <li class="select-list__item">
-                                <input class=" undefined js-select-empty select-list__input" tabindex="8" value="1" type="empty" id="name11-0" name="name11"/>
-                                <label class="select-list__label" for="name11-0">1</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="1" type="radio" id="name12-0" name="name12"/>
+                                <label class="select-list__label" for="name12-0">1</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-empty select-list__input" tabindex="8" value="2" type="empty" id="name11-1" name="name11"/>
-                                <label class="select-list__label" for="name11-1">2</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="2" type="radio" id="name12-1" name="name12"/>
+                                <label class="select-list__label" for="name12-1">2</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-empty select-list__input" tabindex="8" value="3" type="empty" id="name11-2" name="name11"/>
-                                <label class="select-list__label" for="name11-2">3</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="3" type="radio" id="name12-2" name="name12"/>
+                                <label class="select-list__label" for="name12-2">3</label>
                               </li>
                               <li class="select-list__item">
-                                <input class=" undefined js-select-empty select-list__input" tabindex="8" value="4" type="empty" id="name11-3" name="name11"/>
-                                <label class="select-list__label" for="name11-3">4</label>
+                                <input class=" undefined js-select-radio select-list__input" tabindex="8" value="4" type="radio" id="name12-3" name="name12"/>
+                                <label class="select-list__label" for="name12-3">4</label>
                               </li>
                             </ul>
                           </div>

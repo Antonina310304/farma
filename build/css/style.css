@@ -169,6 +169,7 @@ body {
   box-sizing: border-box;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
 }
 
 body.log .page__wrapper {
@@ -518,6 +519,7 @@ body.log .page__wrapper {
   display: flex;
   flex-wrap: wrap;
   width: auto;
+  margin-bottom: 10px;
 }
 
 .create-person__button {

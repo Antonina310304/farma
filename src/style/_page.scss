@@ -47,6 +47,9 @@
         box-sizing: border-box;
         border-radius: 8px;
         overflow: hidden;
+        position: relative;
+
+
 
         body.log & {
             margin-left: 28px;
