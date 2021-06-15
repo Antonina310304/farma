@@ -13,7 +13,7 @@ function DropdownInput(container) {
     this.showClass = 'show';
     this.checkedClass = 'checked';
     this.errorClass = 'error';
-    this.maxHeight = 90;
+    this.maxHeight = 108;
     this.inputTextTemplate = $('<div class="cloned create-person__col-3">\n' +
         '                  <div class="input">\n' +
         '                    <div class="input__in">\n' +

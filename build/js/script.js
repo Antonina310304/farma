@@ -1665,7 +1665,7 @@ function DropdownInput(container) {
     this.showClass = 'show';
     this.checkedClass = 'checked';
     this.errorClass = 'error';
-    this.maxHeight = 90;
+    this.maxHeight = 108;
     this.inputTextTemplate = $('<div class="cloned create-person__col-3">\n' +
         '                  <div class="input">\n' +
         '                    <div class="input__in">\n' +
@@ -1996,6 +1996,28 @@ function pagination() {
 }
 
 pagination();
+function Preloader() {
+    this.template = $('<div class="preloader">\n' +
+        '        <div class="preloader__in"></div>\n' +
+        '      </div>')
+}
+
+Preloader.prototype.renderInBlock = function (block) {
+    block.append(this.template);
+    $('body').css('overflow', 'hidden');
+
+}
+
+Preloader.prototype.show = function () {
+    this.renderInBlock($('footer'))
+}
+
+Preloader.prototype.hide = function () {
+    this.template.remove();
+    $('body').attr('style', '');
+}
+
+var preloader = new Preloader();
 //поставить галочку в реестре пациентов/отчетах, консилиумах
 $('body').on('click', '.js-checked', function (evt) {
     var modal = new PageInfoController('modal-footer');
@@ -2065,28 +2087,6 @@ $('body').on('click', '.js-locked', function (evt) {
         })
     }
 })
-function Preloader() {
-    this.template = $('<div class="preloader">\n' +
-        '        <div class="preloader__in"></div>\n' +
-        '      </div>')
-}
-
-Preloader.prototype.renderInBlock = function (block) {
-    block.append(this.template);
-    $('body').css('overflow', 'hidden');
-
-}
-
-Preloader.prototype.show = function () {
-    this.renderInBlock($('footer'))
-}
-
-Preloader.prototype.hide = function () {
-    this.template.remove();
-    $('body').attr('style', '');
-}
-
-var preloader = new Preloader();
 function tab(target) {
     var activeClass = 'active';
     var disabledClass = 'disabled';
