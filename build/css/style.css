@@ -8,6 +8,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: red;
 }
 
 .text-left {
@@ -178,6 +179,7 @@ body.log .page__wrapper {
 
 .page__rug {
   background: #fff;
+  background: red;
 }
 
 .page__info-wrapper {
