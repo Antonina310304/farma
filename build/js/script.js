@@ -442,8 +442,8 @@ var mockDataPersonsList = $('<div class="js-page-content">\n' +
 
 
 var docsList = $('<li class="docs-list__item">\n' +
-    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-5454">\n' +
-    '                        <label class="docs-list__label" for="doc-5454">\n' +
+    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-0">\n' +
+    '                        <label class="docs-list__label" for="doc-0">\n' +
     '                          <div class="docs-list__wrapper">\n' +
     '                            <p class="docs-list__title">Какой-то новый документ</p>\n' +
     '                            <p class="docs-list__subtitle">PDF (8.6 мб), 16.10.2020, 16:45</p>\n' +
@@ -452,8 +452,8 @@ var docsList = $('<li class="docs-list__item">\n' +
     '                        <div class="docs-list__button"><a class="docs-list__open open-button" href="#">скачать документ</a></div>\n' +
     '                      </li>' +
     '<li class="docs-list__item">\n' +
-    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-5458">\n' +
-    '                        <label class="docs-list__label" for="doc-5458">\n' +
+    '                        <input class="docs-list__input js-check-docs" type="checkbox" id="doc-0">\n' +
+    '                        <label class="docs-list__label" for="doc-0">\n' +
     '                          <div class="docs-list__wrapper">\n' +
     '                            <p class="docs-list__title">Какой-то другой новый документ</p>\n' +
     '                            <p class="docs-list__subtitle">PDF (12.6 мб), 16.10.2020, 16:45</p>\n' +
@@ -2001,7 +2001,7 @@ $('body').on('click', '.js-checked', function (evt) {
     var modal = new PageInfoController('modal-footer');
     var input = $(this).find('input');
     if(!input.length) return;
-    if(evt.target.nodeName == 'BUTTON') {
+    if(evt.target.nodeName == 'BUTTON' || evt.target.nodeName == 'A') {
         return;
     }
     input.prop('checked', !input.prop("checked"))
@@ -2014,8 +2014,6 @@ $('body').on('click', '.js-checked', function (evt) {
     } else {
         modal.hide();
     }
-
-
 })
 
 
@@ -2121,6 +2119,34 @@ $('body').on('click', '[data-target="tab"]', function () {
     tab($(this));
 });
 
+function triggerNav() {
+    var exitBlock = $('.page-header__exit');
+
+    function closeCloseBlock(evt) {
+        var target = $(evt.target);
+        closeTrigger();
+    }
+
+    function closeTrigger() {
+        exitBlock.animate({opacity: 0}, 150, function () {
+            exitBlock.removeClass('open');
+            $('body').off('click', closeCloseBlock);
+        })
+    }
+
+    $('body').on('click', '.js-nav-trigger', function () {
+
+        if(exitBlock.hasClass('open')) {
+            closeTrigger();
+        } else {
+            exitBlock.addClass('open');
+            exitBlock.animate({opacity: 1}, 150);
+            $('body').on('click', closeCloseBlock);
+        }
+    })
+}
+
+triggerNav();
 //заблокировать пользователя в детальной карточке
 $('body').on('click', '.js-locked-user', function (evt) {
     evt.preventDefault();
@@ -2167,6 +2193,48 @@ $('body').on('click', '.js-locked-user', function (evt) {
 })
 
 $('body').on('click', '.js-remove-registr', function () {
+    var _this = $(this);
+    _this.attr('disabled', true);
+    var parent = $('.js-persons-input:checked');
+    preloader.show();
+    var id = [];
+    var modeElem = [];
+
+    parent.each(function () {
+        var element = $(this).closest('.persons-list__tr')
+        modeElem.push(element);
+        var idItem = element.attr('id');
+        id.push(idItem)
+    });
+
+    onSendAjax({
+        type: 'POST',
+        url: 'action.php',
+        dataType: 'json',
+        data: {
+            action: 'REMOVE',
+            data: id,
+        },
+        onSuccess: function (data) {
+            var  data = {
+                status: "OK"
+            }
+            //Пряму модалку и делаю доступной кнопку
+            var modal = new PageInfoController('modal-footer');
+            modal.hide();
+            _this.attr('disabled', true);
+
+            if(data.status == 'OK') {
+                preloader.hide();
+                modeElem.forEach(function (item) {
+                    $(item).remove();
+                })
+            }
+        },
+        onError: function () {
+            alert('Ошибка соединения, попробуйте позже!')
+        },
+    })
 
 })
 
@@ -2177,7 +2245,6 @@ $('body').on('click', '.js-mark', function (evt) {
 
     var parent = $(this).closest('.persons-list__tr');
     var id = parent.attr('id');
-    console.log(id)
 
     onSendAjax({
         type: 'POST',
@@ -2209,31 +2276,3 @@ $('body').on('click', '.js-mark', function (evt) {
 
 
 
-function triggerNav() {
-    var exitBlock = $('.page-header__exit');
-
-    function closeCloseBlock(evt) {
-        var target = $(evt.target);
-        closeTrigger();
-    }
-
-    function closeTrigger() {
-        exitBlock.animate({opacity: 0}, 150, function () {
-            exitBlock.removeClass('open');
-            $('body').off('click', closeCloseBlock);
-        })
-    }
-
-    $('body').on('click', '.js-nav-trigger', function () {
-
-        if(exitBlock.hasClass('open')) {
-            closeTrigger();
-        } else {
-            exitBlock.addClass('open');
-            exitBlock.animate({opacity: 1}, 150);
-            $('body').on('click', closeCloseBlock);
-        }
-    })
-}
-
-triggerNav();

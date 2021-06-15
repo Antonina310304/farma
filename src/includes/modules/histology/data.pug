@@ -1,7 +1,7 @@
 -
     var histologyList = [
         {
-            label: 'VMA',
+            label: 'VMA (Мг/сут)',
             type: 'text',
             disabled: false,
             placeholder: '',
@@ -10,13 +10,12 @@
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name1',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
-            label: 'HVA',
+            label: 'HVA (Мг/сут)',
             type: 'text',
             disabled: false,
             placeholder: '',
@@ -25,9 +24,8 @@
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name2',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
@@ -55,30 +53,26 @@
             value: '',
             name: 'name4',
             size: 3,
-            'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name4',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
-            label: 'NSA (0-13) (инициально)',
+            label: 'NSA (0-13) (инициально) (Нг/мл)',
             type: 'text',
             disabled: false,
             placeholder: '',
             value: '',
             name: 'name5',
             size: 3,
-            'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name5',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
-            label: 'ЛДГ инициально',
+            label: 'ЛДГ инициально (Ед/л)',
             type: 'text',
             disabled: false,
             placeholder: '',
@@ -87,9 +81,8 @@
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name6',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
@@ -119,9 +112,8 @@
             size: 3,
             'error-text': 'Недопустимые символы',
             attributes: {
-                'data-validate': 'empty',
                 'data-name': 'name8',
-                'max-lenght': '250',
+                'maxlength': '250',
             }
         },
         {
@@ -167,7 +159,7 @@
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'checkbox',
+                'data-validate': 'radio',
                 'data-name': 'name10'
             },
             options: [
@@ -190,7 +182,7 @@
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'checkbox',
+                'data-validate': 'radio',
                 'data-name': 'name11'
             },
             options: [

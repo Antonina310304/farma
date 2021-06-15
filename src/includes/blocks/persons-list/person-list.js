@@ -3,7 +3,7 @@ $('body').on('click', '.js-checked', function (evt) {
     var modal = new PageInfoController('modal-footer');
     var input = $(this).find('input');
     if(!input.length) return;
-    if(evt.target.nodeName == 'BUTTON') {
+    if(evt.target.nodeName == 'BUTTON' || evt.target.nodeName == 'A') {
         return;
     }
     input.prop('checked', !input.prop("checked"))
@@ -16,8 +16,6 @@ $('body').on('click', '.js-checked', function (evt) {
     } else {
         modal.hide();
     }
-
-
 })
 
 
