@@ -49,8 +49,29 @@
             options_: [
                 {name: 'Трамадол 5%', attr: 'number'},
                 {name: 'Морфин 1%', attr: 'float'},
-                {name: 'Другое', attr: 'number'},
-            ]
+                {name: 'Другое', 'data-show': 'name29'},
+            ],
+            optionsAttr: {
+                2: {'data-show': 'name29'}
+            }
+
+        },
+        {
+            label: 'Обезболивание (другое)',
+            type: 'text',
+            disabled: true,
+            className: 'name29',
+            placeholder: '',
+            value: '',
+            name: 'name29',
+            size: 3,
+            'error-text': 'Выберете поле',
+            attributes: {
+                'data-validate': 'empty',
+                'data-name': 'name29',
+                'maxlength': 250
+            },
+
         },
         {
             label: 'Обезболивание (доза) мг/кг/сутки',
@@ -457,11 +478,12 @@
             disabled: false,
             placeholder: '',
             value: '',
+            className: 'name24',
             name: 'name24',
             size: 3,
             'error-text': 'Выберете поле',
             attributes: {
-                'data-validate': 'number',
+                'data-validate': 'radio',
                 'data-name': 'name24'
             },
             options: [

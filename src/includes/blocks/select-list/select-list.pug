@@ -35,7 +35,7 @@ mixin SelectListRadio(params)
                          data-change-mask=val.attr
                          data-change-name=params.attributes['data-change-name'] ? params.attributes['data-change-name'] : false,
                          name=params.className
-                         class=`${other} ${params.attributes['data-select']} js-select-${params.attributes['data-validate']}`)._input
+                         class=`${other} ${params.attributes['data-select']} js-select-${params.attributes['data-validate']}`)._input&attributes(params.optionsAttr ? params.optionsAttr[index] : '')
                      label(for=`${params.className}-${index}`)._label=val.name
                  - test = test + 1;
 
