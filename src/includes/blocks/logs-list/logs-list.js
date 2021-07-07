@@ -45,4 +45,9 @@ function refreshChanges() {
     })
 }
 
-refreshChanges();
+$(document).ready(function () {
+    refreshChanges();
+})
+
+
+

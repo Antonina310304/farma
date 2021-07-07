@@ -207,6 +207,13 @@ DropdownInput.prototype.onBodyClick = function (evt) {
 }
 
 
-$('.input-select').each(function () {
-    var dropdownInput = new DropdownInput($(this));
+
+
+$(document).ready(function () {
+    $('.input-select').each(function () {
+        var dropdownInput = new DropdownInput($(this));
+    })
 })
+
+
+

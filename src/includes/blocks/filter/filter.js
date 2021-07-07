@@ -55,7 +55,6 @@ SelectBlock.prototype.hide = function () {
     $('body').off('click', this.onBodyClick);
 }
 
-var selectBlock = new SelectBlock();
 
 
 function AjaxFilter() {
@@ -103,5 +102,10 @@ function AjaxFilter() {
     }
 }
 
-AjaxFilter();
+$(document).ready(function () {
+    var selectBlock = new SelectBlock();
+    AjaxFilter();
+})
+
+
 

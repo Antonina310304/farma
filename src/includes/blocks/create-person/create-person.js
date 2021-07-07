@@ -434,5 +434,6 @@ ValidatePerson.prototype.init = function () {
         }
     })
 }
-
-var validatePerson = new ValidatePerson();
+$(document).ready(function () {
+    var validatePerson = new ValidatePerson();
+})

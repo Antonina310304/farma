@@ -335,9 +335,6 @@ DownloadFiles.prototype.init = function () {
     })
 }
 
-var downloadFiles = new DownloadFiles();
-
-
-function removeElement() {
-
-}
+$(document).ready(function () {
+    var downloadFiles = new DownloadFiles();
+})

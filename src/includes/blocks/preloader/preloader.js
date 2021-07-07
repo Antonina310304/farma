@@ -18,5 +18,7 @@ Preloader.prototype.hide = function () {
     this.template.remove();
     $('body').attr('style', '');
 }
+$(document).ready(function () {
+    var preloader = new Preloader();
+})
 
-var preloader = new Preloader();

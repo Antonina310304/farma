@@ -59,6 +59,10 @@ CounterSms.prototype.init = function () {
 
 }
 
-var counterSms = new CounterSms();
+$(document).ready(function () {
+    var counterSms = new CounterSms();
+})
+
+
 
 

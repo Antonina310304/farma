@@ -25,7 +25,9 @@ function tab(target) {
     show(content);
     show(target);
 }
+$(document).ready(function () {
+    $('body').on('click', '[data-target="tab"]', function () {
+        tab($(this));
+    });
+})
 
-$('body').on('click', '[data-target="tab"]', function () {
-    tab($(this));
-});

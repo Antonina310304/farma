@@ -523,7 +523,11 @@ CounterSms.prototype.init = function () {
 
 }
 
-var counterSms = new CounterSms();
+$(document).ready(function () {
+    var counterSms = new CounterSms();
+})
+
+
 
 
 
@@ -963,8 +967,10 @@ ValidatePerson.prototype.init = function () {
         }
     })
 }
+$(document).ready(function () {
+    var validatePerson = new ValidatePerson();
+})
 
-var validatePerson = new ValidatePerson();
 function DocumentListController() {
     this.checkAllClass = '.js-check-all-docs';
     this.checkDocClass = '.js-check-docs';
@@ -1004,7 +1010,11 @@ DocumentListController.prototype.init = function () {
 
 }
 
-var documentListController = new DocumentListController();
+$(document).ready(function () {
+    var documentListController = new DocumentListController();
+})
+
+
 
 function PageInfoController(attr) {
     this.modal = $('[data-modal-name="'+ attr + '"]');
@@ -1343,119 +1353,9 @@ DownloadFiles.prototype.init = function () {
     })
 }
 
-var downloadFiles = new DownloadFiles();
-
-
-function removeElement() {
-
-}
-function SelectBlock() {
-    this.onClick = $.proxy(this.onClick, this);
-    this.onBodyClick = $.proxy(this.onBodyClick, this);
-    this.activeClass = "show";
-    this.init();
-}
-
-SelectBlock.prototype.onBodyClick = function (evt) {
-    if (this.selectWrapper.has(evt.target).length === 0){
-        this.hide();
-    }
-}
-
-SelectBlock.prototype.hideBlock = function (selectWrapper) {
-    var _this = this;
-    var selectBlock = selectWrapper.find('.js-select-list');
-    selectBlock.animate({opacity: 0}, 150, function () {
-        selectWrapper.removeClass(_this.activeClass);
-    });
-
-    $('body').off('click', this.onBodyClick);
-}
-
-SelectBlock.prototype.onClick = function () {
-    if(this.selectWrapper.hasClass(this.activeClass)) {
-        this.hide();
-    } else {
-        var activeOther = $('.filter-select.show');
-        this.hideBlock(activeOther);
-        this.selectWrapper.addClass(this.activeClass);
-        this.selectBlock.animate({opacity: 1}, 150);
-        $('body').on('click', this.onBodyClick)
-    }
-}
-
-SelectBlock.prototype.init = function () {
-    var _this = this;
-
-    $('body').on('click', '.js-select', function () {
-        _this.selectWrapper = $(this).parent();
-        if (!_this.selectWrapper.length) return;
-        _this.selectBlock = _this.selectWrapper.find('.js-select-list');
-        if (!_this.selectBlock.length) return;
-
-        _this.onClick();
-    })
-}
-
-SelectBlock.prototype.hide = function () {
-    var _this = this;
-    this.selectBlock.animate({opacity: 0}, 150, function () {
-        _this.selectWrapper.removeClass(_this.activeClass);
-    });
-
-    $('body').off('click', this.onBodyClick);
-}
-
-var selectBlock = new SelectBlock();
-
-
-function AjaxFilter() {
-    var WAIT = 700;
-
-    $('body').on('input', '.js-evt-search', debounce(refreshList, WAIT));
-    $('body').on('change', '.js-filter-checkbox', debounce(refreshList, WAIT));
-
-
-    function refreshList() {
-        var json = getJsonForm($('#filter'));
-        preloader.show();
-
-        var paramsAjax = {
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: json,
-            onSuccess: function (data) {
-
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    template: $('#filter').hasClass('persons-list--registry') ? mockDataPersonsList.clone() : mockUserList.clone(),
-                }
-
-                if(data.status == 'OK') {
-
-                    $('.js-page-content').replaceWith(data.template);
-
-                } else {
-                    alert('Ошибка связи с сервером');
-                }
-                preloader.hide();
-            },
-
-            onError: function () {
-                alert('Ошибка связи с сервером');
-                preloader.hide();
-            },
-        }
-
-        onSendAjax(paramsAjax)
-
-    }
-}
-
-AjaxFilter();
-
+$(document).ready(function () {
+    var downloadFiles = new DownloadFiles();
+})
 
 function onSubmitForm(params) {
     $('body').on('submit', params.class, function (evt) {
@@ -1553,6 +1453,172 @@ onSubmitForm({
 
 
 
+function SelectBlock() {
+    this.onClick = $.proxy(this.onClick, this);
+    this.onBodyClick = $.proxy(this.onBodyClick, this);
+    this.activeClass = "show";
+    this.init();
+}
+
+SelectBlock.prototype.onBodyClick = function (evt) {
+    if (this.selectWrapper.has(evt.target).length === 0){
+        this.hide();
+    }
+}
+
+SelectBlock.prototype.hideBlock = function (selectWrapper) {
+    var _this = this;
+    var selectBlock = selectWrapper.find('.js-select-list');
+    selectBlock.animate({opacity: 0}, 150, function () {
+        selectWrapper.removeClass(_this.activeClass);
+    });
+
+    $('body').off('click', this.onBodyClick);
+}
+
+SelectBlock.prototype.onClick = function () {
+    if(this.selectWrapper.hasClass(this.activeClass)) {
+        this.hide();
+    } else {
+        var activeOther = $('.filter-select.show');
+        this.hideBlock(activeOther);
+        this.selectWrapper.addClass(this.activeClass);
+        this.selectBlock.animate({opacity: 1}, 150);
+        $('body').on('click', this.onBodyClick)
+    }
+}
+
+SelectBlock.prototype.init = function () {
+    var _this = this;
+
+    $('body').on('click', '.js-select', function () {
+        _this.selectWrapper = $(this).parent();
+        if (!_this.selectWrapper.length) return;
+        _this.selectBlock = _this.selectWrapper.find('.js-select-list');
+        if (!_this.selectBlock.length) return;
+
+        _this.onClick();
+    })
+}
+
+SelectBlock.prototype.hide = function () {
+    var _this = this;
+    this.selectBlock.animate({opacity: 0}, 150, function () {
+        _this.selectWrapper.removeClass(_this.activeClass);
+    });
+
+    $('body').off('click', this.onBodyClick);
+}
+
+
+
+function AjaxFilter() {
+    var WAIT = 700;
+
+    $('body').on('input', '.js-evt-search', debounce(refreshList, WAIT));
+    $('body').on('change', '.js-filter-checkbox', debounce(refreshList, WAIT));
+
+
+    function refreshList() {
+        var json = getJsonForm($('#filter'));
+        preloader.show();
+
+        var paramsAjax = {
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: json,
+            onSuccess: function (data) {
+
+                //удалить при интеграции
+                var data = {
+                    status: 'OK',
+                    template: $('#filter').hasClass('persons-list--registry') ? mockDataPersonsList.clone() : mockUserList.clone(),
+                }
+
+                if(data.status == 'OK') {
+
+                    $('.js-page-content').replaceWith(data.template);
+
+                } else {
+                    alert('Ошибка связи с сервером');
+                }
+                preloader.hide();
+            },
+
+            onError: function () {
+                alert('Ошибка связи с сервером');
+                preloader.hide();
+            },
+        }
+
+        onSendAjax(paramsAjax)
+
+    }
+}
+
+$(document).ready(function () {
+    var selectBlock = new SelectBlock();
+    AjaxFilter();
+})
+
+
+
+
+function refreshChanges() {
+    $('body').on('click', '.js-refresh-changes',function (evt) {
+        evt.preventDefault();
+
+        var stingLogItem = $(this).closest('.logs-list__tr');
+        var id = stingLogItem.attr('id');
+        var action = $(this).data('action');
+        preloader.show();
+
+        onSendAjax({
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: {
+                action,
+                id
+            },
+            onSuccess: function (data) {
+                //удалить при интеграции
+                var data = {
+                    status: 'OK',
+                    errorText: 'Какая-то ошибка которая приходит с бэка'
+                }
+
+                var pageInfo = new PageInfoController('success-confirmed');
+                preloader.hide();
+
+                if(data.status == 'OK') {
+
+                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
+                    stingLogItem.remove();
+                    pageInfo.changeText(textSuccess);
+                    pageInfo.showModal();
+
+                } else {
+                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
+                    pageInfo.showModal();
+
+                }
+            },
+            onError: function () {
+                alert('Ошибка соединения, попробуйте позже!')
+            },
+        })
+    })
+}
+
+$(document).ready(function () {
+    refreshChanges();
+})
+
+
+
+
 function ControllerInput() {
     this.focusedClass = 'focused';
     this.focusClass = 'focus';
@@ -1607,9 +1673,6 @@ ControllerInput.prototype.init = function () {
 }
 
 
-var controllerInput = new ControllerInput();
-
-
 function codeMask() {
     $('.js-mask-code').inputmask({
         mask: "99",
@@ -1648,7 +1711,13 @@ function codeMask() {
     })
 }
 
-codeMask();
+$(document).ready(function () {
+    var controllerInput = new ControllerInput();
+    codeMask();
+})
+
+
+
 
 function DropdownInput(container) {
     this.container = container;
@@ -1859,102 +1928,17 @@ DropdownInput.prototype.onBodyClick = function (evt) {
 }
 
 
-$('.input-select').each(function () {
-    var dropdownInput = new DropdownInput($(this));
-})
-function refreshChanges() {
-    $('body').on('click', '.js-refresh-changes',function (evt) {
-        evt.preventDefault();
 
-        var stingLogItem = $(this).closest('.logs-list__tr');
-        var id = stingLogItem.attr('id');
-        var action = $(this).data('action');
-        preloader.show();
 
-        onSendAjax({
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: {
-                action,
-                id
-            },
-            onSuccess: function (data) {
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    errorText: 'Какая-то ошибка которая приходит с бэка'
-                }
-
-                var pageInfo = new PageInfoController('success-confirmed');
-                preloader.hide();
-
-                if(data.status == 'OK') {
-
-                    var textSuccess = action == 'confirm' ? 'Изменения успешно приняты' : 'Изменения успешно отменены';
-                    stingLogItem.remove();
-                    pageInfo.changeText(textSuccess);
-                    pageInfo.showModal();
-
-                } else {
-                    pageInfo.changeText(data.errorText ? data.errorText : 'Ошибка обновления данных, обратитесь к администратору!');
-                    pageInfo.showModal();
-
-                }
-            },
-            onError: function () {
-                alert('Ошибка соединения, попробуйте позже!')
-            },
-        })
+$(document).ready(function () {
+    $('.input-select').each(function () {
+        var dropdownInput = new DropdownInput($(this));
     })
-}
-
-refreshChanges();
-
-function Modal(params) {
-    this.modal = params.modal;
-    this.closeBtn = this.modal.find('.js-modal-close');
-    this.confirmBtn = this.modal.find('.js-confirm');
-    this.showClass = 'show';
-    this.overlay = $('.overlay');
-    this.closeModal = $.proxy(this.closeModal, this);
-    this.confirm = params.confirm ? params.confirm : function () {return true};
-    this.close = params.close ? params.close : function () {return true};
-}
-
-Modal.prototype.closeModal = function () {
-    this.modal.removeClass(this.showClass);
-    this.overlay.removeClass(this.showClass);
-    this.closeBtn.off('click', this.closeModal);
-    this.overlay.off('click', this.closeModal);
-    this.confirmBtn.off('click', this.confirm);
-    this.parent.append(this.modal);
-    this.close();
-}
-
-Modal.prototype.openModal = function () {
-    this.modal.addClass(this.showClass);
-    this.overlay.addClass(this.showClass);
-
-    this.closeBtn.on('click', this.closeModal);
-    this.confirmBtn.on('click', this.confirm);
-    this.overlay.on('click', this.closeModal);
-}
-
-Modal.prototype.render = function () {
-    this.parent = this.modal.parent();
-    //чтобы модалка всегда была в подвале при рендере
-    $('footer').append(this.modal);
-    this.openModal();
-}
-
-
-$('body').on('click', '[data-modal]', function () {
-    var modalName = $(this).attr('data-modal');
-    var modal = $('[data-modal-name="'+ modalName + '"]');
-    var modalClass = new Modal({modal});
-    modalClass.render();
 })
+
+
+
+
 
 function pagination() {
     $('body').on('click', '.js-pagination', function (evt) {
@@ -1994,8 +1978,134 @@ function pagination() {
         })
     })
 }
+$(document).ready(function () {
+    pagination();
+})
 
-pagination();
+
+
+function Modal(params) {
+    this.modal = params.modal;
+    this.closeBtn = this.modal.find('.js-modal-close');
+    this.confirmBtn = this.modal.find('.js-confirm');
+    this.showClass = 'show';
+    this.overlay = $('.overlay');
+    this.closeModal = $.proxy(this.closeModal, this);
+    this.confirm = params.confirm ? params.confirm : function () {return true};
+    this.close = params.close ? params.close : function () {return true};
+}
+
+Modal.prototype.closeModal = function () {
+    this.modal.removeClass(this.showClass);
+    this.overlay.removeClass(this.showClass);
+    this.closeBtn.off('click', this.closeModal);
+    this.overlay.off('click', this.closeModal);
+    this.confirmBtn.off('click', this.confirm);
+    this.parent.append(this.modal);
+    this.close();
+}
+
+Modal.prototype.openModal = function () {
+    this.modal.addClass(this.showClass);
+    this.overlay.addClass(this.showClass);
+
+    this.closeBtn.on('click', this.closeModal);
+    this.confirmBtn.on('click', this.confirm);
+    this.overlay.on('click', this.closeModal);
+}
+
+Modal.prototype.render = function () {
+    this.parent = this.modal.parent();
+    //чтобы модалка всегда была в подвале при рендере
+    $('footer').append(this.modal);
+    this.openModal();
+}
+$(document).ready(function () {
+    $('body').on('click', '[data-modal]', function () {
+        var modalName = $(this).attr('data-modal');
+        var modal = $('[data-modal-name="'+ modalName + '"]');
+        var modalClass = new Modal({modal});
+        modalClass.render();
+    })
+})
+
+
+
+//поставить галочку в реестре пациентов/отчетах, консилиумах
+
+$(document).ready(function () {
+
+    $('body').on('click', '.js-checked', function (evt) {
+        var modal = new PageInfoController('modal-footer');
+        var input = $(this).find('input');
+        if(!input.length) return;
+        if(evt.target.nodeName == 'BUTTON' || evt.target.nodeName == 'A') {
+            return;
+        }
+        input.prop('checked', !input.prop("checked"))
+
+        var countCheckedDocs = $('.js-persons-input:checked').length;
+
+        if(countCheckedDocs > 0) {
+            modal.changeText('Выбрано документов: ' + countCheckedDocs);
+            modal.showModal();
+        } else {
+            modal.hide();
+        }
+    })
+
+
+    //заблокировать разблокировать пользователя/пациента
+    $('body').on('click', '.js-locked', function (evt) {
+        evt.preventDefault();
+        var isLocked = $(this).attr('data-locked');
+
+        var modal = $('[data-modal-name="lockdown"]');
+        var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
+        var textModal = isLocked == 'N' ? 'Вы уверены, что хотите заблокировать пользователя?' : 'Вы уверены, что хотите разблокировать пользователя?';
+        modal.find('.modal__text').text(textModal);
+        modalClass.render();
+
+        function confirm() {
+            modalClass.closeModal();
+
+            var id = $(this).closest('.persons-list__tr').attr('data-id');
+            $(this).attr('disabled', true);
+            var _this = $(this);
+
+            onSendAjax({
+                type: 'POST',
+                url: 'action.php',
+                dataType: 'json',
+                data: {id: id, isLocked: isLocked},
+                onSuccess: function (data) {
+
+                    //удалить при интеграции
+                    var data = {
+                        status: 'OK',
+                        state: _this.attr('data-locked') == 'N' ? 'Y' : 'N',
+                    };
+
+                    // _this.attr('disabled', false);
+                    if(data.status == 'OK') {
+                        // _this.attr('data-locked', data.state);
+                        var modal = $('[data-modal-name="modal-success"]');
+                        var modalClass = new Modal({modal});
+                        modalClass.render();
+                    } else {
+                        alert('Ошибка запроса. Повторите позже');
+                    }
+
+                },
+                onError: function () {
+                    alert('Ошибка запроса. Повторите позже');
+                },
+            })
+        }
+    })
+
+
+})
 function Preloader() {
     this.template = $('<div class="preloader">\n' +
         '        <div class="preloader__in"></div>\n' +
@@ -2016,77 +2126,11 @@ Preloader.prototype.hide = function () {
     this.template.remove();
     $('body').attr('style', '');
 }
-
-var preloader = new Preloader();
-//поставить галочку в реестре пациентов/отчетах, консилиумах
-$('body').on('click', '.js-checked', function (evt) {
-    var modal = new PageInfoController('modal-footer');
-    var input = $(this).find('input');
-    if(!input.length) return;
-    if(evt.target.nodeName == 'BUTTON' || evt.target.nodeName == 'A') {
-        return;
-    }
-    input.prop('checked', !input.prop("checked"))
-
-    var countCheckedDocs = $('.js-persons-input:checked').length;
-
-    if(countCheckedDocs > 0) {
-        modal.changeText('Выбрано документов: ' + countCheckedDocs);
-        modal.showModal();
-    } else {
-        modal.hide();
-    }
+$(document).ready(function () {
+    var preloader = new Preloader();
 })
 
 
-//заблокировать разблокировать пользователя/пациента
-$('body').on('click', '.js-locked', function (evt) {
-    evt.preventDefault();
-    var isLocked = $(this).attr('data-locked');
-
-    var modal = $('[data-modal-name="lockdown"]');
-    var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
-    var textModal = isLocked == 'N' ? 'Вы уверены, что хотите заблокировать пользователя?' : 'Вы уверены, что хотите разблокировать пользователя?';
-    modal.find('.modal__text').text(textModal);
-    modalClass.render();
-
-    function confirm() {
-        modalClass.closeModal();
-
-        var id = $(this).closest('.persons-list__tr').attr('data-id');
-        $(this).attr('disabled', true);
-        var _this = $(this);
-
-        onSendAjax({
-            type: 'POST',
-            url: 'action.php',
-            dataType: 'json',
-            data: {id: id, isLocked: isLocked},
-            onSuccess: function (data) {
-
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                    state: _this.attr('data-locked') == 'N' ? 'Y' : 'N',
-                };
-
-                // _this.attr('disabled', false);
-                if(data.status == 'OK') {
-                    // _this.attr('data-locked', data.state);
-                    var modal = $('[data-modal-name="modal-success"]');
-                    var modalClass = new Modal({modal});
-                    modalClass.render();
-                } else {
-                    alert('Ошибка запроса. Повторите позже');
-                }
-
-            },
-            onError: function () {
-                alert('Ошибка запроса. Повторите позже');
-            },
-        })
-    }
-})
 function tab(target) {
     var activeClass = 'active';
     var disabledClass = 'disabled';
@@ -2114,10 +2158,12 @@ function tab(target) {
     show(content);
     show(target);
 }
+$(document).ready(function () {
+    $('body').on('click', '[data-target="tab"]', function () {
+        tab($(this));
+    });
+})
 
-$('body').on('click', '[data-target="tab"]', function () {
-    tab($(this));
-});
 
 function triggerNav() {
     var exitBlock = $('.page-header__exit');
@@ -2147,132 +2193,135 @@ function triggerNav() {
 }
 
 triggerNav();
-//заблокировать пользователя в детальной карточке
-$('body').on('click', '.js-locked-user', function (evt) {
-    evt.preventDefault();
-
-    var modal = $('[data-modal-name="lockdown"]');
-    var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
-    modalClass.render();
-
-    function confirm() {
-        modalClass.closeModal();
-        $(this).attr('disabled', true);
-        var id = $(['data-user-id']);
+$(document).ready(function () {
+    $('body').on('click', '.js-remove-registr', function () {
         var _this = $(this);
+        _this.attr('disabled', true);
+        var parent = $('.js-persons-input:checked');
+        preloader.show();
+        var id = [];
+        var modeElem = [];
+
+        parent.each(function () {
+            var element = $(this).closest('.persons-list__tr')
+            modeElem.push(element);
+            var idItem = element.attr('id');
+            id.push(idItem)
+        });
 
         onSendAjax({
             type: 'POST',
             url: 'action.php',
             dataType: 'json',
-            data: {id: id, action: 'locked'},
+            data: {
+                action: 'REMOVE',
+                data: id,
+            },
             onSuccess: function (data) {
-
-                //удалить при интеграции
-                var data = {
-                    status: 'OK',
-                };
-                //блокируем кнопку для повторных запросов
+                var  data = {
+                    status: "OK"
+                }
+                //Пряму модалку и делаю доступной кнопку
+                var modal = new PageInfoController('modal-footer');
+                modal.hide();
+                _this.attr('disabled', true);
 
                 if(data.status == 'OK') {
-                    var modalNode = $('[data-modal-name="modal-success"]');
-                    var modalSuccess = new Modal({modal: modalNode});
-                    modalSuccess.render();
-
-
-                } else {
-                    alert('Ошибка запроса. Повторите позже');
+                    preloader.hide();
+                    modeElem.forEach(function (item) {
+                        $(item).remove();
+                    })
                 }
-
             },
             onError: function () {
-                alert('Ошибка запроса. Повторите позже');
+                alert('Ошибка соединения, попробуйте позже!')
             },
         })
-    }
-})
 
-$('body').on('click', '.js-remove-registr', function () {
-    var _this = $(this);
-    _this.attr('disabled', true);
-    var parent = $('.js-persons-input:checked');
-    preloader.show();
-    var id = [];
-    var modeElem = [];
-
-    parent.each(function () {
-        var element = $(this).closest('.persons-list__tr')
-        modeElem.push(element);
-        var idItem = element.attr('id');
-        id.push(idItem)
-    });
-
-    onSendAjax({
-        type: 'POST',
-        url: 'action.php',
-        dataType: 'json',
-        data: {
-            action: 'REMOVE',
-            data: id,
-        },
-        onSuccess: function (data) {
-            var  data = {
-                status: "OK"
-            }
-            //Пряму модалку и делаю доступной кнопку
-            var modal = new PageInfoController('modal-footer');
-            modal.hide();
-            _this.attr('disabled', true);
-
-            if(data.status == 'OK') {
-                preloader.hide();
-                modeElem.forEach(function (item) {
-                    $(item).remove();
-                })
-            }
-        },
-        onError: function () {
-            alert('Ошибка соединения, попробуйте позже!')
-        },
     })
 
-})
+    $('body').on('click', '.js-mark', function (evt) {
+        var _this = $(this);
+        evt.preventDefault();
+        _this.attr('disabled', true);
 
-$('body').on('click', '.js-mark', function (evt) {
-    var _this = $(this);
-    evt.preventDefault();
-    _this.attr('disabled', true);
+        var parent = $(this).closest('.persons-list__tr');
+        var id = parent.attr('id');
 
-    var parent = $(this).closest('.persons-list__tr');
-    var id = parent.attr('id');
+        onSendAjax({
+            type: 'POST',
+            url: 'action.php',
+            dataType: 'json',
+            data: {
+                id: id,
+                action: 'REMOVE_MARK'
+            },
 
-    onSendAjax({
-        type: 'POST',
-        url: 'action.php',
-        dataType: 'json',
-        data: {
-            id: id,
-            action: 'REMOVE_MARK'
-        },
+            onSuccess: function (data) {
+                var data = {
+                    state: 'OK'
+                }
 
-        onSuccess: function (data) {
-            var data = {
-                state: 'OK'
-            }
+                if(data.state == 'OK') {
+                    _this.attr('disabled', false);
+                    parent.removeClass('mark');
+                } else {
+                    alert('Ошибка, попробуйте позже');
+                }
+            },
 
-            if(data.state == 'OK') {
-                _this.attr('disabled', false);
-                parent.removeClass('mark');
-            } else {
-                alert('Ошибка, попробуйте позже');
-            }
-        },
-
-        onError: function () {
-            alert('Ошибка связи с сервером');
-        },
+            onError: function () {
+                alert('Ошибка связи с сервером');
+            },
+        })
     })
 })
 
+//заблокировать пользователя в детальной карточке
+$(document).ready(function () {
+    $('body').on('click', '.js-locked-user', function (evt) {
+        evt.preventDefault();
+
+        var modal = $('[data-modal-name="lockdown"]');
+        var modalClass = new Modal({modal, confirm: $.proxy(confirm, this)});
+        modalClass.render();
+
+        function confirm() {
+            modalClass.closeModal();
+            $(this).attr('disabled', true);
+            var id = $(['data-user-id']);
+            var _this = $(this);
+
+            onSendAjax({
+                type: 'POST',
+                url: 'action.php',
+                dataType: 'json',
+                data: {id: id, action: 'locked'},
+                onSuccess: function (data) {
+
+                    //удалить при интеграции
+                    var data = {
+                        status: 'OK',
+                    };
+                    //блокируем кнопку для повторных запросов
+
+                    if(data.status == 'OK') {
+                        var modalNode = $('[data-modal-name="modal-success"]');
+                        var modalSuccess = new Modal({modal: modalNode});
+                        modalSuccess.render();
+
+
+                    } else {
+                        alert('Ошибка запроса. Повторите позже');
+                    }
+
+                },
+                onError: function () {
+                    alert('Ошибка запроса. Повторите позже');
+                },
+            })
+        }
+    })
+})
 
 

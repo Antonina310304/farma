@@ -34,11 +34,13 @@ Modal.prototype.render = function () {
     $('footer').append(this.modal);
     this.openModal();
 }
-
-
-$('body').on('click', '[data-modal]', function () {
-    var modalName = $(this).attr('data-modal');
-    var modal = $('[data-modal-name="'+ modalName + '"]');
-    var modalClass = new Modal({modal});
-    modalClass.render();
+$(document).ready(function () {
+    $('body').on('click', '[data-modal]', function () {
+        var modalName = $(this).attr('data-modal');
+        var modal = $('[data-modal-name="'+ modalName + '"]');
+        var modalClass = new Modal({modal});
+        modalClass.render();
+    })
 })
+
+

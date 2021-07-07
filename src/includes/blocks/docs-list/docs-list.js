@@ -37,4 +37,8 @@ DocumentListController.prototype.init = function () {
 
 }
 
-var documentListController = new DocumentListController();
+$(document).ready(function () {
+    var documentListController = new DocumentListController();
+})
+
+

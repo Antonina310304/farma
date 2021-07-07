@@ -36,5 +36,8 @@ function pagination() {
         })
     })
 }
+$(document).ready(function () {
+    pagination();
+})
 
-pagination();
+

@@ -52,9 +52,6 @@ ControllerInput.prototype.init = function () {
 }
 
 
-var controllerInput = new ControllerInput();
-
-
 function codeMask() {
     $('.js-mask-code').inputmask({
         mask: "99",
@@ -93,4 +90,10 @@ function codeMask() {
     })
 }
 
-codeMask();
+$(document).ready(function () {
+    var controllerInput = new ControllerInput();
+    codeMask();
+})
+
+
+
