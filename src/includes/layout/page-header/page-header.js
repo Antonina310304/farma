@@ -25,4 +25,7 @@ function triggerNav() {
     })
 }
 
-triggerNav();
+$(document).ready(function () {
+    triggerNav();
+})
+
