@@ -531,38 +531,6 @@ $(document).ready(function () {
 
 
 
-function triggerNav() {
-    var exitBlock = $('.page-header__exit');
-
-    function closeCloseBlock(evt) {
-        var target = $(evt.target);
-        closeTrigger();
-    }
-
-    function closeTrigger() {
-        exitBlock.animate({opacity: 0}, 150, function () {
-            exitBlock.removeClass('open');
-            $('body').off('click', closeCloseBlock);
-        })
-    }
-
-    $('body').on('click', '.js-nav-trigger', function () {
-
-        if(exitBlock.hasClass('open')) {
-            closeTrigger();
-        } else {
-            exitBlock.addClass('open');
-            exitBlock.animate({opacity: 1}, 150);
-            $('body').on('click', closeCloseBlock);
-        }
-    })
-}
-
-$(document).ready(function () {
-    triggerNav();
-})
-
-
 /**
  *  * маска накладывается по атрибуту data-mask
  * валидация проходит по полю data-validate и data-required
@@ -1971,6 +1939,7 @@ $(document).ready(function () {
 
 
 
+
 function Modal(params) {
     this.modal = params.modal;
     this.closeBtn = this.modal.find('.js-modal-close');
@@ -2018,7 +1987,6 @@ $(document).ready(function () {
 
 
 
-
 function pagination() {
     $('body').on('click', '.js-pagination', function (evt) {
         evt.preventDefault();
@@ -2061,6 +2029,31 @@ $(document).ready(function () {
     pagination();
 })
 
+
+
+function Preloader() {
+    this.template = $('<div class="preloader">\n' +
+        '        <div class="preloader__in"></div>\n' +
+        '      </div>')
+}
+
+Preloader.prototype.renderInBlock = function (block) {
+    block.append(this.template);
+    $('body').css('overflow', 'hidden');
+
+}
+
+Preloader.prototype.show = function () {
+    this.renderInBlock($('footer'))
+}
+
+Preloader.prototype.hide = function () {
+    this.template.remove();
+    $('body').attr('style', '');
+}
+$(document).ready(function () {
+    var preloader = new Preloader();
+})
 
 
 //поставить галочку в реестре пациентов/отчетах, консилиумах
@@ -2138,31 +2131,6 @@ $(document).ready(function () {
 
 
 })
-function Preloader() {
-    this.template = $('<div class="preloader">\n' +
-        '        <div class="preloader__in"></div>\n' +
-        '      </div>')
-}
-
-Preloader.prototype.renderInBlock = function (block) {
-    block.append(this.template);
-    $('body').css('overflow', 'hidden');
-
-}
-
-Preloader.prototype.show = function () {
-    this.renderInBlock($('footer'))
-}
-
-Preloader.prototype.hide = function () {
-    this.template.remove();
-    $('body').attr('style', '');
-}
-$(document).ready(function () {
-    var preloader = new Preloader();
-})
-
-
 function tab(target) {
     var activeClass = 'active';
     var disabledClass = 'disabled';
@@ -2327,5 +2295,37 @@ $(document).ready(function () {
     })
 })
 
+
+
+function triggerNav() {
+    var exitBlock = $('.page-header__exit');
+
+    function closeCloseBlock(evt) {
+        var target = $(evt.target);
+        closeTrigger();
+    }
+
+    function closeTrigger() {
+        exitBlock.animate({opacity: 0}, 150, function () {
+            exitBlock.removeClass('open');
+            $('body').off('click', closeCloseBlock);
+        })
+    }
+
+    $('body').on('click', '.js-nav-trigger', function () {
+
+        if(exitBlock.hasClass('open')) {
+            closeTrigger();
+        } else {
+            exitBlock.addClass('open');
+            exitBlock.animate({opacity: 1}, 150);
+            $('body').on('click', closeCloseBlock);
+        }
+    })
+}
+
+$(document).ready(function () {
+    triggerNav();
+})
 
 

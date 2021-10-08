@@ -340,6 +340,7 @@ ValidatePerson.prototype.submit = function () {
                         name: 'tel',
                         textError: 'Текст ошибки с бэка'
                     },
+
                 ]
             }
 
